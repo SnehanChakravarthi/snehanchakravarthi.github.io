@@ -31,7 +31,7 @@ export const authorData = {
 		{
 			title: 'Co-Founder',
 			company: 'Motsats Furniture',
-			from: '2020',
+			from: '2021',
 			to: '2023'
 		}
 	],

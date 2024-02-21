@@ -82,7 +82,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 	const lastMousePosition = useRef({ x: 0, y: 0 });
 	const mouseIdleTimeoutRef = useRef<number | null>(null);
 
-	const idleTimeoutDuration = 5000; // 5 seconds
+	const idleTimeoutDuration = 1000; // 5 seconds
 
 	const { nodes, materials, animations } = useGLTF('/cad/snehanReadyPlayerOne.glb') as GLTFResult;
 	//   const { actions } = useAnimations(animations, group);

@@ -4,29 +4,91 @@ import Artworks from './astroComponents/Artworks.astro';
 import DesignProjects from './astroComponents/DesignProjects.astro';
 ---
 
-<section id="projects" class="mt-40 flex w-screen max-w-7xl flex-col px-4 pt-20 sm:px-10 md:px-16">
+<section id="projects" class="flex w-screen max-w-7xl flex-col px-4 pt-20 sm:px-10 md:px-16">
 	<h3
-		class="text-color-animate z-0 ml-4 rotate-2 font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
+		class="text-color-animate z-0 mt-8 -rotate-2 font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
 	>
-		And I put them to good use in these
-		<span class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate"> projects. </span>
+		Take a look at these specially selected <span
+			class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate"
+		>
+			PROJECTS &nbsp;
+		</span> where I've showcased my abilities!
 	</h3>
 
-	<div class="mt-40">
+	<h3
+		class="text-color-animate z-0 mt-20 text-center font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
+	>
+		<span class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate text-3xl sm:text-5xl">
+			1. &nbsp;programming
+		</span>
+	</h3>
+	<p
+		class="mt-2 max-w-xl self-center text-pretty pl-10 font-virgil text-base text-cyan-800 dark:text-pink-600 sm:text-lg"
+	>
+		I'm a full-stack dev geek with a flair for crafting functional eye-catching web apps, dabbling
+		in everything from <span class="text-decoration">3D, AR/VR</span> to <span
+			class="text-decoration">LLMS and Generative AI</span
+		> With a strong foundation/passion in comp sci and <span class="text-decoration"
+			>bachelors degree in information tech</span
+		>, I'm always leveling up in the tech game.
+	</p>
+
+	<div class="mt-10">
 		<ProgrammingProjects />
 	</div>
 	<h3
-		class="text-color-animate z-0 ml-4 rotate-2 font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
+		class="text-color-animate z-0 mt-28 text-center font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
 	>
-		And I put them to good use in these
-		<span class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate"> projects. </span>
+		<span class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate text-3xl sm:text-5xl">
+			2. &nbsp;industrial design
+		</span>
 	</h3>
-	<div class="mt-40"><DesignProjects /></div>
+	<p
+		class="mt-2 max-w-2xl self-center text-pretty pl-10 font-virgil text-base text-cyan-800 dark:text-pink-600 sm:text-lg"
+	>
+		Holding a <span class="text-decoration">master's degree in Industrial Design</span> and a keen eye
+		for geometry, perspective, and shapes, I've developed several physical products and designed many
+		others. My two most significant projects in industrial design were collaborative efforts with <span
+			class="text-decoration">NASA</span
+		> and <span class="text-decoration">IKEA</span>, which eventually led to the founding of a
+		startup. This venture gave me valuable insight into the startup world and business operations.
+	</p>
+	<div class="mt-10"><DesignProjects /></div>
 	<h3
-		class="text-color-animate z-0 ml-4 rotate-2 font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
+		class="text-color-animate z-0 mt-20 text-center font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
 	>
-		And I put them to good use in these
-		<span class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate"> projects. </span>
+		<span class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate text-3xl sm:text-5xl">
+			3. &nbsp;entrepreneurship
+		</span>
 	</h3>
-	<div class="mt-40"><Artworks /></div>
+	<p
+		class="mt-2 max-w-2xl self-center text-pretty pl-10 font-virgil text-base text-cyan-800 dark:text-pink-600 sm:text-lg"
+	>
+		As a master's student, one of my prototype was showcased at <span class="text-decoration"
+			>Milano Design Week</span
+		> under IKEA, going viral online and sparking global interest. This led me to co-founding a startup,
+		raising over <span class="text-decoration">1 Million SEK</span> to commercialize the concept. Although
+		the venture concluded after two years, the experience enriched my understanding of developing meaningful
+		global products and services.
+	</p>
+	<h3
+		class="text-color-animate z-0 mt-20 text-center font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
+	>
+		<span class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate text-3xl sm:text-5xl">
+			4. &nbsp;art
+		</span>
+	</h3>
+	<p
+		class="mt-2 max-w-2xl self-center pl-10 text-center font-virgil text-base text-cyan-800 dark:text-pink-600 sm:text-lg"
+	>
+		I don't sketch as often as I did in my childhood, but now, I make it a point to preserve them
+		since I've lost most of my early sketches. As for art,<span class="text-decoration"
+			>it's my escape from reality; there's a certain tranquility in just being with myself, the
+			canvas, and letting creativity flow.</span
+		>
+	</p>
+
+	<div class="mt-10">
+		<Artworks />
+	</div>
 </section>

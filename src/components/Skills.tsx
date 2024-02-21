@@ -16,7 +16,8 @@ const skills = {
 		{ skill: 'Vue', expertise: 2 },
 		{ skill: 'Svelte', expertise: 2 },
 		{ skill: 'HTMX', expertise: 2 },
-		{ skill: 'Solid', expertise: 1 }
+		{ skill: 'Solid', expertise: 1 },
+		{ skill: 'Alpine', expertise: 1 }
 	],
 	frameworks: [
 		{ skill: 'Next.js', expertise: 3 },
@@ -24,14 +25,16 @@ const skills = {
 		{ skill: 'Astro', expertise: 3 },
 		{ skill: 'SvelteKit', expertise: 2 },
 		{ skill: 'Nuxt', expertise: 2 },
-		{ skill: 'Remix', expertise: 2 }
+		{ skill: 'Remix', expertise: 2 },
+		{ skill: 'PWA', expertise: 2 }
 	],
 	tools: [
 		{ skill: 'Prisma', expertise: 3 },
 		{ skill: 'ReactQuery', expertise: 3 },
 		{ skill: 'Redux', expertise: 2 },
 		{ skill: 'tRPC', expertise: 2 },
-		{ skill: 'FramerMotion', expertise: 2 }
+		{ skill: 'FramerMotion', expertise: 2 },
+		{ skill: 'Puppeteer', expertise: 2 }
 	],
 	'back-End': [
 		{ skill: 'Nodejs', expertise: 3 },
@@ -73,7 +76,8 @@ const skills = {
 		{ skill: 'XD', expertise: 3 },
 		{ skill: 'Photoshop', expertise: 3 },
 		{ skill: 'Indesign', expertise: 3 },
-		{ skill: 'Illustrator', expertise: 3 }
+		{ skill: 'Illustrator', expertise: 2 },
+		{ skill: 'AfterEffects', expertise: 2 }
 	],
 	Tools: [
 		{ skill: 'Git', expertise: 3 },
@@ -262,7 +266,7 @@ const Skills = () => {
 	}, []);
 
 	return (
-		<section id="skills" className="flex w-screen max-w-7xl flex-col px-4 md:px-16 ">
+		<section id="skills" className="relative flex w-screen max-w-7xl flex-col px-4 md:px-16">
 			<div className="relative  pt-20">
 				<svg ref={svgRef} className="absolute left-0 top-0 h-full w-full" />
 
@@ -342,7 +346,7 @@ const Skills = () => {
 					</div>
 				</div>
 			</div>
-			<div className="dark:bg-darkCard dark:border-darkCardBorder bg-lightCard border-lightCardBorder dark:divide-darkCardBorder/60 divide-lightCardBorder/60 dark:hover:shadow-darkShadow dark:shadow-darkShadow shadow-lightShadow hover:shadow-lightShadow dark:hover:bg-darkCardHover flex w-full flex-col justify-center divide-y rounded-2xl  border shadow-xl transition-all duration-300 ease-in-out hover:-rotate-0 hover:scale-105 hover:border-cyan-950 hover:shadow-2xl sm:rotate-1 dark:hover:border-pink-950">
+			<div className="dark:bg-darkCard dark:border-darkCardBorder bg-lightCard border-lightCardBorder dark:divide-darkCardBorder/60 divide-lightCardBorder/60 dark:hover:shadow-darkShadow dark:shadow-darkShadow shadow-lightShadow hover:shadow-lightShadow dark:hover:bg-darkCardHover  flex w-full flex-col justify-center divide-y rounded-2xl  border shadow-xl transition-all duration-300 ease-in-out hover:-rotate-0 hover:scale-105 hover:border-cyan-950 hover:shadow-2xl sm:rotate-1 dark:hover:border-pink-950">
 				{Object.entries(filteredSkills).map(([category, skills]) => (
 					<div
 						className="grid justify-start px-4 py-2 text-sm sm:grid-flow-col sm:text-base "
@@ -374,6 +378,10 @@ const Skills = () => {
 					</div>
 				))}
 			</div>
+			<p className=" font-virgil  mt-6 w-1/2 rotate-2 self-end text-end text-base text-cyan-800 sm:text-lg dark:text-pink-600">
+				... I continually seek out new technologies to study during my leisure time in order to
+				broaden my set of skills.
+			</p>
 		</section>
 	);
 };

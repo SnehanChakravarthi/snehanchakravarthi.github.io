@@ -26,7 +26,7 @@ const synchat = ['Docker', 'NodeJS', 'Express', 'Whatsapp API', 'Python', 'Flask
 		<div class="ml-4 space-y-4 font-redhat">
 			<div class="flex flex-col items-baseline xl:flex-row xl:gap-4">
 				<h2
-					class="group-hover:dark:text-shadow-3d-dark group-hover:text-shadow-3d font-microgammaBold text-3xl uppercase transition-all duration-100 dark:text-pink-200"
+					class="group-hover:dark:text-shadow-3d-dark group-hover:text-shadow-3d font-microgammaBold text-3xl uppercase dark:text-pink-200"
 				>
 					Zero da Vinci
 				</h2>
@@ -46,7 +46,7 @@ const synchat = ['Docker', 'NodeJS', 'Express', 'Whatsapp API', 'Python', 'Flask
 			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
 				{
 					zerodavinci.map((skill) => (
-						<div class="flex items-center justify-center gap-1    rounded-lg border border-black/20 bg-[#767676]/20 from-cyan-500 to-blue-500 px-1 py-1 text-xs font-bold transition-all duration-100 group-hover:bg-gradient-to-br group-hover:text-black dark:border-white/10 dark:from-orange-600 dark:to-pink-500 sm:gap-2 sm:px-2 sm:text-sm">
+						<div class="flex items-center justify-center gap-1    rounded-lg border border-black/20 bg-[#767676]/20 from-cyan-500 to-blue-500 px-1 py-1 text-xs font-bold  group-hover:bg-gradient-to-br group-hover:text-black dark:border-white/10 dark:from-orange-600 dark:to-pink-500 sm:gap-2 sm:px-2 sm:text-sm">
 							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
 								<img
 									src={`/logos/${skill.toLowerCase()}.svg`}
@@ -79,15 +79,13 @@ const synchat = ['Docker', 'NodeJS', 'Express', 'Whatsapp API', 'Python', 'Flask
 		class="project-card group flex cursor-pointer flex-col-reverse items-center justify-around border-x px-3 py-3 transition-all duration-150 ease-in-out hover:rotate-1 hover:scale-105 hover:rounded-2xl hover:border hover:shadow-2xl hover:shadow-lightShadow dark:hover:shadow-darkShadow lg:flex-row"
 		href="/programming/acetrait"
 	>
-		<div
-			class="-rotate-2 transition-transform duration-150 group-hover:-rotate-6 group-hover:scale-110"
-		>
+		<div class="-rotate-2 transition-transform group-hover:-rotate-6 group-hover:scale-110">
 			<Macbook videoChoice="acetrait" />
 		</div>
 		<div class="ml-4 space-y-4 font-redhat">
 			<div class="flex flex-col items-baseline xl:flex-row xl:gap-4">
 				<h2
-					class="group-hover:dark:text-shadow-3d-dark group-hover:text-shadow-3d font-microgammaBold text-3xl uppercase transition-all duration-100 dark:text-pink-200"
+					class="group-hover:dark:text-shadow-3d-dark group-hover:text-shadow-3d font-microgammaBold text-3xl uppercase dark:text-pink-200"
 				>
 					Acetrait
 				</h2>
@@ -99,7 +97,7 @@ const synchat = ['Docker', 'NodeJS', 'Express', 'Whatsapp API', 'Python', 'Flask
 				AI powered web platform for smart recruitment. AI Interviewing, Candidate Shortlisting, and
 				more.
 			</p>
-			<ul class="sm:text-bas *:group-hover:text-decoration-card text-sm text-emerald-600">
+			<ul class="*:group-hover:text-decoration-card text-sm text-emerald-600 sm:text-base">
 				<li>⭐️ Finetunned LLM + Streaming Responses + Dynamic Prompting</li>
 				<li>⭐️ NextJS Server Actions</li>
 				<li>⭐️ PostgreSQL + Supabase Realtime</li>
@@ -108,7 +106,7 @@ const synchat = ['Docker', 'NodeJS', 'Express', 'Whatsapp API', 'Python', 'Flask
 			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
 				{
 					acetrait.map((skill) => (
-						<div class="flex items-center justify-center gap-1    rounded-lg border border-black/20 bg-[#767676]/20 from-cyan-500 to-blue-500 px-1 py-1 text-xs font-bold transition-all duration-100 group-hover:bg-gradient-to-br group-hover:text-black dark:border-white/10 dark:from-orange-600 dark:to-pink-500 sm:gap-2 sm:px-2 sm:text-sm">
+						<div class="flex items-center justify-center gap-1    rounded-lg border border-black/20 bg-[#767676]/20 from-cyan-500 to-blue-500 px-1 py-1 text-xs font-bold group-hover:bg-gradient-to-br group-hover:text-black dark:border-white/10 dark:from-orange-600 dark:to-pink-500 sm:gap-2 sm:px-2 sm:text-sm">
 							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
 								<img
 									src={`/logos/${skill.toLowerCase()}.svg`}
@@ -131,7 +129,7 @@ const synchat = ['Docker', 'NodeJS', 'Express', 'Whatsapp API', 'Python', 'Flask
 		<div class="mx-4 space-y-4 font-redhat">
 			<div class="flex flex-col items-baseline xl:flex-row xl:gap-4">
 				<h2
-					class="group-hover:dark:text-shadow-3d-dark group-hover:text-shadow-3d font-microgammaBold text-3xl uppercase transition-all duration-100"
+					class="group-hover:dark:text-shadow-3d-dark group-hover:text-shadow-3d font-microgammaBold text-3xl uppercase"
 				>
 					Synchat
 				</h2>
@@ -151,7 +149,7 @@ const synchat = ['Docker', 'NodeJS', 'Express', 'Whatsapp API', 'Python', 'Flask
 			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
 				{
 					synchat.map((skill) => (
-						<div class="flex items-center justify-center gap-1    rounded-lg border border-black/20 bg-[#767676]/20 from-cyan-500 to-blue-500 px-1 py-1 text-xs font-bold transition-all duration-100 group-hover:bg-gradient-to-br group-hover:text-black dark:border-white/10 dark:from-orange-600 dark:to-pink-500 sm:gap-2 sm:px-2 sm:text-sm">
+						<div class="flex items-center justify-center gap-1 rounded-lg border border-black/20 bg-[#767676]/20 from-cyan-500 to-blue-500 px-1 py-1 text-xs font-bold  group-hover:bg-gradient-to-br group-hover:text-black dark:border-white/10 dark:from-orange-600 dark:to-pink-500 sm:gap-2 sm:px-2 sm:text-sm">
 							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
 								<img
 									src={`/logos/${skill.toLowerCase()}.svg`}
