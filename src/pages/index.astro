@@ -1,0 +1,28 @@
+---
+import Skills from '@/components/Skills.tsx';
+import Layout from '@/layouts/Layout.astro';
+import Hero from '@/components/Hero.astro';
+import About from '@/components/About.astro';
+import Projects from '@/components/Projects.astro';
+import Avatar from '@/components/reactComponents/Avatar.tsx';
+---
+
+<script>
+	document.addEventListener('scroll', function () {
+		const scrollY = window.scrollY;
+		const avatarDiv = document.getElementById('avatar');
+		if (avatarDiv) {
+			avatarDiv.style.transform = `translateY(${scrollY * 2}px)`;
+		}
+	});
+</script>
+
+<Layout>
+	<div class="fixed left-0 z-10 h-screen w-full" id="avatar">
+		<Avatar client:only="react" />
+	</div>
+	<Hero />
+	<Skills client:only="react" />
+	<Projects />
+	<About />
+</Layout>

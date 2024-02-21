@@ -1,0 +1,146 @@
+---
+import { Image } from 'astro:assets';
+
+import Layout from '@/layouts/Layout.astro';
+import Skillbox from '@/components/astroComponents/Skillbox.astro';
+import ViewSiteBadge from '@/components/astroComponents/ViewSiteBadge.astro';
+import GoBackBadge from '@/components/astroComponents/GoBackBadge.astro';
+import Macbook from '@/components/astroComponents/Macbook.astro';
+import Iphone from '@/components/astroComponents/Iphone.astro';
+
+import Vert from '@/images/zerodavinci/VertCount.png';
+import UV from '@/images/zerodavinci/UVWrap.png';
+import Render1 from '@/images/zerodavinci/gold1.png';
+import Blender1 from '@/images/zerodavinci/Blender1.png';
+import Blender2 from '@/images/zerodavinci/Blender2.png';
+import ZeroDV1 from '@/images/zerodavinci/ZeroDV1.jpg';
+import ZeroDV2 from '@/images/zerodavinci/ZeroDV2.jpg';
+import HeadingLine from '@/components/astroComponents/HeadingLine.astro';
+---
+
+<Layout title="Acetrait | Snehan Chakra Varthi">
+	<GoBackBadge />
+	<ViewSiteBadge link="https://www.acetrait.com" />
+
+	<div
+		class="mb-20 flex max-w-5xl flex-col items-center space-y-8 px-4 text-center font-redhat text-sm dark:text-pink-600 sm:px-8 sm:text-base md:px-12"
+	>
+		<h1
+			class="dark:text-shadow-3d-dark text-shadow mt-14 font-microgammaBold text-3xl text-cyan-400 dark:text-white sm:text-5xl"
+		>
+			ACETRAIT
+		</h1>
+		<!-- 
+    <ul class="text-white">
+      <li>⭐️ Interactive webGL site</li>
+      <li>⭐️ Optimsed 3D low poly (17k verts)</li>
+      <li>⭐️ Scroll controlled animations and camera</li>
+      <li>⭐️ AR product visualisation</li>
+      <li>⭐️ SEO + MDX Blog</li>
+    </ul> -->
+
+		<HeadingLine title="what is it?" />
+
+		<p>
+			Acetrait is an innovative AI-powered platform designed to revolutionize the recruitment
+			process for both companies and job seekers. At its core, Acetrait simplifies and automates the
+			task of creating engaging job posts, developing ideal candidate personas, conducting in-depth
+			interviews, and evaluating candidates through AI and LLMs. This platform is a testament to
+			leveraging cutting-edge technologies to streamline the recruitment workflow, offering a
+			seamless bridge between recruiters and potential candidates.
+		</p>
+
+		<Macbook className="max-w-full" videoChoice="acetrait" />
+
+		<HeadingLine title="Features" />
+
+		<ul class="*:flex *:flex-col">
+			<li>
+				<p class="text-decoration">AI-Driven Interviews</p>
+				<p>
+					Personalized, in-depth chat-based interviews that evaluate a candidate's fit for the job
+					position.
+				</p>
+			</li>
+			<li>
+				<strong>Candidate Evaluation and Scoring</strong> AI assesses candidates across multiple attributes,
+				presenting results in a spider chart.
+			</li>
+			<li>
+				<p class="text-decoration">Automated Job Post Creation</p>
+				<p>
+					Generate captivating job advertisements and ideal candidate personas with just basic job
+					details.
+				</p>
+			</li>
+			<li>
+				<strong>Job Feed</strong> Job posts are accessible in a comprehensive public feed for candidates.
+			</li>
+		</ul>
+
+		<Image src={UV} alt="Blender screenshot of UV wrapping process" />
+
+		<HeadingLine title="Technical Overview" />
+
+		<h3>Frontend Excellence</h3>
+		<p>
+			Utilizing Next.js 14 and React with Tailwind CSS and Shadcn for a user-friendly interface. The
+			application ensures a modern, fast, and secure user experience.
+		</p>
+		<h3>Distinct Interfaces for Users</h3>
+		<p>
+			Features tailored UIs for both candidates and recruiters, equipped with role-specific
+			functionalities.
+		</p>
+		<h3>Backend and Hosting Innovations</h3>
+		<p>
+			The backend is built on Node.js, hosted on Vercel, and uses Edge functions for enhanced
+			performance. React Server Components are used for security and efficiency.
+		</p>
+		<h3>Database and AI Integration</h3>
+		<p>
+			Supabase is used for the database, ensuring scalability and data integrity. The AI component,
+			powered by OpenAI's API, is fine-tuned for accuracy and relevance.
+		</p>
+
+		<HeadingLine title="AR Visualisation" />
+
+		<p>
+			I added AR visualisation feature to the site, that uses the opensource <span
+				class="text-decoration"
+			>
+				Google Model Viewer library</span
+			> to allow users to view the product in AR on their mobile devices. Below you can see a screen
+			recording of the AR feature in action.
+		</p>
+
+		<div class="max-w-60">
+			<Iphone className="max-w-60" />
+		</div>
+
+		<HeadingLine title="Result" />
+
+		<p>
+			The final website succeeded in showcasing the product in all its glory that wount have been
+			otherwise possible. The website is live at <a
+				href="https://www.zerodavinci.com"
+				class="text-decoration">www.zerodavinci.com</a
+			> and has been a great success in attracting potential customers and investors.
+			<br /><br />Personally, I am very proud of the result and the skills I have acquired in the
+			process. I am now able to create interactive 3D web experiences and have a better
+			understanding of webGL and 3D rendering techniques. I am also able to create and optimise 3D
+			models for webGL rendering and have a better understanding of the <span
+				class="text-decoration"
+			>
+				webGL pipeline and performance optimisations.</span
+			>
+			<br /><br />Here are some of the real pictures of the product.
+		</p>
+
+		<div class="flex flex-col items-start gap-4 sm:flex-row">
+			<Image src={ZeroDV1} alt="Man Sitting on Zero da Vinci" class="h-auto rounded-2xl sm:w-1/2" />
+			<Image src={ZeroDV2} alt="Man Resting on Zero da Vinci" class="h-auto rounded-2xl sm:w-1/2" />
+		</div>
+		<Image src={Render1} alt="Render of the Zero da Vinci" class="w-full rounded-2xl" />
+	</div>
+</Layout>

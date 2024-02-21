@@ -1,0 +1,102 @@
+---
+import ProgrammingProjects from './astroComponents/ProgrammingProjects.astro';
+import Artworks from './astroComponents/Artworks.astro';
+import DesignProjects from './astroComponents/DesignProjects.astro';
+---
+
+<script>
+	function attachEventListeners() {
+		const buttons = document.querySelectorAll('.toggleBtn');
+		buttons.forEach((button) => {
+			button.removeEventListener('click', handleButtonClick); // Prevent multiple bindings
+			button.addEventListener('click', handleButtonClick);
+		});
+
+		// Use session state or default to '1' if none exists
+		const savedProjectType = sessionStorage.getItem('selectedProjectType') || '1';
+		toggleProjects(savedProjectType);
+	}
+
+	function handleButtonClick(this: any) {
+		const projectType = this.getAttribute('project-type');
+		sessionStorage.setItem('selectedProjectType', projectType);
+		toggleProjects(projectType || '');
+	}
+
+	function toggleProjects(project: string) {
+		const programmingProjects = document.getElementById('programmingProjects');
+		const designProjects = document.getElementById('designProjects');
+		const artWorks = document.getElementById('artWorks');
+
+		if (programmingProjects) {
+			programmingProjects.style.display = project === '1' ? 'block' : 'none';
+		}
+		if (designProjects) {
+			designProjects.style.display = project === '2' ? 'block' : 'none';
+		}
+		if (artWorks) {
+			artWorks.style.display = project === '3' ? 'block' : 'none';
+		}
+
+		updateButtonStyles(project);
+	}
+
+	function updateButtonStyles(activeProject: string | null) {
+		const buttons = document.querySelectorAll('.toggleBtn');
+		const isDarkMode = document.documentElement.classList.contains('dark');
+		buttons.forEach((button) => {
+			const projectType = button.getAttribute('project-type');
+			if (projectType === activeProject) {
+				button.classList.add(
+					isDarkMode ? 'circle-sketch-highlight-dark' : 'circle-sketch-highlight'
+				);
+			} else {
+				button.classList.remove('circle-sketch-highlight', 'circle-sketch-highlight-dark');
+			}
+		});
+	}
+
+	// Clean up before the page is swapped
+	document.addEventListener(
+		'astro:before-swap',
+		() => {
+			// Remove event listeners to prevent memory leaks or errors
+			const buttons = document.querySelectorAll('.toggleBtn');
+			buttons.forEach((button) => {
+				button.removeEventListener('click', handleButtonClick);
+			});
+		},
+		{ once: true }
+	);
+
+	// Re-initialize after swapping pages
+	document.addEventListener('astro:after-swap', attachEventListeners);
+
+	// Initialize on first load
+	document.addEventListener('DOMContentLoaded', attachEventListeners);
+</script>
+
+<section id="projects" class="mt-40 flex w-screen max-w-7xl flex-col px-4 pt-20 sm:px-10 md:px-16">
+	<h3
+		class="text-color-animate z-0 ml-4 rotate-2 font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
+	>
+		And I put them to good use in these
+		<span class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate"> projects. </span>
+	</h3>
+
+	<div
+		class="my-4 flex flex-col items-start justify-center gap-2 font-virgil text-xl sm:my-10 sm:flex-row sm:gap-0 sm:text-2xl"
+	>
+		<button class="toggleBtn px-3 text-sky-500" project-type="1">Programming</button>
+		<button class="toggleBtn whitespace-nowrap px-3 text-emerald-500" project-type="2"
+			>Industrial Design</button
+		>
+		<button class="toggleBtn px-3 text-yellow-500" project-type="3">Art</button>
+	</div>
+
+	<div id="programmingProjects" style="display:block;">
+		<ProgrammingProjects />
+	</div>
+	<div id="designProjects" style="display:none;"><DesignProjects /></div>
+	<div id="artWorks" style="display:none;"><Artworks /></div>
+</section>

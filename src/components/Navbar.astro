@@ -1,0 +1,109 @@
+---
+import { Image } from 'astro:assets';
+
+import siteLogo from '../assets/siteLogo/signature.png';
+import siteLogoDark from '../assets/siteLogo/signatureDark.png';
+
+const menu = [
+	{
+		name: 'Skills',
+		link: '#skills'
+	},
+	{
+		name: 'Projects',
+		link: '#projects'
+	},
+	{
+		name: 'About',
+		link: '#about'
+	}
+];
+---
+
+<script>
+	const themeToggles = document.querySelectorAll('[data-theme-toggle]');
+
+	const getTheme = () => localStorage.getItem('theme') || 'light';
+
+	const setTheme = (theme: string) => document.documentElement.setAttribute('data-theme', theme);
+
+	// Apply the theme and icon when the page loads and after theme changes
+	window.addEventListener('DOMContentLoaded', () => {
+		setTheme(getTheme());
+	});
+	document.addEventListener('astro:after-swap', () => {
+		setTheme(getTheme());
+	});
+
+	themeToggles.forEach((toggle) => {
+		toggle.addEventListener('click', () => {
+			const nextTheme = getTheme() === 'light' ? 'dark' : 'light';
+			localStorage.setItem('theme', nextTheme);
+			setTheme(nextTheme);
+		});
+	});
+</script>
+
+<div
+	class="fixed z-10 flex h-12 w-screen items-center justify-center border-lightGrid bg-lightBG font-microgammaMedium text-lightText dark:border-darkGrid dark:bg-darkBG dark:text-pink-200"
+	transition:persist
+>
+	<div
+		class="flex h-12 w-full items-center justify-between border border-lightGrid bg-lightBG px-6 dark:border-darkGrid dark:bg-darkBG"
+	>
+		<a href="/" class="mt-14 w-36 -rotate-3">
+			<Image src={siteLogo} alt="Snehan Signature" class="dark:hidden" />
+			<Image src={siteLogoDark} alt="Snehan Signature" class="hidden dark:block" />
+		</a>
+		<ul class="hidden flex-row items-center gap-6 sm:flex">
+			{
+				menu.map((item) => (
+					<li class="font-light hover:font-medium">
+						<a href={item.link}>{item.name}</a>
+					</li>
+				))
+			}
+			<li>
+				<a href="/CV.pdf" download>CV</a>
+			</li>
+			<button
+				class="theme-toggle mx-auto flex h-12 w-12 cursor-pointer items-center justify-center border border-lightGrid bg-white hover:bg-lightBG dark:border-darkGrid dark:bg-black dark:hover:bg-darkBG"
+				data-theme-toggle
+				aria-label="toggle theme"
+			>
+				<span class="moon"
+					><svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg
+					></span
+				>
+				<span class="sun"
+					><svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="lucide lucide-sun"
+						><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"
+						></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"
+						></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path
+							d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg
+					></span
+				>
+			</button>
+		</ul>
+	</div>
+</div>

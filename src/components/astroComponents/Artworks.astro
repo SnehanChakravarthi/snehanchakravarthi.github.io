@@ -1,0 +1,71 @@
+---
+import { Image } from 'astro:assets';
+
+import artWork1 from '@/images/art/1.jpg';
+import artWork2 from '@/images/art/2.jpg';
+import artWork3 from '@/images/art/3.jpg';
+import artWork4 from '@/images/art/4.jpg';
+import artWork5 from '@/images/art/5.jpg';
+import artWork6 from '@/images/art/6.jpg';
+---
+
+<div
+	class="mt-10 rounded-2xl border border-lightCardBorder bg-lightCard shadow-xl shadow-lightShadow transition-all duration-300 ease-in-out hover:-rotate-0 hover:scale-105 hover:border-cyan-950 hover:shadow-2xl hover:shadow-lightShadow dark:border-darkCardBorder dark:bg-darkCard dark:shadow-darkShadow dark:hover:border-pink-950 dark:hover:bg-darkCardHover dark:hover:shadow-darkShadow lg:-rotate-1"
+>
+	<div class="columns-2xs gap-4 p-4">
+		<div class="relative mb-4 h-auto">
+			<Image
+				alt="Drawing of a young boy with water over his face"
+				src={artWork1}
+				class="rounded-lg object-cover"
+				height={artWork1.height}
+				width={artWork1.width}
+			/>
+		</div>
+		<div class="relative mb-4 h-auto">
+			<Image
+				alt="Drawing of an unicorn and a horse"
+				src={artWork3}
+				class="rounded-lg object-cover"
+				height={artWork3.height}
+				width={artWork3.width}
+			/>
+		</div>
+		<div class="relative mb-4 h-auto">
+			<Image
+				alt="Drawing of Mother Teresa and a child"
+				src={artWork2}
+				class="rounded-lg object-cover"
+				height={artWork2.height}
+				width={artWork2.width}
+			/>
+		</div>
+		<div class="relative mb-4 h-auto">
+			<Image
+				alt="Drawing of a hand grabbing a thigh"
+				src={artWork5}
+				class="rounded-lg object-cover"
+				height={artWork5.height}
+				width={artWork5.width}
+			/>
+		</div>
+		<div class="relative mb-4 h-auto">
+			<Image
+				alt="Drawing of a chimpanzee"
+				src={artWork6}
+				class="rounded-lg object-cover"
+				height={artWork6.height}
+				width={artWork6.width}
+			/>
+		</div>
+		<div class="relative h-auto">
+			<Image
+				alt="Drawing of the Big Ben"
+				src={artWork4}
+				class="rounded-lg object-cover"
+				height={artWork4.height}
+				width={artWork4.width}
+			/>
+		</div>
+	</div>
+</div>

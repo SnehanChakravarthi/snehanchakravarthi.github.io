@@ -1,0 +1,37 @@
+---
+import '@/styles/globals.css';
+
+import '@fontsource-variable/red-hat-mono';
+import { ViewTransitions, fade } from 'astro:transitions';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title?: string;
+}
+
+const { title = 'Snehan Chakra Varthi' } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
+	<body class="bg-baseLight min-h-screen dark:bg-stone-950">
+		<div
+			class="dark:hero-background-dark hero-background flex w-screen justify-center bg-lightBG pb-40 text-lightText transition-colors duration-300 ease-in-out dark:bg-darkBG dark:text-darkText"
+		>
+			<Navbar />
+			<main class="min-w-0 pt-14" transition:animate={fade({ duration: '0.4s' })}>
+				<slot />
+			</main>
+		</div>
+		<Footer />
+	</body>
+</html>

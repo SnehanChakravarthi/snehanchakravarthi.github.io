@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+
+import rangerImage from '@/images/Ranger/1.jpg';
+import motsatsImage from '@/images/Motsats/1.jpg';
+import rebirthcradleImage from '@/images/RebirthCradle/1.jpg';
+import sightlightImage from '@/images/SightLight/1.jpg';
+
+const designWorks = {
+	ranger: {
+		title: 'Ranger',
+		description: 'Electric surfboard with foldable seat for minimal jet-ski experience.',
+		image: rangerImage
+	},
+	motsats: {
+		title: 'Motsats',
+		description: 'Transformable & Multifunctional furniture for work and rest.',
+		image: motsatsImage
+	},
+	rebirthcradle: {
+		title: 'Rebirth Cradle',
+		description:
+			'Human micro habitat for the future of living and working in long distance space travel.',
+		image: rebirthcradleImage
+	},
+	sightlight: {
+		title: 'Sight Light',
+		description: 'Multi-functional light with form x function.',
+		image: sightlightImage
+	}
+};
+---
+
+<div
+	class="mt-10 rounded-2xl border-lightCardBorder bg-lightCard shadow-xl shadow-lightShadow dark:border-darkCardBorder dark:bg-darkCard dark:shadow-darkShadow lg:-rotate-1"
+>
+	{
+		Object.entries(designWorks).map(([key, work]) => (
+			<a
+				class="project-card flex cursor-pointer items-center justify-between gap-2 overflow-hidden border border-b-0 transition-all  duration-150  ease-in-out first:rounded-t-2xl last:rounded-b-2xl last:border odd:flex-col-reverse even:flex-col-reverse hover:rotate-1 hover:scale-105 hover:rounded-2xl hover:border hover:shadow-2xl hover:shadow-lightShadow dark:hover:shadow-darkShadow md:h-60 md:gap-4 md:odd:flex-row-reverse md:even:flex-row"
+				href={`/design/${key}`}
+			>
+				<div class="px-4 pb-2 font-redhat lg:px-8">
+					<p>{work.description}</p>
+				</div>
+				<Image src={work.image} alt={work.description} height={260} class="w-full  md:w-auto" />
+			</a>
+		))
+	}
+</div>

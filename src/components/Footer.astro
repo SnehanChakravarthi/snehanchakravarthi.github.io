@@ -1,0 +1,53 @@
+---
+import Instagram from '@/components/astroComponents/socials/Instagram.astro';
+import Linkedin from '@/components/astroComponents/socials/Linkedin.astro';
+import X from '@/components/astroComponents/socials/X.astro';
+import Github from '@/components/astroComponents/socials/Github.astro';
+
+import { authorData } from '@/siteConfig';
+---
+
+<div
+	class="bg-baseLight flex h-32 w-screen flex-col items-center justify-center space-y-2 border-t border-lightText text-lightText dark:border-darkCardBorder dark:bg-stone-950 dark:text-[#522a3b]"
+>
+	<p>Website built by Snehan Chakravarthi</p>
+	<ul class="flex flex-row items-center justify-between gap-4">
+		<li class="pl-2">
+			<a href={`mailto:${authorData.email}`}>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.75"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="lucide lucide-mail"
+					><rect width="20" height="16" x="2" y="4" rx="2"></rect><path
+						d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+				</svg>
+			</a>
+		</li>
+		<ul class="flex flex-row justify-between gap-4">
+			{
+				Object.entries(authorData.links).map(([name, url]) => (
+					<li>
+						<a
+							href={url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="flex h-10 w-10 cursor-pointer flex-col  items-center justify-center gap-2 text-sm "
+						>
+							{name === 'github' && <Github />}
+							{name === 'linkedin' && <Linkedin />}
+							{name === 'x' && <X />}
+							{name === 'instagram' && <Instagram />}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</ul>
+</div>

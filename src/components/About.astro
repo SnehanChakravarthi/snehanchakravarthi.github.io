@@ -1,0 +1,230 @@
+---
+import { Image } from 'astro:assets';
+
+import SnehanImg from '@/images/snehan.png';
+import SnehanImg2 from '@/images/snehanPhoto.png';
+import SnehanImg3 from '@/images/snehan2.png';
+
+import Instagram from '@/components/astroComponents/socials/Instagram.astro';
+import Linkedin from '@/components/astroComponents/socials/Linkedin.astro';
+import X from '@/components/astroComponents/socials/X.astro';
+import Github from '@/components/astroComponents/socials/Github.astro';
+
+import { authorData } from '@/siteConfig';
+---
+
+<script>
+	document.addEventListener('DOMContentLoaded', (event) => {
+		attachEventListeners();
+	});
+
+	// Re-initialize after swapping pages
+	document.addEventListener('astro:after-swap', attachEventListeners);
+
+	function attachEventListeners() {
+		const buttons = document.querySelectorAll('.copyBtn');
+		buttons.forEach((button) => {
+			button.addEventListener('click', handleButtonClick);
+		});
+	}
+
+	function handleButtonClick(event: Event) {
+		const emailElement = document.getElementById('email');
+		if (emailElement) {
+			const emailText = emailElement.textContent || '';
+			navigator.clipboard
+				.writeText(emailText)
+				.then(() => {
+					console.log('Email copied to clipboard!');
+				})
+				.catch((err) => {
+					console.error('Failed to copy text: ', err);
+				});
+		}
+	}
+
+	// Clean up before the page is swapped
+	document.addEventListener(
+		'astro:before-swap',
+		() => {
+			// Remove event listeners to prevent memory leaks or errors
+			const buttons = document.querySelectorAll('.copyBtn');
+			buttons.forEach((button) => {
+				button.removeEventListener('click', handleButtonClick);
+			});
+		},
+		{ once: true }
+	);
+</script>
+
+<section
+	id="about"
+	class="my-40 flex w-screen max-w-7xl flex-col justify-center px-4 pt-20 sm:px-10 md:px-16"
+>
+	<h3
+		class="z-0 mb-6 ml-4 rotate-1 font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
+	>
+		more
+		<span class="dark:text-shadow-3d-dark text-shadow text-shadow-3d dark:text-shadow-3d-dark">
+			about
+		</span> me
+	</h3>
+
+	<div
+		class="project-card relative flex h-auto w-full flex-col items-end justify-between overflow-hidden rounded-2xl border shadow-xl shadow-lightShadow transition-all duration-300 ease-in-out hover:rotate-1 hover:scale-105 hover:border hover:shadow-2xl hover:shadow-lightShadow dark:shadow-darkShadow dark:hover:shadow-darkShadow md:rotate-2 lg:flex-row"
+	>
+		<div class="flex w-full flex-col justify-start font-redhat text-sm sm:text-base">
+			<div class="space-y-2 p-3 text-justify font-redhat sm:p-6">
+				<div class="flex gap-3">
+					<p class="dark:about-card-dark about-card">Name:</p>
+					<span>{authorData.name}</span>
+				</div>
+				<div class="flex gap-3">
+					<p class="dark:about-card-dark about-card">From:</p>
+					<span>{authorData.from}</span>
+				</div>
+				<div class="flex gap-3">
+					<p class="dark:about-card-dark about-card">Current Location:</p>
+					<span>{authorData.location}</span>
+				</div>
+				<div class="flex gap-3">
+					<p class="dark:about-card-dark about-card">Birthday:</p>
+					<span>{authorData.birthday}</span>
+				</div>
+				<div class="">
+					<p class="dark:about-card-dark about-card">Titles:</p>
+					<ul>
+						{authorData.titles.map((title) => <li> • {title}</li>)}
+					</ul>
+				</div>
+				<div class="">
+					<p class="dark:about-card-dark about-card">Education:</p>
+					<ul>
+						{
+							authorData.education.map((edu) => (
+								<li>
+									• {edu.degree}
+									<br /> {edu.from} ({edu.graduation})
+								</li>
+							))
+						}
+					</ul>
+				</div>
+				<div class="">
+					<p class="dark:about-card-dark about-card">Work Experience:</p>
+					<ul>
+						{
+							authorData.work.map((job) => (
+								<li>
+									• {job.title} at {job.company}, {job.from} - {job.to}
+								</li>
+							))
+						}
+					</ul>
+				</div>
+			</div>
+
+			<div class="flex flex-row items-center justify-between">
+				<div class="flex flex-col items-start p-3 sm:p-6">
+					<p class="dark:text-shadow-3d-dark text-shadow-3d my-4 text-xl sm:text-2xl">Contact Me</p>
+					<div class="flex h-auto flex-col items-start gap-4 text-sm sm:h-auto sm:text-base">
+						<div class="flex h-10">
+							<p
+								id="email"
+								class="flex h-full items-center rounded-l-md border border-lightGrid bg-black/20 px-3 dark:border-pink-900 dark:bg-pink-900/20"
+							>
+								{authorData.email}
+							</p>
+							<button
+								class="copyBtn flex h-full cursor-pointer items-center gap-2 self-auto rounded-r-lg border border-l-0 border-lightGrid bg-lightBG px-2 text-black dark:border-pink-900"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="16"
+									height="16"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									class="lucide lucide-copy"
+									><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path
+										d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg
+								>
+							</button>
+						</div>
+						<ul class="flex flex-row justify-between gap-4">
+							{
+								Object.entries(authorData.links).map(([name, url]) => (
+									<li>
+										<a
+											href={url}
+											target="_blank"
+											rel="noopener noreferrer"
+											class="flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border border-lightGrid bg-lightBG text-sm hover:bg-black/20 dark:border-pink-900 dark:bg-pink-900/30 hover:dark:bg-pink-900"
+										>
+											{name === 'github' && <Github />}
+											{name === 'linkedin' && <Linkedin />}
+											{name === 'x' && <X />}
+											{name === 'instagram' && <Instagram />}
+										</a>
+									</li>
+								))
+							}
+
+							<li>
+								<a
+									href="/CV.pdf"
+									download
+									class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg bg-cyan-500 font-microgammaMedium text-sm text-black transition-all duration-100 ease-in-out hover:bg-cyan-600 dark:bg-pink-500 dark:hover:bg-pink-600 sm:absolute sm:hidden"
+									>CV</a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="hidden sm:block sm:w-3/5 md:w-2/5 lg:absolute lg:bottom-0 lg:right-0">
+					<Image src={SnehanImg2} alt="Snehan Chakra Varthi" />
+				</div>
+			</div>
+		</div>
+		<div class="w-4/5 sm:hidden">
+			<Image src={SnehanImg2} alt="Snehan Chakra Varthi" />
+		</div>
+		<a
+			href="/CV.pdf"
+			download
+			class="right-6 top-6 hidden items-center gap-2 rounded-lg bg-cyan-500 px-3 py-2 font-microgammaMedium text-lg text-black transition-all duration-100 ease-in-out hover:bg-cyan-600 dark:bg-pink-500 dark:hover:bg-pink-600 sm:absolute sm:flex"
+			>Download CV</a
+		>
+	</div>
+</section>
+
+<style>
+	.flip-card {
+		perspective: 3200px;
+		position: relative;
+	}
+
+	.flip-card__front-side,
+	.flip-card__back-side {
+		transition: transform 1s ease-in-out;
+		position: absolute;
+		backface-visibility: hidden;
+	}
+
+	.flip-card__front-side {
+		transform: rotateX(0deg);
+	}
+	.flip-card__back-side {
+		transform: rotateX(-180deg);
+	}
+
+	.flip-card:hover .flip-card__front-side {
+		transform: rotateX(180deg);
+	}
+	.flip-card:hover .flip-card__back-side {
+		transform: rotateX(0deg);
+	}
+</style>

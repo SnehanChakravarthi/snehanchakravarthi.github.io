@@ -1,0 +1,145 @@
+---
+import { Image } from 'astro:assets';
+
+import Layout from '@/layouts/Layout.astro';
+import Skillbox from '@/components/astroComponents/Skillbox.astro';
+import ViewSiteBadge from '@/components/astroComponents/ViewSiteBadge.astro';
+import GoBackBadge from '@/components/astroComponents/GoBackBadge.astro';
+import Macbook from '@/components/astroComponents/Macbook.astro';
+import Iphone from '@/components/astroComponents/Iphone.astro';
+
+import Vert from '@/images/zerodavinci/VertCount.png';
+import UV from '@/images/zerodavinci/UVWrap.png';
+import Render1 from '@/images/zerodavinci/gold1.png';
+import Blender1 from '@/images/zerodavinci/Blender1.png';
+import Blender2 from '@/images/zerodavinci/Blender2.png';
+import ZeroDV1 from '@/images/zerodavinci/ZeroDV1.jpg';
+import ZeroDV2 from '@/images/zerodavinci/ZeroDV2.jpg';
+import HeadingLine from '@/components/astroComponents/HeadingLine.astro';
+---
+
+<Layout title="Zero da Vinci | Snehan Chakra Varthi">
+	<GoBackBadge />
+	<ViewSiteBadge link="https://www.zerodavinci.com" />
+
+	<div
+		class="mb-20 flex max-w-5xl flex-col items-center space-y-8 px-4 text-center font-redhat text-sm dark:text-pink-600 sm:px-8 sm:text-base md:px-12"
+	>
+		<h1 class="dark:text-shadow-3d-dark text-shadow-3d mt-14 text-3xl text-cyan-400 sm:text-5xl">
+			ZERO DA VINCI
+		</h1>
+		<!-- 
+    <ul class="text-white">
+      <li>⭐️ Interactive webGL site</li>
+      <li>⭐️ Optimsed 3D low poly (17k verts)</li>
+      <li>⭐️ Scroll controlled animations and camera</li>
+      <li>⭐️ AR product visualisation</li>
+      <li>⭐️ SEO + MDX Blog</li>
+    </ul> -->
+
+		<HeadingLine title="the story" />
+
+		<p>
+			Following the social media success of my conceptual product, <a
+				href="/design/motsats"
+				class="text-decoration">Motsats</a
+			>, I co-founded Motsats Furniture AB in 2022 to introduce <span class="font-semibold">
+				Zero da Vinci</span
+			>, a multi-functional designer furniture piece that transitions between work and rest modes
+			seamlessly with the user sitting on it. <br /><br />To showcase the product's innovative
+			qualities and its transforming mechanical design, it was important to have an interactive
+			website featuring the 3D model where users can see the product in action. So I decided to
+			build a modern website harnessing the power of webGL API using
+			<Skillbox skill="three.js" /> and <Skillbox skill="react" />.<br /><br /> But first, I had to optimise
+			the 3D model to be low poly and efficient for webGL rendering.
+		</p>
+
+		<HeadingLine title="webGL optimisations" />
+
+		<p>
+			So I took the .STEP file from <Skillbox skill="solidworks" /> and jumped straight into the world
+			of <Skillbox skill="blender" />.
+		</p>
+
+		<div class="flex flex-col items-center justify-center gap-2 sm:flex-row">
+			<Image src={Blender1} alt="Picture of the CAD model" class="h-auto rounded-2xl sm:w-1/2" />
+			<Image src={Blender2} alt="Picture of the CAD model" class="h-auto rounded-2xl sm:w-1/2" />
+		</div>
+
+		<p>
+			For optimal webGL performance for a marketing site, the max no. of traingle is 25k. <span
+				class="text-decoration">So I reduced the traingle count from more than 250k to 17k</span
+			> by removing unnecessary and hidden faces, and optimised vertices without losing the shape or
+			form.
+		</p>
+
+		<Image src={Vert} alt="Blender screenshot of the model" />
+
+		<HeadingLine title="UV and Texturing" />
+
+		<p>
+			To make model appear as real as possible without increasing the file size, <span
+				class="text-decoration"
+			>
+				I used bump, normal and roughness maps</span
+			> for textures and <span class="text-decoration"> UV wrapped</span> them to optimise and create
+			realistic details on the model rather than using vertex points.
+		</p>
+
+		<Image src={UV} alt="Blender screenshot of UV wrapping process" />
+
+		<HeadingLine title="r3f and Three.js" />
+
+		<p>
+			Once the model was optimised and ready for webGL, I used the famous <Skillbox
+				skill="three.js"
+			/> library <Skillbox skill="r3f" /> for adding animations and camera controls to a <Skillbox
+				skill="react"
+			/> website. Additionally I used <Skillbox skill="tailwindcss" /> for styling and <Skillbox
+				skill="mdx"
+			/> for blog posts.
+		</p>
+
+		<Macbook className="max-w-full" />
+
+		<HeadingLine title="AR Visualisation" />
+
+		<p>
+			I added AR visualisation feature to the site, that uses the opensource <span
+				class="text-decoration"
+			>
+				Google Model Viewer library</span
+			> to allow users to view the product in AR on their mobile devices. Below you can see a screen
+			recording of the AR feature in action.
+		</p>
+
+		<div class="max-w-60">
+			<Iphone className="max-w-60" />
+		</div>
+
+		<HeadingLine title="Result" />
+
+		<p>
+			The final website succeeded in showcasing the product in all its glory that wount have been
+			otherwise possible. The website is live at <a
+				href="https://www.zerodavinci.com"
+				class="text-decoration">www.zerodavinci.com</a
+			> and has been a great success in attracting potential customers and investors.
+			<br /><br />Personally, I am very proud of the result and the skills I have acquired in the
+			process. I am now able to create interactive 3D web experiences and have a better
+			understanding of webGL and 3D rendering techniques. I am also able to create and optimise 3D
+			models for webGL rendering and have a better understanding of the <span
+				class="text-decoration"
+			>
+				webGL pipeline and performance optimisations.</span
+			>
+			<br /><br />Here are some of the real pictures of the product.
+		</p>
+
+		<div class="flex flex-col items-start gap-4 sm:flex-row">
+			<Image src={ZeroDV1} alt="Man Sitting on Zero da Vinci" class="h-auto rounded-2xl sm:w-1/2" />
+			<Image src={ZeroDV2} alt="Man Resting on Zero da Vinci" class="h-auto rounded-2xl sm:w-1/2" />
+		</div>
+		<Image src={Render1} alt="Render of the Zero da Vinci" class="w-full rounded-2xl" />
+	</div>
+</Layout>

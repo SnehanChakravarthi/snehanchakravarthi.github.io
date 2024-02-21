@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets';
+
+import macbook from '@/images/devices/MacBookPro.png';
+import video from '@/assets/video/zerodvvideo.mp4';
+import video2 from '@/assets/video/Acetrait.mp4';
+
+const { className = 'max-w-96', videoChoice } = Astro.props;
+
+const selectedVideo = videoChoice === 'acetrait' ? video2 : video;
+---
+
+<div class="relative flex justify-center">
+	<video src={selectedVideo} class="absolute -z-10 mt-[7.2%] px-[10%]" autoplay muted loop>
+		Your browser does not support the video tag.
+	</video>
+	<Image src={macbook} alt="Macbook Device with Zero da vinci website" class={className} />
+</div>
