@@ -1,14 +1,11 @@
 ---
-import Instagram from '@/components/astroComponents/socials/Instagram.astro';
-import Linkedin from '@/components/astroComponents/socials/Linkedin.astro';
-import X from '@/components/astroComponents/socials/X.astro';
-import Github from '@/components/astroComponents/socials/Github.astro';
+import { Github, Linkedin, X, Instagram } from '@/components/SocialIcons.tsx';
 
 import { authorData } from '@/siteConfig';
 ---
 
 <div
-	class="bg-baseLight flex h-32 w-screen flex-col items-center justify-center space-y-2 border-t border-lightText text-lightText dark:border-darkCardBorder dark:bg-stone-950 dark:text-[#522a3b]"
+	class="flex h-32 w-screen flex-col items-center justify-center space-y-2 border-t border-lightText bg-baseLight text-lightText dark:border-darkCardBorder dark:bg-stone-950 dark:text-[#522a3b]"
 >
 	<p>Website built by Snehan Chakravarthi</p>
 	<ul class="flex flex-row items-center justify-between gap-4">
@@ -38,7 +35,7 @@ import { authorData } from '@/siteConfig';
 							href={url}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="flex h-10 w-10 cursor-pointer flex-col  items-center justify-center gap-2 text-sm "
+							class="flex h-10 w-10 cursor-pointer flex-col  items-center justify-center "
 						>
 							{name === 'github' && <Github />}
 							{name === 'linkedin' && <Linkedin />}

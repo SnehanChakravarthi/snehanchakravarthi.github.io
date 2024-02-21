@@ -1,14 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 
-import SnehanImg from '@/images/snehan.png';
-import SnehanImg2 from '@/images/snehanPhoto.png';
 import SnehanImg3 from '@/images/snehan2.png';
 
-import Instagram from '@/components/astroComponents/socials/Instagram.astro';
-import Linkedin from '@/components/astroComponents/socials/Linkedin.astro';
-import X from '@/components/astroComponents/socials/X.astro';
-import Github from '@/components/astroComponents/socials/Github.astro';
+import { Github, Linkedin, X, Instagram } from '@/components/SocialIcons.tsx';
 
 import { authorData } from '@/siteConfig';
 ---
@@ -185,12 +180,12 @@ import { authorData } from '@/siteConfig';
 					</div>
 				</div>
 				<div class="hidden sm:block sm:w-3/5 md:w-2/5 lg:absolute lg:bottom-0 lg:right-0">
-					<Image src={SnehanImg2} alt="Snehan Chakra Varthi" />
+					<Image src={SnehanImg3} alt="Snehan Chakra Varthi" />
 				</div>
 			</div>
 		</div>
 		<div class="w-4/5 sm:hidden">
-			<Image src={SnehanImg2} alt="Snehan Chakra Varthi" />
+			<Image src={SnehanImg3} alt="Snehan Chakra Varthi" />
 		</div>
 		<a
 			href="/CV.pdf"

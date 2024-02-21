@@ -262,8 +262,8 @@ const Skills = () => {
 	}, []);
 
 	return (
-		<section id="skills" className="flex w-screen max-w-7xl flex-col px-4 pt-20 md:px-16 ">
-			<div className="relative  pt-32 ">
+		<section id="skills" className="flex w-screen max-w-7xl flex-col px-4 md:px-16 ">
+			<div className="relative  pt-20">
 				<svg ref={svgRef} className="absolute left-0 top-0 h-full w-full" />
 
 				<div className="font-virgil text-color-animate z-0 ml-4 -rotate-1 text-3xl text-cyan-800 sm:text-4xl dark:text-pink-600">
@@ -345,7 +345,7 @@ const Skills = () => {
 			<div className="dark:bg-darkCard dark:border-darkCardBorder bg-lightCard border-lightCardBorder dark:divide-darkCardBorder/60 divide-lightCardBorder/60 dark:hover:shadow-darkShadow dark:shadow-darkShadow shadow-lightShadow hover:shadow-lightShadow dark:hover:bg-darkCardHover flex w-full flex-col justify-center divide-y rounded-2xl  border shadow-xl transition-all duration-300 ease-in-out hover:-rotate-0 hover:scale-105 hover:border-cyan-950 hover:shadow-2xl sm:rotate-1 dark:hover:border-pink-950">
 				{Object.entries(filteredSkills).map(([category, skills]) => (
 					<div
-						className="grid justify-start px-4 py-3 text-sm sm:grid-flow-col sm:text-base "
+						className="grid justify-start px-4 py-2 text-sm sm:grid-flow-col sm:text-base "
 						key={category}
 					>
 						<div className="font-virgil text-lightText text-color-animate w-32 pb-1 font-bold uppercase sm:pt-2 dark:text-pink-200">
@@ -355,7 +355,7 @@ const Skills = () => {
 							{skills.length > 0 ? (
 								skills.map((skill) => (
 									<UniqueHighlight key={skill.skill} expertise={skill.expertise}>
-										<div className="flex items-center gap-1 px-1 sm:gap-2 sm:px-3 sm:py-1">
+										<div className="flex h-6 items-center gap-1 px-1 sm:h-8 sm:gap-2 sm:px-3 sm:py-0">
 											<div className="flex h-4 w-4 items-center sm:h-5 sm:w-5">
 												<img
 													src={`/logos/${skill.skill.toLowerCase()}.svg`}

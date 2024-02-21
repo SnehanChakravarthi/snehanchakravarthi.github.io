@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 
 import siteLogo from '@/assets/siteLogo/signature.png';
 import siteLogoDark from '@/assets/siteLogo/signatureDark.png';
+import DropdownMenu from '@/components/reactComponents/Menubar.tsx';
 
 const menu = [
 	{
@@ -45,27 +46,25 @@ const menu = [
 </script>
 
 <div
-	class="fixed z-10 flex h-12 w-screen items-center justify-center border-lightGrid bg-lightBG font-microgammaMedium text-lightText dark:border-darkGrid dark:bg-darkBG dark:text-pink-200"
+	class="fixed z-10 flex h-12 w-screen items-center justify-between border-b border-lightGrid bg-white/30 font-microgammaMedium text-cyan-600 backdrop-blur-xl dark:border-darkGrid dark:bg-black/30 dark:text-pink-600 sm:px-6"
 	transition:persist
 >
-	<div
-		class="flex h-12 w-full items-center justify-between border border-lightGrid bg-lightBG px-6 dark:border-darkGrid dark:bg-darkBG"
-	>
-		<a href="/" class="mt-14 w-36 -rotate-3">
-			<Image src={siteLogo} alt="Snehan Signature" class="dark:hidden" />
-			<Image src={siteLogoDark} alt="Snehan Signature" class="hidden dark:block" />
-		</a>
-		<ul class="flex flex-row items-center gap-6">
-			{
-				menu.map((item) => (
-					<li class="font-light hover:font-medium">
-						<a href={item.link}>{item.name}</a>
-					</li>
-				))
-			}
-			<li>
-				<a href="/CV.pdf" download>CV</a>
-			</li>
+	<a href="/" class="z-20 mt-12 w-40 -rotate-3 px-3 sm:px-0">
+		<Image src={siteLogo} alt="Snehan Signature" class="dark:hidden" />
+		<Image src={siteLogoDark} alt="Snehan Signature" class="hidden dark:block" />
+	</a>
+	<ul class="flex flex-row items-center gap-6">
+		{
+			menu.map((item) => (
+				<li class="hidden font-light hover:font-medium sm:block">
+					<a href={item.link}>{item.name}</a>
+				</li>
+			))
+		}
+		<li>
+			<a href="/CV.pdf" download class="hidden font-light hover:font-medium sm:block">CV</a>
+		</li>
+		<div class="flex">
 			<button
 				class="theme-toggle mx-auto flex h-12 w-12 cursor-pointer items-center justify-center border border-lightGrid bg-white hover:bg-lightBG dark:border-darkGrid dark:bg-black dark:hover:bg-darkBG"
 				data-theme-toggle
@@ -104,6 +103,9 @@ const menu = [
 					></span
 				>
 			</button>
-		</ul>
-	</div>
+			<div class="sm:hidden">
+				<DropdownMenu menu={menu} client:load />
+			</div>
+		</div>
+	</ul>
 </div>
