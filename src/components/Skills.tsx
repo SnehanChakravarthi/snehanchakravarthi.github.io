@@ -351,7 +351,7 @@ const Skills = () => {
 						<div className="font-virgil text-lightText text-color-animate w-32 pb-1 font-bold uppercase sm:pt-2 dark:text-pink-200">
 							{category}
 						</div>
-						{/* <div className="font-redhat flex flex-wrap gap-2 sm:gap-4">
+						<div className="font-redhat flex flex-wrap gap-2 sm:gap-4">
 							{skills.length > 0 ? (
 								skills.map((skill) => (
 									<UniqueHighlight key={skill.skill} expertise={skill.expertise}>
@@ -370,7 +370,7 @@ const Skills = () => {
 							) : (
 								<div>No skills in this category</div>
 							)}
-						</div> */}
+						</div>
 					</div>
 				))}
 			</div>
