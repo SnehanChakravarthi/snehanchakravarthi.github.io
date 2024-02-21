@@ -358,7 +358,7 @@ const Skills = () => {
 										<div className="flex items-center gap-1 px-1 sm:gap-2 sm:px-3 sm:py-1">
 											<div className="flex h-4 w-4 items-center sm:h-5 sm:w-5">
 												<img
-													src={`@/images/logos/${skill.skill.toLowerCase()}.svg`}
+													src={`/logos/${skill.skill.toLowerCase()}.svg`}
 													alt={`${skill.skill} logo`}
 													className="h-4 w-4 sm:h-5 sm:w-5"
 												/>

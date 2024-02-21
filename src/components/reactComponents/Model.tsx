@@ -84,9 +84,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 
 	const idleTimeoutDuration = 5000; // 5 seconds
 
-	const { nodes, materials, animations } = useGLTF(
-		'@/assets/cad/snehanReadyPlayerOne.glb'
-	) as GLTFResult;
+	const { nodes, materials, animations } = useGLTF('/cad/snehanReadyPlayerOne.glb') as GLTFResult;
 	//   const { actions } = useAnimations(animations, group);
 	//   console.log(nodes.Hips, materials, animations);
 	useBlink(avatarMesh);
@@ -369,4 +367,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 	);
 }
 
-useGLTF.preload('@/assets/cad/snehanReadyPlayerOne.glb');
+useGLTF.preload('/cad/snehanReadyPlayerOne.glb');
