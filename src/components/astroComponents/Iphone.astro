@@ -8,13 +8,8 @@ const { className = 'max-w-52' } = Astro.props;
 ---
 
 <div class="relative flex justify-center">
-	<video
-		src={mobileVideo}
-		class="absolute -z-10 mt-[8.1%] rounded-3xl px-[7.9%]"
-		autoplay
-		muted
-		loop
-	>
+	<video class="absolute -z-10 mt-[8.1%] rounded-3xl px-[7.9%]" autoplay muted loop playsinline>
+		<source src={mobileVideo} type="video/mp4" />
 		Your browser does not support the video tag.
 	</video>
 	<Image src={iphone} alt="Zero da Vinci" class={className} />

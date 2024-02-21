@@ -2,7 +2,7 @@
 import Macbook from '../astroComponents/Macbook.astro';
 import Iphone from '../astroComponents/Iphone.astro';
 
-const zerodavinci = ['r3f', 'Three.JS', 'React', 'Blender', 'SolidWorks'];
+const zerodavinci = ['javascript', 'r3f', 'Three.JS', 'React', 'Blender', 'SolidWorks'];
 const acetrait = [
 	'Typescript',
 	'React',
@@ -20,23 +20,24 @@ const synchat = ['Docker', 'NodeJS', 'Express', 'Whatsapp API', 'Python', 'Flask
 	class="mt-2 rounded-2xl bg-lightCard shadow-xl shadow-lightShadow dark:bg-darkCard dark:shadow-darkShadow sm:mt-10 lg:-rotate-1"
 >
 	<a
-		class="project-card flex cursor-pointer flex-col items-center justify-around rounded-t-2xl border px-3 py-3 transition-all duration-150 ease-in-out hover:rotate-1 hover:scale-105 hover:rounded-2xl hover:shadow-2xl hover:shadow-lightShadow dark:hover:shadow-darkShadow lg:flex-row"
+		class="project-card group flex cursor-pointer flex-col items-center justify-around rounded-t-2xl border px-3 py-3 transition-all duration-150 ease-in-out hover:rotate-1 hover:scale-105 hover:rounded-2xl hover:shadow-2xl hover:shadow-lightShadow dark:hover:shadow-darkShadow lg:flex-row"
 		href="/programming/zerodavinci"
 	>
 		<div class="ml-4 space-y-4 font-redhat">
 			<div class="flex flex-col items-baseline xl:flex-row xl:gap-4">
 				<h2
-					class="font-microgammaBold text-3xl uppercase dark:text-pink-200"
-					style="dark:text-shadow-3d-dark: 3px 3px #ca8a04"
+					class="group-hover:dark:text-shadow-3d-dark group-hover:text-shadow-3d font-microgammaBold text-3xl uppercase transition-all duration-100 dark:text-pink-200"
 				>
 					Zero da Vinci
 				</h2>
-				<p class="text-xs text-yellow-600">[ www.zerodavinci.com ]</p>
+				<p class="group-hover:text-decoration-card text-xs text-yellow-600">
+					[ www.zerodavinci.com ]
+				</p>
 			</div>
 			<p class="text-sm sm:text-base">
 				An interactive three.js site for product launch with blog section and stripe paywall.
 			</p>
-			<ul class="text-sm text-yellow-600 sm:text-base">
+			<ul class="*:group-hover:text-decoration-card text-sm text-yellow-600 sm:text-base">
 				<li>🌟 3D & AR visualization</li>
 				<li>🌟 Scroll animations & camera control</li>
 				<li>🌟 Optimized low-poly models (17k verts)</li>
@@ -45,7 +46,7 @@ const synchat = ['Docker', 'NodeJS', 'Express', 'Whatsapp API', 'Python', 'Flask
 			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
 				{
 					zerodavinci.map((skill) => (
-						<div class="flex items-center justify-center gap-1 rounded-lg border border-black/20 bg-[#767676]/20 px-1 py-1 text-xs dark:border-white/10 sm:gap-2 sm:px-2 sm:text-sm">
+						<div class="flex items-center justify-center gap-1    rounded-lg border border-black/20 bg-[#767676]/20 from-cyan-500 to-blue-500 px-1 py-1 text-xs font-bold transition-all duration-100 group-hover:bg-gradient-to-br group-hover:text-black dark:border-white/10 dark:from-orange-600 dark:to-pink-500 sm:gap-2 sm:px-2 sm:text-sm">
 							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
 								<img
 									src={`/logos/${skill.toLowerCase()}.svg`}
@@ -61,11 +62,13 @@ const synchat = ['Docker', 'NodeJS', 'Express', 'Whatsapp API', 'Python', 'Flask
 		</div>
 
 		<div class="flex max-h-96 flex-col items-center sm:flex-row">
-			<div class="-translate-x-8 -rotate-1 scale-75 sm:translate-x-8 sm:scale-100">
+			<div
+				class="-translate-x-8 -rotate-1 scale-75 transition-transform duration-150 group-hover:-translate-x-6 group-hover:-rotate-6 group-hover:scale-110 sm:translate-x-8 sm:scale-100"
+			>
 				<Macbook />
 			</div>
 			<div
-				class="max-w-52 -translate-y-60 translate-x-28 rotate-2 scale-75 sm:-translate-x-16 sm:translate-y-0 sm:scale-100"
+				class="max-w-52 -translate-y-60 translate-x-28 rotate-2 scale-75 transition-transform duration-150 group-hover:rotate-6 group-hover:scale-110 sm:-translate-x-16 sm:translate-y-0 sm:scale-100"
 			>
 				<Iphone />
 			</div>
@@ -73,27 +76,30 @@ const synchat = ['Docker', 'NodeJS', 'Express', 'Whatsapp API', 'Python', 'Flask
 	</a>
 
 	<a
-		class="project-card flex cursor-pointer flex-col-reverse items-center justify-around border-x px-3 py-3 transition-all duration-150 ease-in-out hover:rotate-1 hover:scale-105 hover:rounded-2xl hover:border hover:shadow-2xl hover:shadow-lightShadow dark:hover:shadow-darkShadow lg:flex-row"
+		class="project-card group flex cursor-pointer flex-col-reverse items-center justify-around border-x px-3 py-3 transition-all duration-150 ease-in-out hover:rotate-1 hover:scale-105 hover:rounded-2xl hover:border hover:shadow-2xl hover:shadow-lightShadow dark:hover:shadow-darkShadow lg:flex-row"
 		href="/programming/acetrait"
 	>
-		<div class="-rotate-2">
+		<div
+			class="-rotate-2 transition-transform duration-150 group-hover:-rotate-6 group-hover:scale-110"
+		>
 			<Macbook videoChoice="acetrait" />
 		</div>
 		<div class="ml-4 space-y-4 font-redhat">
 			<div class="flex flex-col items-baseline xl:flex-row xl:gap-4">
 				<h2
-					class="font-microgammaBold text-3xl uppercase dark:text-pink-200"
-					style="dark:text-shadow-3d-dark: 3px 3px #059669"
+					class="group-hover:dark:text-shadow-3d-dark group-hover:text-shadow-3d font-microgammaBold text-3xl uppercase transition-all duration-100 dark:text-pink-200"
 				>
 					Acetrait
 				</h2>
-				<p class="text-xs text-emerald-600">[ www.acetrait.com ]</p>
+				<p class="group-hover:text-decoration-card text-xs text-emerald-600">
+					[ www.acetrait.com ]
+				</p>
 			</div>
 			<p class="text-sm sm:text-base">
 				AI powered web platform for smart recruitment. AI Interviewing, Candidate Shortlisting, and
 				more.
 			</p>
-			<ul class="text-sm text-emerald-600 sm:text-base">
+			<ul class="sm:text-bas *:group-hover:text-decoration-card text-sm text-emerald-600">
 				<li>⭐️ Finetunned LLM + Streaming Responses + Dynamic Prompting</li>
 				<li>⭐️ NextJS Server Actions</li>
 				<li>⭐️ PostgreSQL + Supabase Realtime</li>
@@ -102,7 +108,7 @@ const synchat = ['Docker', 'NodeJS', 'Express', 'Whatsapp API', 'Python', 'Flask
 			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
 				{
 					acetrait.map((skill) => (
-						<div class="flex items-center justify-center gap-1 rounded-lg border border-black/20 bg-[#767676]/20 px-1 py-1 text-xs dark:border-white/10 sm:gap-2 sm:px-2 sm:text-sm">
+						<div class="flex items-center justify-center gap-1    rounded-lg border border-black/20 bg-[#767676]/20 from-cyan-500 to-blue-500 px-1 py-1 text-xs font-bold transition-all duration-100 group-hover:bg-gradient-to-br group-hover:text-black dark:border-white/10 dark:from-orange-600 dark:to-pink-500 sm:gap-2 sm:px-2 sm:text-sm">
 							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
 								<img
 									src={`/logos/${skill.toLowerCase()}.svg`}
@@ -119,23 +125,24 @@ const synchat = ['Docker', 'NodeJS', 'Express', 'Whatsapp API', 'Python', 'Flask
 	</a>
 
 	<a
-		class="project-card flex cursor-pointer items-center justify-around rounded-b-2xl border px-3 py-6 transition-all duration-150 ease-in-out hover:rotate-1 hover:scale-105 hover:rounded-2xl hover:border hover:shadow-2xl hover:shadow-lightShadow dark:hover:shadow-darkShadow"
+		class="project-card group flex cursor-pointer items-center justify-around rounded-b-2xl border px-3 py-6 transition-all duration-150 ease-in-out hover:rotate-1 hover:scale-105 hover:rounded-2xl hover:border hover:shadow-2xl hover:shadow-lightShadow dark:hover:shadow-darkShadow"
 		href="/programming/synchat"
 	>
 		<div class="mx-4 space-y-4 font-redhat">
 			<div class="flex flex-col items-baseline xl:flex-row xl:gap-4">
 				<h2
-					class="font-microgammaBold text-3xl uppercase dark:text-pink-200"
-					style="dark:text-shadow-3d-dark: 3px 3px #a855f7"
+					class="group-hover:dark:text-shadow-3d-dark group-hover:text-shadow-3d font-microgammaBold text-3xl uppercase transition-all duration-100"
 				>
 					Synchat
 				</h2>
-				<p class="text-xs text-purple-500">[ Under Construction! ]</p>
+				<p class="group-hover:text-decoration-card text-xs text-purple-500">
+					[ Under Construction! ]
+				</p>
 			</div>
 			<p class="text-sm sm:text-base">
 				Containerised servers [Node, Flask] for WhatsApp API and personal AI assistance.
 			</p>
-			<ul class="text-sm text-purple-500 sm:text-base">
+			<ul class="*:group-hover:text-decoration-card text-sm text-purple-500 sm:text-base">
 				<li>⭐️ Containerised Docker Server Images</li>
 				<li>⭐️ Middlewares</li>
 				<li>⭐️ Whatsap Business API Integration</li>
@@ -144,7 +151,7 @@ const synchat = ['Docker', 'NodeJS', 'Express', 'Whatsapp API', 'Python', 'Flask
 			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
 				{
 					synchat.map((skill) => (
-						<div class="flex items-center justify-center gap-1 rounded-lg border border-black/20 bg-[#767676]/20 px-1 py-1 text-xs dark:border-white/10 sm:gap-2 sm:px-2 sm:text-sm">
+						<div class="flex items-center justify-center gap-1    rounded-lg border border-black/20 bg-[#767676]/20 from-cyan-500 to-blue-500 px-1 py-1 text-xs font-bold transition-all duration-100 group-hover:bg-gradient-to-br group-hover:text-black dark:border-white/10 dark:from-orange-600 dark:to-pink-500 sm:gap-2 sm:px-2 sm:text-sm">
 							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
 								<img
 									src={`/logos/${skill.toLowerCase()}.svg`}

@@ -11,7 +11,8 @@ const selectedVideo = videoChoice === 'acetrait' ? video2 : video;
 ---
 
 <div class="relative flex justify-center">
-	<video src={selectedVideo} class="absolute -z-10 mt-[7.2%] px-[10%]" autoplay muted loop>
+	<video class="absolute -z-10 mt-[7.2%] px-[10%]" playsinline autoplay muted loop>
+		<source src={selectedVideo} type="video/mp4" />
 		Your browser does not support the video tag.
 	</video>
 	<Image src={macbook} alt="Macbook Device with Zero da vinci website" class={className} />

@@ -209,4 +209,16 @@
 		@apply dark:from-pink-600 dark:to-orange-500;
 		color: transparent;
 	}
+
+	.text-decoration-card {
+		@apply bg-gradient-to-r from-cyan-500 to-blue-500 font-bold dark:from-orange-600 dark:to-pink-500;
+		color: transparent;
+		background-clip: text;
+		-webkit-background-clip: text;
+	}
+
+	.dark .text-decoration-card {
+		@apply dark:from-pink-600 dark:to-orange-500;
+		color: transparent;
+	}
 }

@@ -7,15 +7,15 @@ import siteLogoDark from '@/assets/siteLogo/signatureDark.png';
 const menu = [
 	{
 		name: 'Skills',
-		link: '#skills'
+		link: '/#skills'
 	},
 	{
 		name: 'Projects',
-		link: '#projects'
+		link: '/#projects'
 	},
 	{
 		name: 'About',
-		link: '#about'
+		link: '/#about'
 	}
 ];
 ---
@@ -55,7 +55,7 @@ const menu = [
 			<Image src={siteLogo} alt="Snehan Signature" class="dark:hidden" />
 			<Image src={siteLogoDark} alt="Snehan Signature" class="hidden dark:block" />
 		</a>
-		<ul class="hidden flex-row items-center gap-6 sm:flex">
+		<ul class="flex flex-row items-center gap-6">
 			{
 				menu.map((item) => (
 					<li class="font-light hover:font-medium">
