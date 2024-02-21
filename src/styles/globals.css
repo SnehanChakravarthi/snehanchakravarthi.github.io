@@ -6,8 +6,8 @@
 	@font-face {
 		font-family: 'MicrogrammaBoldExtendedD';
 		src:
-			url('fonts/MicrogrammaBoldExtendedD/font.woff2') format('woff2'),
-			url('fonts/MicrogrammaBoldExtendedD/font.woff') format('woff');
+			url('/fonts/MicrogrammaBoldExtendedD/font.woff2') format('woff2'),
+			url('/fonts/MicrogrammaBoldExtendedD/font.woff') format('woff');
 		font-weight: normal;
 		font-style: normal;
 		font-display: swap;
@@ -15,15 +15,15 @@
 	@font-face {
 		font-family: 'MicrogrammaMediumExtendedD';
 		src:
-			url('fonts/MicrogrammaMediumExtendedD/font.woff2') format('woff2'),
-			url('fonts/MicrogrammaMediumExtendedD/font.woff') format('woff');
+			url('/fonts/MicrogrammaMediumExtendedD/font.woff2') format('woff2'),
+			url('/fonts/MicrogrammaMediumExtendedD/font.woff') format('woff');
 		font-weight: normal;
 		font-style: normal;
 		font-display: swap;
 	}
 	@font-face {
 		font-family: 'Virgil';
-		src: url('fonts/Virgil.woff2') format('woff2');
+		src: url('/fonts/Virgil.woff2') format('woff2');
 		font-weight: normal;
 		font-style: normal;
 		font-display: swap;

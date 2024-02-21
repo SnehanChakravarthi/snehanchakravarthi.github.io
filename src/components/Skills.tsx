@@ -343,7 +343,7 @@ const Skills = () => {
 				</div>
 			</div>
 			<div className="dark:bg-darkCard dark:border-darkCardBorder bg-lightCard border-lightCardBorder dark:divide-darkCardBorder/60 divide-lightCardBorder/60 dark:hover:shadow-darkShadow dark:shadow-darkShadow shadow-lightShadow hover:shadow-lightShadow dark:hover:bg-darkCardHover flex w-full flex-col justify-center divide-y rounded-2xl  border shadow-xl transition-all duration-300 ease-in-out hover:-rotate-0 hover:scale-105 hover:border-cyan-950 hover:shadow-2xl sm:rotate-1 dark:hover:border-pink-950">
-				{Object.entries(filteredSkills).map(([category, skills]) => (
+				{Object.entries(filteredSkills).map(([category]) => (
 					<div
 						className="grid justify-start px-4 py-3 text-sm sm:grid-flow-col sm:text-base "
 						key={category}
@@ -351,7 +351,7 @@ const Skills = () => {
 						<div className="font-virgil text-lightText text-color-animate w-32 pb-1 font-bold uppercase sm:pt-2 dark:text-pink-200">
 							{category}
 						</div>
-						<div className="font-redhat flex flex-wrap gap-2 sm:gap-4">
+						{/* <div className="font-redhat flex flex-wrap gap-2 sm:gap-4">
 							{skills.length > 0 ? (
 								skills.map((skill) => (
 									<UniqueHighlight key={skill.skill} expertise={skill.expertise}>
@@ -370,7 +370,7 @@ const Skills = () => {
 							) : (
 								<div>No skills in this category</div>
 							)}
-						</div>
+						</div> */}
 					</div>
 				))}
 			</div>
