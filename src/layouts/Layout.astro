@@ -6,6 +6,9 @@ import { ViewTransitions, fade } from 'astro:transitions';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import { authorData } from '@/siteConfig';
+import { Image } from 'astro:assets';
+
+import OG from '@/images/OG.png';
 
 interface Props {
 	title?: string;
@@ -23,10 +26,7 @@ const { title = 'Snehan Chakra Varthi | 2024 Portfolio' } = Astro.props;
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="Snehan Chakra Varthi" />
 		<meta property="og:description" content={authorData.description} />
-		<meta
-			property="og:image"
-			content="https://opengraph.b-cdn.net/production/documents/f557e20e-73d0-4e6d-a4db-1d6b1b7247cd.png?token=r3N9MjyJUdaEZH_XDQshdhmVhYjAmwowWHxrF6_idlY&height=642&width=1200&expires=33244598108"
-		/>
+		<meta property="og:image" content="https://www.snehan.site/public/OG.jpg" />
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
