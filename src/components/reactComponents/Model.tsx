@@ -11,7 +11,6 @@ import useMorphTargetAnimation from './ShapeKeyAnim';
 import getMouseDegreesNormalized from '../../lib/getMouseDegreesNormalized';
 import animateEyeballs from './EyeMovement';
 import moveJointToMousePosition from './MoveJoint';
-import { o } from 'dist/chunks/astro_rYpCgs1T.mjs';
 
 type GLTFResult = GLTF & {
 	nodes: {

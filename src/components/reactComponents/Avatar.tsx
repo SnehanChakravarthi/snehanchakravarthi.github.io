@@ -47,7 +47,7 @@ const Avatar = () => {
 					<Environment preset="apartment" />
 				</Suspense>
 			</Canvas>
-			<div ref={canvasContainerRef} className="absolute bottom-0 h-96 "></div>
+			<div ref={canvasContainerRef} className="absolute bottom-0 h-72"></div>
 		</div>
 	);
 };
