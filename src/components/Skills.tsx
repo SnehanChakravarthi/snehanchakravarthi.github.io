@@ -280,12 +280,12 @@ const Skills = () => {
 					</p>
 					<p className="ml-6 -rotate-1">
 						Over the years, <br />I have amassed these{' '}
-						<div
+						<span
 							ref={startRef}
 							className="dark:text-shadow-3d-dark text-shadow-3d text-color-animate inline-block"
 						>
 							skills.
-						</div>
+						</span>
 					</p>
 				</div>
 

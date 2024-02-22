@@ -187,7 +187,6 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 				repetitions: number,
 				onFinishCallback?: () => void
 			) => {
-				console.log('Playing animation', actionClip.name);
 				if (!mixerRef.current) return null;
 				const action = mixerRef.current.clipAction(actionClip);
 				if (actionClip) setCurrentClipName(actionClip.name);

@@ -22,9 +22,9 @@ const DropdownMenu: React.FC<{ menu: MenuItem[] }> = ({ menu }) => {
 					viewBox="0 0 24 24"
 					fill="none"
 					stroke="currentColor"
-					stroke-width="2"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
 					className={`${isOpen ? 'hidden' : 'block'}`}
 				>
 					<line x1="4" x2="20" y1="12" y2="12" />
@@ -39,9 +39,9 @@ const DropdownMenu: React.FC<{ menu: MenuItem[] }> = ({ menu }) => {
 					viewBox="0 0 24 24"
 					fill="none"
 					stroke="currentColor"
-					stroke-width="2"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
 					className={`${isOpen ? 'block' : 'hidden'}`}
 				>
 					<path d="M18 6 6 18" />
@@ -84,17 +84,17 @@ const DropdownMenu: React.FC<{ menu: MenuItem[] }> = ({ menu }) => {
 									viewBox="0 0 24 24"
 									fill="none"
 									stroke="currentColor"
-									stroke-width="1.75"
-									stroke-linecap="round"
-									stroke-linejoin="round"
+									strokeWidth="1.75"
+									strokeLinecap="round"
+									strokeLinejoin="round"
 								>
 									<rect width="20" height="16" x="2" y="4" rx="2"></rect>
 									<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
 								</svg>
 							</a>
 						</li>
-						{Object.entries(authorData.links).map(([name, url]) => (
-							<li>
+						{Object.entries(authorData.links).map(([name, url], index) => (
+							<li key={index}>
 								<a
 									href={url}
 									target="_blank"
