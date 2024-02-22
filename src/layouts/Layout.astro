@@ -23,12 +23,12 @@ const { title = 'Snehan Chakra Varthi' } = Astro.props;
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
-	<body class="bg-baseLight min-h-screen dark:bg-stone-950">
+	<body class="min-h-screen bg-baseLight dark:bg-stone-950">
 		<div
 			class="dark:hero-background-dark hero-background flex w-screen justify-center bg-lightBG pb-40 text-lightText transition-colors duration-300 ease-in-out dark:bg-darkBG dark:text-darkText"
 		>
 			<Navbar />
-			<main class="min-w-0 pt-14" transition:animate={fade({ duration: '0.4s' })}>
+			<main class="min-w-0 pt-12" transition:animate={fade({ duration: '0.4s' })}>
 				<slot />
 			</main>
 		</div>

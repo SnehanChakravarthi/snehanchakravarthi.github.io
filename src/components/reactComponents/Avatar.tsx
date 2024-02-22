@@ -1,14 +1,36 @@
+import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { Canvas } from '@react-three/fiber';
 import { Environment } from '@react-three/drei';
 import { Model } from './Model';
 import { Suspense } from 'react';
 import Loader from './Loader';
-// import { Loader } from '@react-three/drei';
+import { Perf } from 'r3f-perf';
 
 const Avatar = () => {
+	const canvasContainerRef = useRef<HTMLDivElement>(null);
+
+	const [isOnScreen, setIsOnScreen] = useState(false);
+
+	useEffect(() => {
+		const container = canvasContainerRef.current;
+		if (!container) return;
+
+		const intersectionObserver = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				setIsOnScreen(entry.isIntersecting);
+			});
+		});
+
+		intersectionObserver.observe(container);
+
+		return () => {
+			intersectionObserver.disconnect();
+		};
+	}, []);
+
 	return (
-		<div className="h-full w-full">
+		<div className="relative h-screen w-full">
 			<Canvas
 				camera={{
 					fov: 4,
@@ -16,15 +38,24 @@ const Avatar = () => {
 					far: 1000,
 					position: new THREE.Vector3(0, 0, 15)
 				}}
+				dpr={[1, 2]}
+				frameloop={isOnScreen ? 'always' : 'never'}
 			>
+				{/* <Perf /> */}
 				<Suspense fallback={<Loader />}>
-					{/* <ambientLight intensity={1} /> */}
-					{/* <pointLight position={[10, 10, 10]} /> */}
 					<Model scale={1} position={[0, -1.7, 0]} />
 					<Environment preset="apartment" />
 				</Suspense>
 			</Canvas>
-			{/* <Loader
+			<div ref={canvasContainerRef} className="absolute bottom-0 h-96 "></div>
+		</div>
+	);
+};
+
+export default Avatar;
+
+{
+	/* <Loader
 				containerStyles={{
 					display: 'flex',
 					justifyContent: 'center',
@@ -54,9 +85,5 @@ const Avatar = () => {
 					fontWeight: 'bold'
 				}}
 				dataInterpolation={(p) => `Loading ${p.toFixed(2)}%`}
-			/> */}
-		</div>
-	);
-};
-
-export default Avatar;
+			/> */
+}

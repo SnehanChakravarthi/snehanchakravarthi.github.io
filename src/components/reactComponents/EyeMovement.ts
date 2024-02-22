@@ -1,76 +1,48 @@
+import { MathUtils } from 'three';
+
+const eyeMorphTargetsData = new Map<string, number>(); // For storing previous influences
+
 function animateEyeballs(
-  avatarMesh: React.RefObject<
-    THREE.SkinnedMesh<
-      THREE.BufferGeometry<THREE.NormalBufferAttributes>,
-      THREE.Material | THREE.Material[],
-      THREE.Object3DEventMap
-    >
-  >,
-  normalizedMousePosition: { x: number; y: number },
-  isMouseIdle: boolean
+	avatarMesh: React.RefObject<
+		THREE.SkinnedMesh<
+			THREE.BufferGeometry<THREE.NormalBufferAttributes>,
+			THREE.Material | THREE.Material[],
+			THREE.Object3DEventMap
+		>
+	>,
+	normalizedMousePosition: { x: number; y: number },
+	isMouseIdle: boolean
 ) {
-  if (!avatarMesh.current || !avatarMesh.current.morphTargetDictionary) return;
+	if (!avatarMesh.current || !avatarMesh.current.morphTargetDictionary) return;
 
-  // When the mouse is idle, reset eye positions to neutral
-  if (isMouseIdle) {
-    resetEyeMorphTargetsToNeutral(avatarMesh);
-    return;
-  }
+	const lerpFactor = 0.1; // Adjust for desired smoothness
+	const morphTargetDict = avatarMesh.current.morphTargetDictionary;
+	const morphTargetInfluences = avatarMesh.current.morphTargetInfluences;
+	const { x: normalizedX, y: normalizedY } = normalizedMousePosition;
 
-  // Existing logic to set eye morph targets based on mouse position
-  const { x: normalizedX, y: normalizedY } = normalizedMousePosition;
-  setEyeMorphTarget(avatarMesh, 'eyeLookUpLeft', Math.max(0, -normalizedY));
-  setEyeMorphTarget(avatarMesh, 'eyeLookUpRight', Math.max(0, -normalizedY));
-  setEyeMorphTarget(avatarMesh, 'eyeLookDownLeft', Math.max(0, normalizedY));
-  setEyeMorphTarget(avatarMesh, 'eyeLookDownRight', Math.max(0, normalizedY));
+	// Logic for setting or resetting eye morph targets
+	const targets = [
+		{ name: 'eyeLookUpLeft', influence: Math.max(0, normalizedY) },
+		{ name: 'eyeLookUpRight', influence: Math.max(0, normalizedY) },
+		{ name: 'eyeLookDownLeft', influence: Math.max(0, -normalizedY) },
+		{ name: 'eyeLookDownRight', influence: Math.max(0, -normalizedY) },
+		{ name: 'eyeLookInLeft', influence: Math.max(0, -normalizedX) },
+		{ name: 'eyeLookInRight', influence: Math.max(0, normalizedX) },
+		{ name: 'eyeLookOutLeft', influence: Math.max(0, normalizedX) },
+		{ name: 'eyeLookOutRight', influence: Math.max(0, -normalizedX) }
+	];
 
-  setEyeMorphTarget(avatarMesh, 'eyeLookInLeft', Math.max(0, -normalizedX));
-  setEyeMorphTarget(avatarMesh, 'eyeLookInRight', Math.max(0, normalizedX));
-  setEyeMorphTarget(avatarMesh, 'eyeLookOutLeft', Math.max(0, normalizedX));
-  setEyeMorphTarget(avatarMesh, 'eyeLookOutRight', Math.max(0, -normalizedX));
-}
+	targets.forEach((target) => {
+		const index = morphTargetDict[target.name];
+		if (typeof index === 'number' && morphTargetInfluences) {
+			const storedInfluence = eyeMorphTargetsData.get(target.name) || 0;
+			const targetInfluence = isMouseIdle ? 0 : target.influence;
+			const newInfluence = MathUtils.lerp(storedInfluence, targetInfluence, lerpFactor);
 
-function setEyeMorphTarget(
-  avatarMesh: React.RefObject<
-    THREE.SkinnedMesh<
-      THREE.BufferGeometry<THREE.NormalBufferAttributes>,
-      THREE.Material | THREE.Material[],
-      THREE.Object3DEventMap
-    >
-  >,
-  targetName: string,
-  influence: number
-) {
-  if (avatarMesh.current && avatarMesh.current.morphTargetDictionary) {
-    const index = avatarMesh.current.morphTargetDictionary[targetName];
-    if (typeof index === 'number' && avatarMesh.current.morphTargetInfluences) {
-      avatarMesh.current.morphTargetInfluences[index] = influence;
-    }
-  }
-}
-
-function resetEyeMorphTargetsToNeutral(
-  avatarMesh: React.RefObject<
-    THREE.SkinnedMesh<
-      THREE.BufferGeometry<THREE.NormalBufferAttributes>,
-      THREE.Material | THREE.Material[],
-      THREE.Object3DEventMap
-    >
-  >
-) {
-  // Reset all relevant morph targets to 0 to achieve a neutral expression
-  const targetsToReset = [
-    'eyeLookUpLeft',
-    'eyeLookUpRight',
-    'eyeLookDownLeft',
-    'eyeLookDownRight',
-    'eyeLookInLeft',
-    'eyeLookInRight',
-    'eyeLookOutLeft',
-    'eyeLookOutRight',
-  ];
-
-  targetsToReset.forEach((target) => setEyeMorphTarget(avatarMesh, target, 0));
+			morphTargetInfluences[index] = newInfluence;
+			eyeMorphTargetsData.set(target.name, newInfluence);
+		}
+	});
 }
 
 export default animateEyeballs;

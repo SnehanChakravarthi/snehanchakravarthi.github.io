@@ -9,9 +9,9 @@ import type { GLTF } from 'three-stdlib';
 import useBlink from './BlinkLogic';
 import useMorphTargetAnimation from './ShapeKeyAnim';
 import getMouseDegreesNormalized from '../../lib/getMouseDegreesNormalized';
-import getMousePosition from '../../lib/getMousePosition';
 import animateEyeballs from './EyeMovement';
 import moveJointToMousePosition from './MoveJoint';
+import { o } from 'dist/chunks/astro_rYpCgs1T.mjs';
 
 type GLTFResult = GLTF & {
 	nodes: {
@@ -55,7 +55,8 @@ const actions = {
 		{ action: 'Stretch2', repetitions: 1 },
 		{ action: 'HeadStretch', repetitions: 1 },
 		{ action: 'Looking', repetitions: 1 },
-		{ action: 'Dance', repetitions: 2 }
+		{ action: 'Dance', repetitions: 2 },
+		{ action: 'HiAction', repetitions: 1 }
 	],
 	lightActions: [
 		{ action: 'HappyIdle', repetitions: 3 },
@@ -77,21 +78,87 @@ interface Actions {
 export function Model(props: JSX.IntrinsicElements['group']) {
 	const avatarMesh = useRef<SkinnedMesh>(null);
 	const group = useRef(null!);
-	const { size } = useThree();
+	const { pointer } = useThree();
+	let normalizedX = 0;
+	let normalizedY = 0;
 	const [isMouseIdle, setIsMouseIdle] = useState(false);
 	const lastMousePosition = useRef({ x: 0, y: 0 });
 	const mouseIdleTimeoutRef = useRef<number | null>(null);
 
-	const idleTimeoutDuration = 1000; // 5 seconds
+	const idleTimeoutDuration = 1000;
 
 	const { nodes, materials, animations } = useGLTF('/cad/snehanReadyPlayerOne.glb') as GLTFResult;
-	//   const { actions } = useAnimations(animations, group);
-	//   console.log(nodes.Hips, materials, animations);
+
 	useBlink(avatarMesh);
+
+	const [currentClipName, setCurrentClipName] = useState('');
+
+	const hiAction1 = useMorphTargetAnimation(avatarMesh, 'mouthSmile', 0.5, 0.5, 4);
+	const hiAction2 = useMorphTargetAnimation(avatarMesh, 'mouthDimpleLeft', 0.7, 0.6, 4);
+	const hiAction3 = useMorphTargetAnimation(avatarMesh, 'mouthDimpleRight', 1, 0.6, 4);
+	const hiAction4 = useMorphTargetAnimation(avatarMesh, 'mouthOpen', 0.5, 1, 1);
+	const hiAction5 = useMorphTargetAnimation(avatarMesh, 'eyeWideLeft', 0.6, 1, 4);
+	const hiAction6 = useMorphTargetAnimation(avatarMesh, 'eyeWideRight', 0.6, 1, 4);
+	const hiAction7 = useMorphTargetAnimation(avatarMesh, 'browInnerUp', 0.5, 0.5, 4);
+
+	const happyIdle1 = useMorphTargetAnimation(avatarMesh, 'browOuterUpLeft', 0.4, 0.5, 11);
+	const happyIdle2 = useMorphTargetAnimation(avatarMesh, 'mouthPucker', 0.6, 0.6, 11);
+	const happyIdle3 = useMorphTargetAnimation(avatarMesh, 'mouthSmileRight', 0.4, 0.5, 11);
+
+	const lookingAction1 = useMorphTargetAnimation(avatarMesh, 'browDownLeft', 0.3, 0.5, 4);
+	const lookingAction2 = useMorphTargetAnimation(avatarMesh, 'browDownRight', 0.6, 0.5, 4);
+	const lookingAction3 = useMorphTargetAnimation(avatarMesh, 'eyeSquintLeft', 0.3, 0.5, 4);
+	const lookingAction4 = useMorphTargetAnimation(avatarMesh, 'eyeSquintRight', 0.6, 0.5, 4);
+
+	const offensiveIdle1 = useMorphTargetAnimation(avatarMesh, 'mouthShrugLower', 0.6, 0.5, 9);
+	const offensiveIdle2 = useMorphTargetAnimation(avatarMesh, 'mouthPressLeft', 0.7, 0.5, 9);
+
+	const HeadStretch1 = useMorphTargetAnimation(avatarMesh, 'cheekPuff', 1, 1, 1);
+
+	useEffect(() => {
+		if (currentClipName === 'HiAction') {
+			hiAction1();
+			hiAction2();
+			hiAction3();
+			hiAction4();
+			hiAction5();
+			hiAction6();
+			hiAction7();
+		} else if (currentClipName === 'HappyIdle') {
+			happyIdle1();
+			happyIdle2();
+			happyIdle3();
+		} else if (currentClipName === 'Looking') {
+			lookingAction1();
+			lookingAction2();
+			lookingAction3();
+			lookingAction4();
+		} else if (currentClipName === 'standingIdle') {
+			hiAction7();
+		} else if (currentClipName === 'OfensiveIdle') {
+			offensiveIdle1();
+			hiAction1();
+			offensiveIdle2();
+		} else if (currentClipName === 'Dance') {
+			hiAction4();
+			hiAction1();
+			happyIdle2();
+		} else if (currentClipName === 'HeadStretch') {
+			HeadStretch1();
+		} else if (currentClipName === 'StretchAction') {
+			HeadStretch1();
+		} else if (currentClipName === 'Stretch2') {
+			HeadStretch1();
+		} else {
+			hiAction1();
+			hiAction2();
+			hiAction3();
+			hiAction4();
+		}
+	}, [currentClipName]);
 
 	const mixerRef = useRef<THREE.AnimationMixer | null>(null);
 	const mixerRef2 = useRef<THREE.AnimationMixer | null>(null);
-
 	useEffect(() => {
 		if (animations.length > 0) {
 			mixerRef2.current = new THREE.AnimationMixer(nodes.Hips);
@@ -102,7 +169,6 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 				action.setLoop(THREE.LoopRepeat, Infinity);
 				action.play();
 			}
-			startAnimation();
 		}
 		return () => {
 			if (mixerRef2.current) {
@@ -122,8 +188,11 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 				repetitions: number,
 				onFinishCallback?: () => void
 			) => {
+				console.log('Playing animation', actionClip.name);
 				if (!mixerRef.current) return null;
 				const action = mixerRef.current.clipAction(actionClip);
+				if (actionClip) setCurrentClipName(actionClip.name);
+
 				action.reset();
 				action.setLoop(THREE.LoopRepeat, repetitions);
 				action.clampWhenFinished = true;
@@ -132,7 +201,6 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 					const duration = 1.2; // Duration of the crossfade (in seconds)
 					previousAction.crossFadeTo(action, duration, true);
 				}
-
 				action.play();
 				previousAction = action; // Update the previous action
 
@@ -181,8 +249,6 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 		}
 	}, [animations, nodes.Hips]);
 
-	const startAnimation = useMorphTargetAnimation(avatarMesh, 'mouthSmile', 0.8, 1);
-
 	useEffect(() => {
 		return () => {
 			if (mouseIdleTimeoutRef.current !== null) {
@@ -192,48 +258,45 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 	}, []);
 
 	useFrame((state, delta) => {
+		normalizedX = pointer.x;
+		normalizedY = pointer.y;
 		mixerRef.current?.update(delta);
 		mixerRef2.current?.update(delta);
-
-		// Get both original and normalized mouse positions
-		const {
-			original: mousePosition,
-			normalized: { x: normalizedX, y: normalizedY }
-		} = getMousePosition(state, size);
-
+		const changeThreshold = 0.05;
 		if (
-			normalizedX !== lastMousePosition.current.x ||
-			normalizedY !== lastMousePosition.current.y
+			Math.abs(normalizedX - lastMousePosition.current.x) > changeThreshold ||
+			Math.abs(normalizedY - lastMousePosition.current.y) > changeThreshold
 		) {
-			// Mouse has moved, reset idle state and timeout
 			if (isMouseIdle) setIsMouseIdle(false);
+
 			if (mouseIdleTimeoutRef.current !== null) {
 				clearTimeout(mouseIdleTimeoutRef.current);
 			}
+
 			mouseIdleTimeoutRef.current = setTimeout(() => {
 				setIsMouseIdle(true);
 			}, idleTimeoutDuration);
 
 			lastMousePosition.current = { x: normalizedX, y: normalizedY };
 		}
-
-		// Use the normalized mouse positions for your calculations
 		animateEyeballs(avatarMesh, { x: normalizedX, y: normalizedY }, isMouseIdle);
 		updateJointPositions(normalizedX, normalizedY);
 	});
 
 	function updateJointPositions(normalizedX: number, normalizedY: number) {
 		const degreeLimits = [20, 12, 10, 5];
-		['Head', 'Neck', 'Spine2', 'Spine1'].forEach((nodeName, index) => {
-			const degrees = getMouseDegreesNormalized(normalizedX, normalizedY, degreeLimits[index]);
-			moveJoint(nodeName, degrees);
-		});
-	}
 
-	function moveJoint(nodeName: string, degrees: { x: number; y: number }) {
-		const node = nodes[nodeName as keyof typeof nodes] as THREE.Object3D | undefined;
-		if (node) {
-			moveJointToMousePosition(degrees, node, isMouseIdle);
+		const spine1Node = nodes.Hips?.children[0]?.children[0] as THREE.Object3D | undefined;
+		const spine2Node = spine1Node?.children[0] as THREE.Object3D | undefined;
+		const neckNode = spine2Node?.children[0] as THREE.Object3D | undefined;
+		const headNode = neckNode?.children[0] as THREE.Object3D | undefined;
+
+		for (let index = 0; index < 4; index++) {
+			const node = [headNode, neckNode, spine2Node, spine1Node][index];
+			if (node) {
+				const degrees = getMouseDegreesNormalized(normalizedX, normalizedY, degreeLimits[index]);
+				moveJointToMousePosition(degrees, node, isMouseIdle);
+			}
 		}
 	}
 
