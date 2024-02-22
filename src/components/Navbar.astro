@@ -46,7 +46,7 @@ const menu = [
 </script>
 
 <div
-	class="fixed z-10 flex h-12 w-screen items-center justify-between border-b border-lightGrid bg-white/30 font-microgammaMedium text-cyan-600 backdrop-blur-xl dark:border-darkGrid dark:bg-black/30 dark:text-pink-600 sm:px-6"
+	class="fixed z-10 flex h-12 w-screen items-center justify-between border-b border-lightGrid bg-lightBG font-microgammaMedium text-cyan-600 dark:border-darkGrid dark:bg-darkBG dark:text-pink-600 sm:bg-white/30 sm:px-6 sm:backdrop-blur-3xl sm:dark:bg-black/30"
 	transition:persist
 >
 	<a href="/" class="z-20 mt-12 w-40 -rotate-3 px-3 sm:px-0">
@@ -66,7 +66,7 @@ const menu = [
 		</li>
 		<div class="flex">
 			<button
-				class="theme-toggle mx-auto flex h-12 w-12 cursor-pointer items-center justify-center border border-lightGrid bg-white hover:bg-lightBG dark:border-darkGrid dark:bg-black dark:hover:bg-darkBG"
+				class="theme-toggle mx-auto flex h-12 w-12 cursor-pointer items-center justify-center border border-b-0 border-t-0 border-lightGrid hover:bg-lightBG dark:border-darkGrid dark:hover:bg-darkBG"
 				data-theme-toggle
 				aria-label="toggle theme"
 			>

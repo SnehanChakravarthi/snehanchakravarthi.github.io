@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 
 import { authorData } from '@/siteConfig';
 
-interface MenuItem {
-	name: string;
-	link: string;
-}
-
 import { Github, Linkedin, X, Instagram } from '@/components/SocialIcons.tsx';
 
-const DropdownMenu = ({ menu }: { menu: MenuItem[] }) => {
+type MenuItem = {
+	name: string;
+	link: string;
+};
+
+const DropdownMenu: React.FC<{ menu: MenuItem[] }> = ({ menu }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<div className="border-lightGrid hover:bg-lightBG dark:border-darkGrid dark:hover:bg-darkBG flex  h-12 w-12 items-center justify-center border border-x-0 bg-white dark:bg-black">
+		<div className="border-lightGrid hover:bg-lightBG dark:border-darkGrid dark:hover:bg-darkBG flex h-12 w-12 items-center justify-center border border-b-0 border-l-0 border-r-0 border-t-0">
 			<button onClick={() => setIsOpen(!isOpen)} className="">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -49,8 +49,8 @@ const DropdownMenu = ({ menu }: { menu: MenuItem[] }) => {
 				</svg>
 			</button>
 			<div
-				className={`bg-lightBG dark:bg-darkBG absolute left-0 top-12 z-10 h-auto w-screen rounded-b-3xl border border-white/10 shadow-xl shadow-black transition duration-100 ease-out ${
-					isOpen ? 'translate-y-0  opacity-100' : 'invisible  opacity-0'
+				className={`border-lightGrid dark:border-darkGrid absolute left-0 top-12 z-10 h-auto w-screen rounded-b-3xl border border-t-0 bg-white/30 shadow-xl shadow-black backdrop-blur-xl transition duration-100 ease-out dark:bg-black/30 ${
+					isOpen ? 'translate-y-0  ' : 'invisible '
 				}`}
 			>
 				<div className="flex flex-col">
@@ -58,14 +58,14 @@ const DropdownMenu = ({ menu }: { menu: MenuItem[] }) => {
 						{menu.map((item, index) => (
 							<li
 								key={index}
-								className="py-4 text-xl text-cyan-600 hover:bg-neutral-900 dark:text-pink-500"
+								className="w-full cursor-pointer py-4 text-xl text-cyan-600 dark:text-pink-500"
 							>
 								<a href={item.link} className="4">
 									{item.name}
 								</a>
 							</li>
 						))}
-						<li className="py-4 text-xl text-cyan-600 hover:bg-neutral-900 dark:text-pink-500">
+						<li className="py-4 text-xl text-cyan-600  dark:text-pink-500">
 							<a href="/CV.pdf" download className="block">
 								CV
 							</a>

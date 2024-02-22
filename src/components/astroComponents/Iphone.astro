@@ -2,15 +2,18 @@
 import { Image } from 'astro:assets';
 
 import iphone from '@/images/devices/iPhone.png';
-import mobileVideo from '@/assets/video/zerodvAR.mp4';
+import zeroDV from '@/assets/video/zerodvAR.mp4';
+import snehan from '@/assets/video/snehan.mp4';
 
-const { className = 'max-w-52' } = Astro.props;
+const { className = 'max-w-52', videoChoice } = Astro.props;
+
+const selectedVideo = videoChoice === 'zero' ? zeroDV : snehan;
 ---
 
 <div class="relative flex justify-center">
 	<video class="absolute -z-10 mt-[8.1%] rounded-3xl px-[7.9%]" autoplay muted loop playsinline>
-		<source src={mobileVideo} type="video/mp4" />
+		<source src={selectedVideo} type="video/mp4" />
 		Your browser does not support the video tag.
 	</video>
-	<Image src={iphone} alt="Zero da Vinci" class={className} />
+	<Image src={iphone} alt="Iphone device showing an application" class={className} />
 </div>

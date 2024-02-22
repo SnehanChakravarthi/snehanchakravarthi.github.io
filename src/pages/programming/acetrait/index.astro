@@ -4,19 +4,14 @@ import { Image } from 'astro:assets';
 import Layout from '@/layouts/Layout.astro';
 import Skillbox from '@/components/astroComponents/Skillbox.astro';
 import ViewSiteBadge from '@/components/astroComponents/ViewSiteBadge.astro';
-import GoBackBadge from '@/components/astroComponents/GoBackBadge.astro';
 import Macbook from '@/components/astroComponents/Macbook.astro';
-import Iphone from '@/components/astroComponents/Iphone.astro';
-
-import UV from '@/images/zerodavinci/UVWrap.png';
-import Render1 from '@/images/zerodavinci/gold1.png';
-import ZeroDV1 from '@/images/zerodavinci/ZeroDV1.jpg';
-import ZeroDV2 from '@/images/zerodavinci/ZeroDV2.jpg';
 import HeadingLine from '@/components/astroComponents/HeadingLine.astro';
+
+import Acetrait1 from '@/images/acetrait/acetrait1.png';
+import Acetrait2 from '@/images/acetrait/acetrait2.png';
 ---
 
 <Layout title="Acetrait | Snehan Chakra Varthi">
-	<GoBackBadge />
 	<ViewSiteBadge link="https://www.acetrait.com" />
 
 	<div
@@ -27,101 +22,122 @@ import HeadingLine from '@/components/astroComponents/HeadingLine.astro';
 		>
 			ACETRAIT
 		</h1>
-		<!-- 
-    <ul class="text-white">
-      <li>⭐️ Interactive webGL site</li>
-      <li>⭐️ Optimsed 3D low poly (17k verts)</li>
-      <li>⭐️ Scroll controlled animations and camera</li>
-      <li>⭐️ AR product visualisation</li>
-      <li>⭐️ SEO + MDX Blog</li>
-    </ul> -->
 
 		<HeadingLine title="what is it?" />
-
 		<p>
-			Acetrait is an innovative AI-powered platform designed to revolutionize the recruitment
-			process for both companies and job seekers. At its core, Acetrait simplifies and automates the
-			task of creating engaging job posts, developing ideal candidate personas, conducting in-depth
-			interviews, and evaluating candidates through AI and LLMs. This platform is a testament to
-			leveraging cutting-edge technologies to streamline the recruitment workflow, offering a
-			seamless bridge between recruiters and potential candidates.
+			Acetrait is an AI-powered platform designed for the <span class="text-decoration"
+				>recruitment process for both companies and job seekers.</span
+			> At its core, Acetrait simplifies and automates the task of creating engaging job posts, developing
+			ideal candidate personas, conducting in-depth interviews, and evaluating candidates through AI
+			and LLMs.
+		</p>
+		<Macbook className="max-w-full" videoChoice="acetrait" />
+		<HeadingLine title="stack ?" />
+		<p>
+			Initially, I wanted to build the application with <Skillbox skill="svelte" /> in
+			<Skillbox skill="sveltekit" /> wishing to take advantage of Svelte's nice global state logic, but
+			my love for <Skillbox skill="next.js" /> combined with its amazing developer experience and the
+			latest <span class="text-decoration">Server Actions</span> made me go with Next.js. Back into the
+			world of <Skillbox skill="react" />, with <Skillbox skill="tailwindcss" />, I started to have
+			fun coding the front end in a matter of days.
 		</p>
 
-		<Macbook className="max-w-full" videoChoice="acetrait" />
+		<HeadingLine title="backend" />
+		<p>
+			I built the server mostly utilising the new Server Actions, with <Skillbox skill="nodejs" />,
+			and hosted on <Skillbox skill="vercel" /> ofc. Also used <span class="text-decoration"
+				>edge functions</span
+			> for couple of things in the application, to save money by not running function on the servers
+			as there were long waiting periods for response from some API fetch calls from the LLMs, frequently
+			hitting the <span class="text-decoration">Server Execution Limits</span> on Vercel.
+		</p>
+		<Image src={Acetrait2} alt="Screenshot of Acetrait Create Job Utility" />
 
-		<HeadingLine title="Features" />
+		<p>
+			What else? I fully committed to <Skillbox skill="typescript" />. The database is built on <Skillbox
+				skill="supabase"
+			/>, and I was quickly able to set up <span class="text-decoration"
+				>secure cookie based auth</span
+			> and in no time I had a highly integrated RLS backed <Skillbox skill="postgresql" /> database,
+			just waiting for my server actions to come fetch and feed them. The AI is powered by <Skillbox
+				skill="openai"
+			/> API.
+		</p>
 
-		<ul class="*:flex *:flex-col">
+		<HeadingLine title="features" />
+		<ul class="space-y-4 *:flex *:flex-col">
 			<li>
-				<p class="text-decoration">AI-Driven Interviews</p>
+				<p class="text-decoration text-lg">AI-Driven Interviews</p>
 				<p>
 					Personalized, in-depth chat-based interviews that evaluate a candidate's fit for the job
-					position.
+					position. The AI is trained to ask relevant questions but using a dynamic real time
+					prompting technique.
 				</p>
 			</li>
 			<li>
-				<strong>Candidate Evaluation and Scoring</strong> AI assesses candidates across multiple attributes,
-				presenting results in a spider chart.
+				<p class="text-decoration text-lg">Candidate Evaluation and Scoring</p> AI assesses candidates
+				across multiple attributes, presenting results in a spider chart. In order to make the AI scoring
+				more reliable, the latest API attributes from OpenAI are used to their full potential.
 			</li>
 			<li>
-				<p class="text-decoration">Automated Job Post Creation</p>
+				<p class="text-decoration text-lg">Automated Job Post Creation</p>
 				<p>
 					Generate captivating job advertisements and ideal candidate personas with just basic job
 					details.
 				</p>
 			</li>
 			<li>
-				<strong>Job Feed</strong> Job posts are accessible in a comprehensive public feed for candidates.
+				<p class="text-decoration text-lg">Job Feed</p> Job posts are accessible in a comprehensive public
+				feed for candidates.
 			</li>
 		</ul>
-
-		<Image src={UV} alt="Blender screenshot of UV wrapping process" />
+		<Image src={Acetrait1} alt="Screenshot of Acetrait Job Feed" />
 
 		<HeadingLine title="Technical Overview" />
 
-		<h3>Frontend Excellence</h3>
-		<p>
-			Utilizing Next.js 14 and React with Tailwind CSS and Shadcn for a user-friendly interface. The
-			application ensures a modern, fast, and secure user experience.
-		</p>
-		<h3>Distinct Interfaces for Users</h3>
-		<p>
-			Features tailored UIs for both candidates and recruiters, equipped with role-specific
-			functionalities.
-		</p>
-		<h3>Backend and Hosting Innovations</h3>
-		<p>
-			The backend is built on Node.js, hosted on Vercel, and uses Edge functions for enhanced
-			performance. React Server Components are used for security and efficiency.
-		</p>
-		<h3>Database and AI Integration</h3>
-		<p>
-			Supabase is used for the database, ensuring scalability and data integrity. The AI component,
-			powered by OpenAI's API, is fine-tuned for accuracy and relevance.
-		</p>
+		<ul class="space-y-4 *:flex *:flex-col">
+			<li>
+				<p class="text-decoration text-lg">Frontend</p>
+				<p>
+					Utilizing Next.js 14 and React with Tailwind CSS and Shadcn for a user-friendly interface.
+					The application ensures a modern, fast, and secure user experience.
+				</p>
+			</li>
+			<li>
+				<p class="text-decoration text-lg">Distinct Interfaces for Users</p>
+				<p>
+					Features tailored UIs for both candidates and recruiters, equipped with role-specific
+					functionalities.
+				</p>
+			</li>
+			<li>
+				<p class="text-decoration text-lg">Backend and Edge runime</p>
+				<p>
+					The backend is built on Node.js, hosted on Vercel, and uses Edge functions for enhanced
+					performance. React Server Components are used for security and efficiency.
+				</p>
+			</li>
+			<li>
+				<p class="text-decoration text-lg">Database and AI Integration</p>
+				<p>
+					Supabase is used for the database, ensuring scalability and data integrity. The AI
+					component, powered by OpenAI's API, is fine-tuned for accuracy and relevance.
+				</p>
+			</li>
+		</ul>
 
 		<HeadingLine title="Result" />
 
 		<p>
-			The final website succeeded in showcasing the product in all its glory that wount have been
-			otherwise possible. The website is live at <a
-				href="https://www.zerodavinci.com"
+			The final website is still under development, with more innovative features and updates coming
+			to it. But it is already being used by a couple of organisations for testing and trying out
+			the AI features on real interviews. Head over to <a
+				href="https://www.acetrait.com"
 				class="text-decoration">www.zerodavinci.com</a
-			> and has been a great success in attracting potential customers and investors.
-			<br /><br />Personally, I am very proud of the result and the skills I have acquired in the
-			process. I am now able to create interactive 3D web experiences and have a better
-			understanding of webGL and 3D rendering techniques. I am also able to create and optimise 3D
-			models for webGL rendering and have a better understanding of the <span
-				class="text-decoration"
-			>
-				webGL pipeline and performance optimisations.</span
-			>
-			<br /><br />Here are some of the real pictures of the product.
+			> to test it yourself.
+			<br /><br />This project has led me to better understand AI and LLMs in general, and I had a
+			great developer experience while coding this application. Largely it was thanks to the amazing
+			libraries that simplifies the use of AI for the top LLMs providers like OpenAI, Mixtral etc.
 		</p>
-
-		<div class="flex flex-col items-start gap-4 sm:flex-row">
-			<Image src={ZeroDV1} alt="Man Sitting on Zero da Vinci" class="h-auto rounded-2xl sm:w-1/2" />
-			<Image src={ZeroDV2} alt="Man Resting on Zero da Vinci" class="h-auto rounded-2xl sm:w-1/2" />
-		</div>
 	</div>
 </Layout>
