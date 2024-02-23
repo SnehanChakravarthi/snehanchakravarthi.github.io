@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 
-import macbook from '@/images/devices/MacBookPro.png';
+import macbook from '@/assets/images/devices/MacBookPro.png';
 import video from '@/assets/video/zerodvvideo.mp4';
 import video2 from '@/assets/video/Acetrait.mp4';
 
@@ -11,9 +11,22 @@ const selectedVideo = videoChoice === 'acetrait' ? video2 : video;
 ---
 
 <div class="relative flex justify-center">
-	<video class="absolute -z-10 mt-[7.2%] px-[10%]" playsinline autoplay muted loop>
+	<video
+		class="absolute -z-10 mt-[7.2%] px-[10%]"
+		playsinline
+		autoplay
+		muted
+		loop
+		playsinline
+		transition:persist
+	>
 		<source src={selectedVideo} type="video/mp4" />
 		Your browser does not support the video tag.
 	</video>
-	<Image src={macbook} alt="Macbook Device showing an application" class={className} />
+	<Image
+		src={macbook}
+		alt="Macbook Device showing an application"
+		class={className}
+		loading="eager"
+	/>
 </div>

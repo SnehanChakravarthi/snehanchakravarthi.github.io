@@ -1,7 +1,18 @@
+const {
+	iconsPlugin,
+	getIconCollections,
+	dynamicIconsPlugin
+} = require('@egoist/tailwindcss-icons');
+
 /** @type {import('tailwindcss').Config} */
 export default {
 	darkMode: ['class', '[data-theme="dark"]'],
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	safelist: [
+		{
+			pattern: /i-skill-icons-.*/
+		}
+	],
 	theme: {
 		fontFamily: {
 			microgammaBold: ['MicrogrammaBoldExtendedD', 'sans-serif'],
@@ -32,5 +43,10 @@ export default {
 			}
 		}
 	},
-	plugins: []
+	plugins: [
+		iconsPlugin({
+			collections: getIconCollections(['skill-icons', 'logos'])
+		}),
+		dynamicIconsPlugin()
+	]
 };

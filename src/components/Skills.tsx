@@ -6,88 +6,125 @@ import { line, curveNatural } from 'd3-shape';
 
 const skills = {
 	'Front-end': [
-		{ skill: 'Javascript', expertise: 3 },
-		{ skill: 'Typescript', expertise: 3 },
-		{ skill: 'Three.js', expertise: 3 },
-		{ skill: 'HTML', expertise: 3 },
-		{ skill: 'CSS', expertise: 3 },
-		{ skill: 'React', expertise: 3 },
-		{ skill: 'MDX', expertise: 3 },
-		{ skill: 'Vue', expertise: 2 },
-		{ skill: 'Svelte', expertise: 2 },
-		{ skill: 'HTMX', expertise: 2 },
-		{ skill: 'Solid', expertise: 1 },
-		{ skill: 'Alpine', expertise: 1 }
+		{ skill: 'Javascript', expertise: 3, icon: 'i-skill-icons-javascript h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Typescript', expertise: 3, icon: 'i-skill-icons-typescript h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'HTML', expertise: 3, icon: 'i-skill-icons-html h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'CSS', expertise: 3, icon: 'i-skill-icons-css h-3 w-3 sm:h-6 sm:w-6' },
+		{
+			skill: 'React',
+			expertise: 3,
+			icon: 'dark:i-logos-react i-skill-icons-react-dark h-3 w-3 sm:h-6 sm:w-6'
+		},
+		{ skill: 'TailwindCSS', expertise: 3, icon: 'i-logos-tailwindcss-icon h-3 w-3 sm:h-6 sm:w-6' },
+		{
+			skill: 'Three.js',
+			expertise: 3,
+			icon: 'dark:i-skill-icons-threejs-light i-logos-threejs h-3 w-3 sm:h-6 sm:w-6'
+		},
+		{ skill: 'MDX', expertise: 3, icon: 'i-logos-mdx h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Vue', expertise: 2, icon: 'i-logos-vue h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Svelte', expertise: 2, icon: 'i-logos-svelte-icon h-3 w-3 sm:h-6 sm:w-6' },
+		{
+			skill: 'HTMX',
+			expertise: 2,
+			icon: 'dark:i-skill-icons-htmx-light i-skill-icons-htmx-dark h-3 w-3 sm:h-6 sm:w-6'
+		},
+		{ skill: 'Solid', expertise: 1, icon: 'i-logos-solidjs-icon h-3 w-3 sm:h-6 sm:w-6' },
+		{
+			skill: 'Alpinejs',
+			expertise: 1,
+			icon: 'i-skill-icons-alpinejs-dark dark:i-skill-icons-alpinejs-light h-3 w-3 sm:h-6 sm:w-6'
+		}
 	],
 	frameworks: [
-		{ skill: 'Next.js', expertise: 3 },
-		{ skill: 'r3f', expertise: 3 },
-		{ skill: 'Astro', expertise: 3 },
-		{ skill: 'SvelteKit', expertise: 2 },
-		{ skill: 'Nuxt', expertise: 2 },
-		{ skill: 'Remix', expertise: 2 },
-		{ skill: 'PWA', expertise: 2 }
+		{ skill: 'Next.js', expertise: 3, icon: 'i-logos-nextjs-icon h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'r3f', expertise: 3, icon: 'i-skill-icons-r3f h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Astro', expertise: 3, icon: 'i-logos-astro-icon h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'SvelteKit', expertise: 2, icon: 'i-logos-svelte-kit h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Nuxt', expertise: 2, icon: 'i-logos-nuxt-icon h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Remix', expertise: 2, icon: 'i-skill-icons-remix-dark h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'PWA', expertise: 2, icon: 'i-logos-pwa h-3 w-3 sm:h-6 sm:w-6' }
 	],
 	tools: [
-		{ skill: 'Prisma', expertise: 3 },
-		{ skill: 'ReactQuery', expertise: 3 },
-		{ skill: 'Redux', expertise: 2 },
-		{ skill: 'tRPC', expertise: 2 },
-		{ skill: 'FramerMotion', expertise: 2 },
-		{ skill: 'Puppeteer', expertise: 2 }
+		{ skill: 'Prisma', expertise: 3, icon: 'i-skill-icons-prisma h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'ReactQuery', expertise: 3, icon: 'i-logos-react-query-icon h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Redux', expertise: 2, icon: 'i-skill-icons-redux h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'tRPC', expertise: 2, icon: 'i-logos-trpc h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'FramerMotion', expertise: 2, icon: 'i-logos-framer h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Puppeteer', expertise: 2, icon: 'i-logos-puppeteer h-3 w-3 sm:h-6 sm:w-6' }
 	],
 	'back-End': [
-		{ skill: 'Nodejs', expertise: 3 },
-		{ skill: 'Express', expertise: 3 },
-		{ skill: 'Python', expertise: 3 },
-		{ skill: 'Flask', expertise: 3 },
-		{ skill: 'FastAPI', expertise: 2 },
-		{ skill: 'Django', expertise: 1 },
-		{ skill: 'Rust', expertise: 1 },
-		{ skill: 'Go', expertise: 1 }
+		{ skill: 'Nodejs', expertise: 3, icon: 'i-logos-nodejs-icon h-3 w-3 sm:h-6 sm:w-6' },
+		{
+			skill: 'Express',
+			expertise: 3,
+			icon: 'dark:i-skill-icons-expressjs-light i-skill-icons-expressjs-dark h-3 w-3 sm:h-6 sm:w-6'
+		},
+		{ skill: 'Python', expertise: 3, icon: 'i-logos-python h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Flask', expertise: 3, icon: 'i-skill-icons-flask-light h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'FastAPI', expertise: 2, icon: 'i-skill-icons-fastapi h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Django', expertise: 1, icon: 'i-skill-icons-django h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Rust', expertise: 1, icon: 'i-logos-rust h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Go', expertise: 1, icon: 'i-logos-go h-3 w-3 sm:h-6 sm:w-6' }
 	],
 	databases: [
-		{ skill: 'PostgreSQL', expertise: 3 },
-		{ skill: 'Supabase', expertise: 3 },
-		{ skill: 'MySQL', expertise: 3 },
-		{ skill: 'MongoDB', expertise: 2 },
-		{ skill: 'Firebase', expertise: 2 }
+		{ skill: 'PostgreSQL', expertise: 3, icon: 'i-logos-postgresql h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Supabase', expertise: 3, icon: 'i-logos-supabase-icon h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'MySQL', expertise: 3, icon: 'i-skill-icons-mysql-dark h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'MongoDB', expertise: 2, icon: 'i-logos-mongodb-icon h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Firebase', expertise: 2, icon: 'i-logos-firebase h-3 w-3 sm:h-6 sm:w-6' }
 	],
 	API: [
-		{ skill: 'Rest', expertise: 3 },
-		{ skill: 'GraphQL', expertise: 2 }
+		{ skill: 'Rest', expertise: 3, icon: 'i-skill-icons-rest h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'GraphQL', expertise: 2, icon: 'i-logos-graphql h-3 w-3 sm:h-6 sm:w-6' }
 	],
 	devOps: [
-		{ skill: 'Docker', expertise: 3 },
-		{ skill: 'Vercel', expertise: 3 },
-		{ skill: 'Kubernetes', expertise: 2 },
-		{ skill: 'AWS', expertise: 2 },
-		{ skill: 'GCP', expertise: 1 },
-		{ skill: 'Azure', expertise: 1 }
+		{ skill: 'Docker', expertise: 3, icon: 'i-skill-icons-docker h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Vercel', expertise: 3, icon: 'i-logos-vercel-icon h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Kubernetes', expertise: 2, icon: 'i-skill-icons-kubernetes h-3 w-3 sm:h-6 sm:w-6' },
+		{
+			skill: 'AWS',
+			expertise: 2,
+			icon: 'dark:i-skill-icons-aws-light i-skill-icons-aws-dark h-3 w-3 sm:h-6 sm:w-6'
+		},
+		{ skill: 'GCP', expertise: 1, icon: 'dark:i-logos-google-cloud h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Azure', expertise: 1, icon: 'i-logos-microsoft-azure h-3 w-3 sm:h-6 sm:w-6' }
 	],
 	testing: [
-		{ skill: 'Jest', expertise: 2 },
-		{ skill: 'Mocha', expertise: 2 },
-		{ skill: 'Cypress', expertise: 1 },
-		{ skill: 'Playwright', expertise: 1 }
+		{ skill: 'Jest', expertise: 2, icon: 'i-skill-icons-jest h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Mocha', expertise: 2, icon: 'i-logos-mocha h-3 w-3 sm:h-6 sm:w-6' },
+		{
+			skill: 'Cypress',
+			expertise: 1,
+			icon: 'i-skill-icons-cypress-light'
+		},
+		{ skill: 'Playwright', expertise: 1, icon: 'i-logos-playwright h-3 w-3 sm:h-6 sm:w-6' }
 	],
 	design: [
-		{ skill: 'Figma', expertise: 3 },
-		{ skill: 'XD', expertise: 3 },
-		{ skill: 'Photoshop', expertise: 3 },
-		{ skill: 'Indesign', expertise: 3 },
-		{ skill: 'Illustrator', expertise: 2 },
-		{ skill: 'AfterEffects', expertise: 2 }
+		{ skill: 'Figma', expertise: 3, icon: 'i-logos-figma h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'XD', expertise: 3, icon: 'i-skill-icons-xd h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Photoshop', expertise: 3, icon: 'i-skill-icons-photoshop h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Indesign', expertise: 3, icon: 'i-logos-adobe-indesign h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Illustrator', expertise: 2, icon: 'i-skill-icons-illustrator h-3 w-3 sm:h-6 sm:w-6' },
+		{
+			skill: 'AfterEffects',
+			expertise: 2,
+			icon: 'i-skill-icons-aftereffects h-3 w-3 sm:h-6 sm:w-6'
+		}
 	],
 	Tools: [
-		{ skill: 'Git', expertise: 3 },
-		{ skill: 'VSCode', expertise: 3 },
-		{ skill: 'Jira', expertise: 3 },
-		{ skill: 'Trello', expertise: 3 }
+		{ skill: 'Git', expertise: 3, icon: 'i-skill-icons-git h-3 w-3 sm:h-6 sm:w-6' },
+		{
+			skill: 'VSCode',
+			expertise: 3,
+			icon: 'dark:i-skill-icons-vscode-light i-skill-icons-vscode-dark h-3 w-3 sm:h-6 sm:w-6'
+		},
+		{ skill: 'Jira', expertise: 3, icon: 'i-logos-jira h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Trello', expertise: 3, icon: 'i-logos-trello h-3 w-3 sm:h-6 sm:w-6' }
 	],
 	CAD: [
-		{ skill: 'Blender', expertise: 3 },
-		{ skill: 'SolidWorks', expertise: 3 }
+		{ skill: 'Blender', expertise: 3, icon: 'i-logos-blender h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'SolidWorks', expertise: 3, icon: 'i-logos-solidworks h-3 w-3 sm:h-6 sm:w-6' }
 	]
 };
 
@@ -242,7 +279,6 @@ const Skills = () => {
 			const newTheme = getCurrentTheme();
 			setCurrentTheme(newTheme);
 		});
-
 		observer.observe(document.documentElement, {
 			attributes: true,
 			attributeFilter: ['data-theme']
@@ -270,7 +306,7 @@ const Skills = () => {
 			<div className="relative  pt-20">
 				<svg ref={svgRef} className="absolute left-0 top-0 h-full w-full" />
 
-				<div className="font-virgil text-color-animate z-0 ml-4 -rotate-1 text-3xl text-cyan-800 sm:text-4xl dark:text-pink-600">
+				<div className="text-color-animate z-0 ml-4 -rotate-1 font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl">
 					<p className="text-decoration -rotate-2 text-xl sm:rotate-1 sm:text-3xl">
 						"Swiss Army{' '}
 						<span className="line-through decoration-black decoration-4 dark:decoration-pink-300">
@@ -289,11 +325,11 @@ const Skills = () => {
 					</p>
 				</div>
 
-				<div className="font-virgil mb-6 mt-32 flex h-12 rotate-1 flex-col items-end justify-end  gap-2  text-base sm:mb-12 sm:h-20 sm:text-2xl">
+				<div className="mb-6 mt-32 flex h-12 rotate-1 flex-col items-end justify-end gap-2  font-virgil  text-base sm:mb-12 sm:h-20 sm:text-2xl">
 					<div className="flex flex-col items-center">
 						<p className="text-decoration mb-2 text-base sm:text-lg">
 							view my skills by <strong>expertise</strong>{' '}
-							<span ref={endRef} className="text-lightText text-xs dark:text-pink-400">
+							<span ref={endRef} className="text-xs text-lightText dark:text-pink-400">
 								(click below)
 							</span>
 						</p>
@@ -346,31 +382,31 @@ const Skills = () => {
 					</div>
 				</div>
 			</div>
-			<div className="dark:bg-darkCard dark:border-darkCardBorder bg-lightCard border-lightCardBorder dark:divide-darkCardBorder/60 divide-lightCardBorder/60 dark:hover:shadow-darkShadow dark:shadow-darkShadow shadow-lightShadow hover:shadow-lightShadow dark:hover:bg-darkCardHover  flex w-full flex-col justify-center divide-y rounded-2xl  border shadow-xl transition-all duration-300 ease-in-out hover:border-cyan-950 hover:shadow-2xl sm:rotate-1 sm:hover:-rotate-0 sm:hover:scale-105 dark:hover:border-pink-950">
+			<div className="flex w-full flex-col justify-center divide-y divide-lightCardBorder/60 rounded-2xl border border-lightCardBorder bg-lightCard shadow-xl  shadow-lightShadow transition-all duration-300 ease-in-out hover:border-cyan-950 hover:shadow-2xl  hover:shadow-lightShadow dark:divide-darkCardBorder/60 dark:border-darkCardBorder dark:bg-darkCard dark:shadow-darkShadow dark:hover:border-pink-950 dark:hover:bg-darkCardHover dark:hover:shadow-darkShadow sm:rotate-1 sm:hover:-rotate-0 sm:hover:scale-105">
 				{Object.entries(filteredSkills).map(([category, skills]) => (
 					<div
 						className="grid justify-start px-4 py-2 text-sm sm:grid-flow-col sm:text-base "
 						key={category}
 					>
-						<div className="font-virgil text-lightText text-color-animate w-32 pb-1 font-bold uppercase sm:pt-2 dark:text-pink-200">
+						<div className="text-color-animate w-32 pb-1 font-virgil font-bold uppercase text-lightText dark:text-pink-200 sm:pt-2">
 							{category}
 						</div>
-						<div className="font-redhat flex flex-wrap gap-2 sm:gap-4">
+						<div className="ml-2 flex flex-wrap gap-2 font-redhat sm:ml-0 sm:flex-wrap sm:gap-4">
 							{skills.length > 0 ? (
-								skills.map((skill) => (
-									<UniqueHighlight key={skill.skill} expertise={skill.expertise}>
-										<div className="flex h-6 items-center gap-1 px-1 sm:h-8 sm:gap-2 sm:px-3 sm:py-0">
-											<div className="flex h-4 w-4 items-center sm:h-5 sm:w-5">
-												<img
-													src={`/logos/${skill.skill.toLowerCase()}.svg`}
-													alt={`${skill.skill} logo`}
-													className="h-4 w-4 sm:h-5 sm:w-5"
-												/>
+								skills.map((skill) => {
+									// const lowercaseSkill = 'blender-light';
+									const iconClassName = skill.icon;
+									const classes = cn(iconClassName, 'h-5 w-5 sm:h-5 sm:w-5');
+									console.log(iconClassName);
+									return (
+										<UniqueHighlight key={skill.skill} expertise={skill.expertise}>
+											<div className="flex h-6 items-center gap-2 px-1 text-xs sm:h-8 sm:gap-2 sm:px-3 sm:py-0 sm:text-base">
+												<span className={classes} />
+												{skill.skill}
 											</div>
-											{skill.skill}
-										</div>
-									</UniqueHighlight>
-								))
+										</UniqueHighlight>
+									);
+								})
 							) : (
 								<div>No skills in this category</div>
 							)}
@@ -378,7 +414,7 @@ const Skills = () => {
 					</div>
 				))}
 			</div>
-			<p className=" font-virgil  mt-6 w-1/2 rotate-2 self-end text-end text-base text-cyan-800 sm:text-lg dark:text-pink-600">
+			<p className="mt-6 w-3/4 rotate-2  self-end text-end font-virgil text-base text-cyan-800 dark:text-pink-600 sm:w-2/3 sm:text-lg">
 				... I continually seek out new technologies to study during my leisure time in order to
 				broaden my set of skills.
 			</p>

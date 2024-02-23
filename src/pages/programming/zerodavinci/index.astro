@@ -4,17 +4,16 @@ import { Image } from 'astro:assets';
 import Layout from '@/layouts/Layout.astro';
 import Skillbox from '@/components/astroComponents/Skillbox.astro';
 import ViewSiteBadge from '@/components/astroComponents/ViewSiteBadge.astro';
-import GoBackBadge from '@/components/astroComponents/GoBackBadge.astro';
 import Macbook from '@/components/astroComponents/Macbook.astro';
 import Iphone from '@/components/astroComponents/Iphone.astro';
 
-import Vert from '@/images/zerodavinci/VertCount.png';
-import UV from '@/images/zerodavinci/UVWrap.png';
-import Render1 from '@/images/zerodavinci/gold1.png';
-import Blender1 from '@/images/zerodavinci/Blender1.png';
-import Blender2 from '@/images/zerodavinci/Blender2.png';
-import ZeroDV1 from '@/images/zerodavinci/ZeroDV1.jpg';
-import ZeroDV2 from '@/images/zerodavinci/ZeroDV2.jpg';
+import Vert from '@/assets/images/zerodavinci/VertCount.png';
+import UV from '@/assets/images/zerodavinci/UVWrap.png';
+import Render1 from '@/assets/images/zerodavinci/gold1.png';
+import Blender1 from '@/assets/images/zerodavinci/Blender1.png';
+import Blender2 from '@/assets/images/zerodavinci/Blender2.png';
+import ZeroDV1 from '@/assets/images/zerodavinci/ZeroDV1.jpg';
+import ZeroDV2 from '@/assets/images/zerodavinci/ZeroDV2.jpg';
 import HeadingLine from '@/components/astroComponents/HeadingLine.astro';
 ---
 
@@ -41,20 +40,31 @@ import HeadingLine from '@/components/astroComponents/HeadingLine.astro';
 			qualities and its transforming mechanical design, it was important to have an interactive
 			website featuring the 3D model where users can see the product in action. So I decided to
 			build a modern website harnessing the power of webGL API using
-			<Skillbox skill="three.js" /> and <Skillbox skill="react" />.<br /><br /> But first, I had to optimise
-			the 3D model to be low poly and efficient for webGL rendering.
+			<Skillbox skill="three.js" iconClass="dark:i-skill-icons-threejs-light i-logos-threejs" /> and
+			<Skillbox skill="react" iconClass="dark:i-logos-react i-skill-icons-react-dark" />.<br /><br
+			/> But first, I had to optimise the 3D model to be low poly and efficient for webGL rendering.
 		</p>
 
 		<HeadingLine title="webGL optimisations" />
 
 		<p>
 			So I took the .STEP file from <Skillbox skill="solidworks" /> and jumped straight into the world
-			of <Skillbox skill="blender" />.
+			of <Skillbox skill="blender" iconClass="i-logos-blender" />.
 		</p>
 
 		<div class="flex flex-col items-center justify-center gap-2 sm:flex-row">
-			<Image src={Blender1} alt="Picture of the CAD model" class="h-auto rounded-2xl sm:w-1/2" />
-			<Image src={Blender2} alt="Picture of the CAD model" class="h-auto rounded-2xl sm:w-1/2" />
+			<Image
+				src={Blender1}
+				alt="Picture of the CAD model"
+				class="h-auto rounded-2xl sm:w-1/2"
+				loading="eager"
+			/>
+			<Image
+				src={Blender2}
+				alt="Picture of the CAD model"
+				class="h-auto rounded-2xl sm:w-1/2"
+				loading="eager"
+			/>
 		</div>
 
 		<p>
@@ -84,11 +94,14 @@ import HeadingLine from '@/components/astroComponents/HeadingLine.astro';
 		<p>
 			Once the model was optimised and ready for webGL, I used the famous <Skillbox
 				skill="three.js"
+				iconClass="dark:i-skill-icons-threejs-light i-logos-threejs"
 			/> library <Skillbox skill="r3f" /> for adding animations and camera controls to a <Skillbox
 				skill="react"
-			/> website. Additionally I used <Skillbox skill="tailwindcss" /> for styling and <Skillbox
-				skill="mdx"
-			/> for blog posts.
+				iconClass="dark:i-logos-react i-skill-icons-react-dark"
+			/> website. Additionally I used <Skillbox
+				skill="tailwindcss"
+				iconClass="i-logos-tailwindcss-icon"
+			/> for styling and <Skillbox skill="mdx" iconClass="i-logos-mdx" /> for blog posts.
 		</p>
 
 		<Macbook className="max-w-full" />
@@ -105,7 +118,7 @@ import HeadingLine from '@/components/astroComponents/HeadingLine.astro';
 		</p>
 
 		<div class="max-w-60">
-			<Iphone className="max-w-60" />
+			<Iphone className="max-w-60" videoChoice="zero" />
 		</div>
 
 		<HeadingLine title="Result" />

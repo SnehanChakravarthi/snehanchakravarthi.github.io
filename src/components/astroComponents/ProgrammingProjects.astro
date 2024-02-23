@@ -2,19 +2,39 @@
 import Macbook from '../astroComponents/Macbook.astro';
 import Iphone from '../astroComponents/Iphone.astro';
 
-const zerodavinci = ['javascript', 'r3f', 'Three.JS', 'React', 'Blender', 'SolidWorks'];
-const acetrait = [
-	'Typescript',
-	'React',
-	'NodeJS',
-	'Next.JS',
-	'PostgreSQL',
-	'Supabase',
-	'OpenAI',
-	'Vercel'
+const zerodavinciSkills = [
+	{ skill: 'JavaScript', icon: 'i-skill-icons-javascript' },
+	{ skill: 'r3f', icon: 'i-logos-react-three-fiber' },
+	{ skill: 'Three.JS', icon: 'dark:i-skill-icons-threejs-light i-logos-threejs' },
+	{ skill: 'React', icon: 'dark:i-logos-react i-skill-icons-react-dark' },
+	{ skill: 'Blender', icon: 'i-logos-blender' },
+	{ skill: 'SolidWorks', icon: 'i-logos-solidworks' }
 ];
-const synchat = ['Docker', 'NodeJS', 'Express', 'Whatsapp API', 'Python', 'Flask'];
-const snehan = ['astro', 'three.js', 'react', 'javascript', 'r3f'];
+const acetraitSkills = [
+	{ skill: 'Typescript', icon: 'i-skill-icons-typescript' },
+	{ skill: 'React', icon: 'dark:i-logos-react i-skill-icons-react-dark' },
+	{ skill: 'NodeJS', icon: 'i-logos-nodejs-icon' },
+	{ skill: 'Next.JS', icon: 'i-logos-nextjs-icon' },
+	{ skill: 'PostgreSQL', icon: 'i-logos-postgresql' },
+	{ skill: 'Supabase', icon: 'i-logos-supabase-icon' },
+	{ skill: 'OpenAI', icon: 'i-logos-openai-icon' },
+	{ skill: 'Vercel', icon: 'i-logos-vercel-icon' }
+];
+const snehanSkills = [
+	{ skill: 'Astro', icon: 'i-logos-astro-icon' },
+	{ skill: 'Three.JS', icon: 'dark:i-skill-icons-threejs-light i-logos-threejs' },
+	{ skill: 'React', icon: 'dark:i-logos-react i-skill-icons-react-dark' },
+	{ skill: 'JavaScript', icon: 'i-skill-icons-javascript' },
+	{ skill: 'r3f', icon: 'i-logos-react-three-fiber' }
+];
+const synchatSkills = [
+	{ skill: 'Docker', icon: 'i-skill-icons-docker' },
+	{ skill: 'NodeJS', icon: 'i-logos-nodejs-icon' },
+	{ skill: 'Express', icon: 'dark:i-skill-icons-expressjs-light i-skill-icons-expressjs-dark' },
+	{ skill: 'Whatsapp API', icon: 'i-logos-whatsapp-icon' },
+	{ skill: 'Python', icon: 'i-logos-python' },
+	{ skill: 'Flask', icon: 'i-skill-icons-flask-light' }
+];
 ---
 
 <div
@@ -46,16 +66,12 @@ const snehan = ['astro', 'three.js', 'react', 'javascript', 'r3f'];
 			</ul>
 			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
 				{
-					zerodavinci.map((skill) => (
+					zerodavinciSkills.map((skill) => (
 						<div class="flex items-center justify-center gap-1 rounded-lg border border-black/20 bg-[#767676]/20 from-cyan-500 to-blue-500 px-1 py-1 text-xs font-bold group-hover:bg-gradient-to-br group-hover:text-black dark:border-white/10 dark:from-orange-600 dark:to-pink-500 sm:gap-2 sm:px-2 sm:text-sm">
-							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
-								<img
-									src={`/logos/${skill.toLowerCase()}.svg`}
-									alt={`${skill} logo`}
-									class="h-4 w-4 sm:h-5 sm:w-5"
-								/>
+							<div class="flex items-center">
+								<span class={`${skill.icon} h-3 w-3 sm:h-6 sm:w-6`} />
 							</div>
-							{skill}
+							{skill.skill}
 						</div>
 					))
 				}
@@ -64,12 +80,12 @@ const snehan = ['astro', 'three.js', 'react', 'javascript', 'r3f'];
 
 		<div class="flex max-h-96 flex-col items-center sm:flex-row">
 			<div
-				class="-translate-x-8 -rotate-1 scale-75 transition-transform duration-150 group-hover:-translate-x-6 group-hover:-rotate-6 group-hover:scale-110 sm:translate-x-8 sm:scale-100"
+				class="-translate-x-2 -rotate-1 scale-75 transition-transform duration-150 sm:translate-x-8 sm:scale-100 sm:group-hover:-translate-x-6 sm:group-hover:-rotate-6 sm:group-hover:scale-110"
 			>
 				<Macbook />
 			</div>
 			<div
-				class="max-w-52 -translate-y-60 translate-x-28 rotate-2 scale-75 transition-transform duration-150 group-hover:rotate-6 group-hover:scale-110 sm:-translate-x-16 sm:translate-y-0 sm:scale-100"
+				class="max-w-52 -translate-y-60 translate-x-16 rotate-2 scale-75 transition-transform duration-150 sm:-translate-x-16 sm:translate-y-0 sm:scale-100 sm:group-hover:rotate-6 sm:group-hover:scale-110"
 			>
 				<Iphone videoChoice="zero" />
 			</div>
@@ -80,7 +96,9 @@ const snehan = ['astro', 'three.js', 'react', 'javascript', 'r3f'];
 		class="project-card group flex cursor-pointer flex-col-reverse items-center justify-around border border-t-0 px-3 py-3 transition-all duration-150 ease-in-out hover:rounded-2xl hover:border hover:shadow-2xl hover:shadow-lightShadow dark:hover:shadow-darkShadow sm:hover:rotate-1 sm:hover:scale-105 lg:flex-row"
 		href="/programming/acetrait"
 	>
-		<div class="-rotate-2 transition-transform group-hover:-rotate-6 group-hover:scale-110">
+		<div
+			class="-rotate-2 scale-75 transition-transform sm:scale-100 sm:group-hover:-rotate-6 sm:group-hover:scale-110"
+		>
 			<Macbook videoChoice="acetrait" />
 		</div>
 		<div class="ml-4 space-y-4 font-redhat">
@@ -106,16 +124,12 @@ const snehan = ['astro', 'three.js', 'react', 'javascript', 'r3f'];
 			</ul>
 			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
 				{
-					acetrait.map((skill) => (
+					acetraitSkills.map((skill) => (
 						<div class="flex items-center justify-center gap-1    rounded-lg border border-black/20 bg-[#767676]/20 from-cyan-500 to-blue-500 px-1 py-1 text-xs font-bold group-hover:bg-gradient-to-br group-hover:text-black dark:border-white/10 dark:from-orange-600 dark:to-pink-500 sm:gap-2 sm:px-2 sm:text-sm">
 							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
-								<img
-									src={`/logos/${skill.toLowerCase()}.svg`}
-									alt={`${skill} logo`}
-									class="h-4 w-4 sm:h-5 sm:w-5"
-								/>
+								<span class={`${skill.icon} h-3 w-3 sm:h-6 sm:w-6`} />
 							</div>
-							{skill}
+							{skill.skill}
 						</div>
 					))
 				}
@@ -144,21 +158,19 @@ const snehan = ['astro', 'three.js', 'react', 'javascript', 'r3f'];
 			</ul>
 			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
 				{
-					snehan.map((skill) => (
+					snehanSkills.map((skill) => (
 						<div class="flex items-center justify-center gap-1    rounded-lg border border-black/20 bg-[#767676]/20 from-cyan-500 to-blue-500 px-1 py-1 text-xs font-bold group-hover:bg-gradient-to-br group-hover:text-black dark:border-white/10 dark:from-orange-600 dark:to-pink-500 sm:gap-2 sm:px-2 sm:text-sm">
 							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
-								<img
-									src={`/logos/${skill.toLowerCase()}.svg`}
-									alt={`${skill} logo`}
-									class="h-4 w-4 sm:h-5 sm:w-5"
-								/>
+								<span class={`${skill.icon} h-3 w-3 sm:h-6 sm:w-6`} />
 							</div>
-							{skill}
+							{skill.skill}
 						</div>
 					))
 				}
 			</ul>
-		</div><div class="rotate-2 transition-transform group-hover:rotate-6 group-hover:scale-110">
+		</div><div
+			class="rotate-2 transition-transform sm:group-hover:rotate-6 sm:group-hover:scale-110"
+		>
 			<Iphone />
 		</div>
 	</a>
@@ -178,7 +190,7 @@ const snehan = ['astro', 'three.js', 'react', 'javascript', 'r3f'];
 				</p>
 			</div>
 			<p class="text-sm sm:text-base">
-				Containerised servers [Node, Flask] for WhatsApp API and personal AI assistance.
+				Containerised servers [Express, Flask] for WhatsApp API and personal AI assistance.
 			</p>
 			<ul class="*:group-hover:text-decoration-card text-sm text-purple-500 sm:text-base">
 				<li>⭐️ Containerised Docker Server Images</li>
@@ -188,16 +200,12 @@ const snehan = ['astro', 'three.js', 'react', 'javascript', 'r3f'];
 			</ul>
 			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
 				{
-					synchat.map((skill) => (
+					synchatSkills.map((skill) => (
 						<div class="flex items-center justify-center gap-1 rounded-lg border border-black/20 bg-[#767676]/20 from-cyan-500 to-blue-500 px-1 py-1 text-xs font-bold  group-hover:bg-gradient-to-br group-hover:text-black dark:border-white/10 dark:from-orange-600 dark:to-pink-500 sm:gap-2 sm:px-2 sm:text-sm">
 							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
-								<img
-									src={`/logos/${skill.toLowerCase()}.svg`}
-									alt={`${skill} logo`}
-									class="h-4 w-4 sm:h-5 sm:w-5"
-								/>
+								<span class={`${skill.icon} h-3 w-3 sm:h-6 sm:w-6`} />
 							</div>
-							{skill}
+							{skill.skill}
 						</div>
 					))
 				}

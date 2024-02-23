@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 
-import SnehanImg3 from '@/images/snehan2.png';
+import SnehanImg3 from '@/assets/images/snehan2.png';
 
 import { Github, Linkedin, X, Instagram } from '@/components/SocialIcons.tsx';
 
@@ -180,12 +180,12 @@ import { authorData } from '@/siteConfig';
 					</div>
 				</div>
 				<div class="hidden sm:block sm:w-3/5 md:w-2/5 lg:absolute lg:bottom-0 lg:right-0">
-					<Image src={SnehanImg3} alt="Snehan Chakra Varthi" />
+					<Image src={SnehanImg3} alt="Snehan Chakra Varthi" loading="eager" />
 				</div>
 			</div>
 		</div>
 		<div class="w-4/5 sm:hidden">
-			<Image src={SnehanImg3} alt="Snehan Chakra Varthi" />
+			<Image src={SnehanImg3} alt="Snehan Chakra Varthi" loading="eager" />
 		</div>
 		<a
 			href="/CV.pdf"

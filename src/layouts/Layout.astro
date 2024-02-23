@@ -6,6 +6,7 @@ import { ViewTransitions, fade } from 'astro:transitions';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import { authorData } from '@/siteConfig';
+import { Icon } from 'astro-icon/components';
 
 interface Props {
 	title?: string;
@@ -33,12 +34,13 @@ const { title = 'Snehan Chakra Varthi | 2024 Portfolio' } = Astro.props;
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
-	<body class="min-h-screen w-screen bg-baseLight dark:bg-stone-950">
+	<body class="min-h-screen bg-baseLight dark:bg-stone-950">
 		<div
-			class="dark:hero-background-dark hero-background flex w-full justify-center bg-lightBG pb-40 text-lightText transition-colors duration-300 ease-in-out dark:bg-darkBG dark:text-darkText"
+			class="dark:hero-background-dark hero-background flex w-screen justify-center bg-lightBG pb-40 text-lightText transition-colors duration-300 ease-in-out dark:bg-darkBG dark:text-darkText"
 		>
 			<Navbar />
-			<main class="min-w-min pt-12" transition:animate={fade({ duration: '0.4s' })}>
+			<main class="min-w-0 pt-12" transition:animate={fade({ duration: '0.4s' })}>
+				<!-- <Icon name="skill-icons:svelte" /> -->
 				<slot />
 			</main>
 		</div>

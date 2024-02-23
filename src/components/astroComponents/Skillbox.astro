@@ -1,14 +1,10 @@
 ---
-const { skill } = Astro.props;
+const { skill, iconClass } = Astro.props;
 ---
 
 <span
 	class="inline-flex items-baseline gap-1 rounded-md border border-lightCardBorder bg-lightText/20 px-1 text-cyan-950 dark:border-white/10 dark:bg-darkText/10 dark:text-rose-500"
 >
-	<img
-		src={`/logos/${skill.toLowerCase()}.svg`}
-		alt={`${skill} logo`}
-		class="h-4 w-4 self-center"
-	/>
+	<span class={`${iconClass} self-center sm:scale-75`}></span>
 	<span>{skill}</span>
 </span>

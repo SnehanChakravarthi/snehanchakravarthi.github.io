@@ -5,6 +5,7 @@ import Hero from '@/components/Hero.astro';
 import About from '@/components/About.astro';
 import ProjectsAll from '@/components/ProjectsAll.astro';
 import Avatar from '@/components/reactComponents/Avatar.tsx';
+import SkillIcons from '@/components/astroComponents/SkillIcons.astro';
 ---
 
 <script>
@@ -12,13 +13,18 @@ import Avatar from '@/components/reactComponents/Avatar.tsx';
 		const scrollY = window.scrollY;
 		const avatarDiv = document.getElementById('avatar');
 		if (avatarDiv) {
-			avatarDiv.style.transform = `translateY(${scrollY * 2}px)`;
+			if (scrollY <= window.innerHeight * 0.7) {
+				avatarDiv.style.transform = `translateY(${scrollY * 2}px)`;
+				avatarDiv.style.display = 'block';
+			} else {
+				avatarDiv.style.display = 'none';
+			}
 		}
 	});
 </script>
 
 <Layout>
-	<div class="fixed left-0 z-10 h-screen w-full" id="avatar">
+	<div class="absolute left-0 z-10 h-screen w-screen" id="avatar">
 		<Avatar client:load />
 	</div>
 	<Hero />

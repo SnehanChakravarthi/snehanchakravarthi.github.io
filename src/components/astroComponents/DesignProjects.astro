@@ -1,10 +1,10 @@
 ---
 import { Image } from 'astro:assets';
 
-import rangerImage from '@/images/Ranger/1.jpg';
-import motsatsImage from '@/images/Motsats/1.jpg';
-import rebirthcradleImage from '@/images/RebirthCradle/1.jpg';
-import sightlightImage from '@/images/SightLight/1.jpg';
+import rangerImage from '@/assets/images/Ranger/1.jpg';
+import motsatsImage from '@/assets/images/Motsats/1.jpg';
+import rebirthcradleImage from '@/assets/images/RebirthCradle/1.jpg';
+import sightlightImage from '@/assets/images/SightLight/1.jpg';
 
 const designWorks = {
 	rebirthcradle: {
@@ -48,7 +48,13 @@ const designWorks = {
 					<p class="group-hover:text-decoration-card">{work.description}</p>
 					<p class="text-sm">{work.project}</p>
 				</div>
-				<Image src={work.image} alt={work.description} height={260} class="w-full  md:w-auto" />
+				<Image
+					src={work.image}
+					alt={work.description}
+					height={260}
+					class="w-full md:w-auto"
+					loading="eager"
+				/>
 			</a>
 		))
 	}

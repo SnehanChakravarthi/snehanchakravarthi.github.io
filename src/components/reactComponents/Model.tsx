@@ -85,7 +85,6 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 	const mouseIdleTimeoutRef = useRef<number | null>(null);
 
 	const idleTimeoutDuration = 1000;
-
 	const { nodes, materials, animations } = useGLTF('/cad/snehanReadyPlayerOne.glb') as GLTFResult;
 
 	useBlink(avatarMesh);
@@ -260,7 +259,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 		normalizedY = pointer.y;
 		mixerRef.current?.update(delta);
 		mixerRef2.current?.update(delta);
-		const changeThreshold = 0.05;
+		const changeThreshold = 0.08;
 		if (
 			Math.abs(normalizedX - lastMousePosition.current.x) > changeThreshold ||
 			Math.abs(normalizedY - lastMousePosition.current.y) > changeThreshold

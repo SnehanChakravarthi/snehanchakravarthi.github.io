@@ -30,13 +30,13 @@ const Avatar = () => {
 	}, []);
 
 	return (
-		<div className="relative h-screen w-full">
+		<div className="absolute h-screen w-full" ref={canvasContainerRef}>
 			<Canvas
 				camera={{
 					fov: 4,
 					near: 0.1,
 					far: 1000,
-					position: new THREE.Vector3(0, 0, 15)
+					position: new THREE.Vector3(0, -2, 15)
 				}}
 				dpr={[1, 2]}
 				frameloop={isOnScreen ? 'always' : 'never'}
@@ -47,7 +47,6 @@ const Avatar = () => {
 					<Environment preset="apartment" />
 				</Suspense>
 			</Canvas>
-			<div ref={canvasContainerRef} className="absolute bottom-0 h-72"></div>
 		</div>
 	);
 };

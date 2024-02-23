@@ -7,8 +7,8 @@ import ViewSiteBadge from '@/components/astroComponents/ViewSiteBadge.astro';
 import Macbook from '@/components/astroComponents/Macbook.astro';
 import HeadingLine from '@/components/astroComponents/HeadingLine.astro';
 
-import Acetrait1 from '@/images/acetrait/acetrait1.png';
-import Acetrait2 from '@/images/acetrait/acetrait2.png';
+import Acetrait1 from '@/assets/images/acetrait/acetrait1.png';
+import Acetrait2 from '@/assets/images/acetrait/acetrait2.png';
 ---
 
 <Layout title="Acetrait | Snehan Chakra Varthi">
@@ -34,34 +34,48 @@ import Acetrait2 from '@/images/acetrait/acetrait2.png';
 		<Macbook className="max-w-full" videoChoice="acetrait" />
 		<HeadingLine title="stack ?" />
 		<p>
-			Initially, I wanted to build the application with <Skillbox skill="svelte" /> in
-			<Skillbox skill="sveltekit" /> wishing to take advantage of Svelte's nice global state logic, but
-			my love for <Skillbox skill="next.js" /> combined with its amazing developer experience and the
-			latest <span class="text-decoration">Server Actions</span> made me go with Next.js. Back into the
-			world of <Skillbox skill="react" />, with <Skillbox skill="tailwindcss" />, I started to have
-			fun coding the front end in a matter of days.
+			Initially, I wanted to build the application with <Skillbox
+				skill="svelte"
+				iconClass="i-logos-svelte-icon "
+			/> in
+			<Skillbox skill="sveltekit" iconClass="i-logos-svelte-kit " /> wishing to take advantage of Svelte's
+			nice global state logic, but my love for <Skillbox
+				skill="next.js"
+				iconClass="i-logos-nextjs-icon "
+			/> combined with its amazing developer experience and the latest <span class="text-decoration"
+				>Server Actions</span
+			> made me go with Next.js. Back into the world of <Skillbox
+				skill="react"
+				iconClass="dark:i-logos-react i-skill-icons-react-dark "
+			/>, with <Skillbox skill="tailwindcss" iconClass="i-logos-tailwindcss-icon " />, I started to
+			have fun coding the front end in a matter of days.
 		</p>
 
 		<HeadingLine title="backend" />
 		<p>
-			I built the server mostly utilising the new Server Actions, with <Skillbox skill="nodejs" />,
-			and hosted on <Skillbox skill="vercel" /> ofc. Also used <span class="text-decoration"
-				>edge functions</span
-			> for couple of things in the application, to save money by not running function on the servers
+			I built the server mostly utilising the new Server Actions, with <Skillbox
+				skill="nodejs"
+				iconClass="i-logos-nodejs-icon "
+			/>, and hosted on <Skillbox skill="vercel" iconClass="i-logos-vercel-icon " /> ofc. Also used <span
+				class="text-decoration"
+				>edge functions
+			</span> for couple of things in the application, to save money by not running function on the servers
 			as there were long waiting periods for response from some API fetch calls from the LLMs, frequently
 			hitting the <span class="text-decoration">Server Execution Limits</span> on Vercel.
 		</p>
 		<Image src={Acetrait2} alt="Screenshot of Acetrait Create Job Utility" />
 
 		<p>
-			What else? I fully committed to <Skillbox skill="typescript" />. The database is built on <Skillbox
-				skill="supabase"
-			/>, and I was quickly able to set up <span class="text-decoration"
-				>secure cookie based auth</span
-			> and in no time I had a highly integrated RLS backed <Skillbox skill="postgresql" /> database,
-			just waiting for my server actions to come fetch and feed them. The AI is powered by <Skillbox
-				skill="openai"
-			/> API.
+			What else? I fully committed to <Skillbox
+				skill="typescript"
+				iconClass="i-skill-icons-typescript "
+			/>. The database is built on <Skillbox skill="supabase" iconClass="i-logos-supabase-icon " />,
+			and I was quickly able to set up <span class="text-decoration">secure cookie based auth</span>
+			and in no time I had a highly integrated RLS backed <Skillbox
+				skill="postgresql"
+				iconClass="i-logos-postgresql "
+			/> database, just waiting for my server actions to come fetch and feed them. The AI is powered
+			by <Skillbox skill="openai" iconClass="i-logos-openai-icon " /> API.
 		</p>
 
 		<HeadingLine title="features" />
@@ -133,7 +147,7 @@ import Acetrait2 from '@/images/acetrait/acetrait2.png';
 			to it. But it is already being used by a couple of organisations for testing and trying out
 			the AI features on real interviews. Head over to <a
 				href="https://www.acetrait.com"
-				class="text-decoration">www.zerodavinci.com</a
+				class="text-decoration">www.acetrait.com</a
 			> to test it yourself.
 			<br /><br />This project has led me to better understand AI and LLMs in general, and I had a
 			great developer experience while coding this application. Largely it was thanks to the amazing

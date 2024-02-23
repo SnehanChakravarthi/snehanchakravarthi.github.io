@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 
-import iphone from '@/images/devices/iPhone.png';
+import iphone from '@/assets/images/devices/iPhone.png';
 import zeroDV from '@/assets/video/zerodvAR.mp4';
 import snehan from '@/assets/video/snehan.mp4';
 
@@ -11,9 +11,21 @@ const selectedVideo = videoChoice === 'zero' ? zeroDV : snehan;
 ---
 
 <div class="relative flex justify-center">
-	<video class="absolute -z-10 mt-[8.1%] rounded-3xl px-[7.9%]" autoplay muted loop playsinline>
+	<video
+		class="absolute -z-10 mt-[7.9%] rounded-3xl px-[7.2%]"
+		autoplay
+		muted
+		loop
+		playsinline
+		transition:persist
+	>
 		<source src={selectedVideo} type="video/mp4" />
 		Your browser does not support the video tag.
 	</video>
-	<Image src={iphone} alt="Iphone device showing an application" class={className} />
+	<Image
+		src={iphone}
+		alt="Iphone device showing an application"
+		class={className}
+		loading="eager"
+	/>
 </div>

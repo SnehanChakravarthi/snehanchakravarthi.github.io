@@ -14,11 +14,13 @@
     "@astrojs/react": "^3.0.10",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/red-hat-mono": "^5.0.17",
+    "@iconify-json/skill-icons": "^1.1.8",
     "@react-three/drei": "^9.99.0",
     "@react-three/fiber": "^8.15.16",
     "@types/react": "^18.2.57",
     "@types/react-dom": "^18.2.19",
     "astro": "^4.4.0",
+    "astro-icon": "^1.1.0",
     "d3": "^7.8.5",
     "d3-shape": "^3.2.0",
     "r3f-perf": "^7.1.2",
@@ -32,6 +34,9 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@egoist/tailwindcss-icons": "^1.7.4",
+    "@iconify-json/logos": "^1.1.42",
+    "@iconify/tailwind": "^0.1.4",
     "@types/d3-shape": "^3.1.6",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
