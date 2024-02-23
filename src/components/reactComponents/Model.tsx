@@ -82,6 +82,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 	let normalizedY = 0;
 	const [isMouseIdle, setIsMouseIdle] = useState(false);
 	const lastMousePosition = useRef({ x: 0, y: 0 });
+
 	const mouseIdleTimeoutRef = useRef<number | null>(null);
 
 	const idleTimeoutDuration = 1000;
@@ -272,7 +273,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 
 			mouseIdleTimeoutRef.current = setTimeout(() => {
 				setIsMouseIdle(true);
-			}, idleTimeoutDuration);
+			}, idleTimeoutDuration) as unknown as number;
 
 			lastMousePosition.current = { x: normalizedX, y: normalizedY };
 		}

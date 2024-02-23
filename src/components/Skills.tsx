@@ -394,10 +394,8 @@ const Skills = () => {
 						<div className="ml-2 flex flex-wrap gap-2 font-redhat sm:ml-0 sm:flex-wrap sm:gap-4">
 							{skills.length > 0 ? (
 								skills.map((skill) => {
-									// const lowercaseSkill = 'blender-light';
 									const iconClassName = skill.icon;
 									const classes = cn(iconClassName, 'h-5 w-5 sm:h-5 sm:w-5');
-									console.log(iconClassName);
 									return (
 										<UniqueHighlight key={skill.skill} expertise={skill.expertise}>
 											<div className="flex h-6 items-center gap-2 px-1 text-xs sm:h-8 sm:gap-2 sm:px-3 sm:py-0 sm:text-base">
