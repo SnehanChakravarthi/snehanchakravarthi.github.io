@@ -82,12 +82,12 @@ const synchatSkills = [
 			<div
 				class="-translate-x-2 -rotate-1 scale-75 transition-transform duration-150 sm:translate-x-8 sm:scale-100 sm:group-hover:-translate-x-6 sm:group-hover:-rotate-6 sm:group-hover:scale-110"
 			>
-				<Macbook />
+				<Macbook transition:name="zero" transition:persist />
 			</div>
 			<div
 				class="max-w-52 -translate-y-60 translate-x-16 rotate-2 scale-75 transition-transform duration-150 sm:-translate-x-16 sm:translate-y-0 sm:scale-100 sm:group-hover:rotate-6 sm:group-hover:scale-110"
 			>
-				<Iphone videoChoice="zero" />
+				<Iphone videoChoice="zero" transition:name="iphoneZero" transition:persist />
 			</div>
 		</div>
 	</a>
@@ -99,7 +99,7 @@ const synchatSkills = [
 		<div
 			class="-rotate-2 scale-75 transition-transform sm:scale-100 sm:group-hover:-rotate-6 sm:group-hover:scale-110"
 		>
-			<Macbook videoChoice="acetrait" />
+			<Macbook videoChoice="acetrait" transition:name="macbookAce" transition:persist />
 		</div>
 		<div class="ml-4 space-y-4 font-redhat">
 			<div class="flex flex-col items-baseline xl:flex-row xl:gap-4">
@@ -171,7 +171,7 @@ const synchatSkills = [
 		</div><div
 			class="rotate-2 transition-transform sm:group-hover:rotate-6 sm:group-hover:scale-110"
 		>
-			<Iphone />
+			<Iphone videoChoice="snehan" transition:name="iphone" transition:persist />
 		</div>
 	</a>
 	<a

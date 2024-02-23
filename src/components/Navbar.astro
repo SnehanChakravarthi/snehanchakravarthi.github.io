@@ -48,8 +48,8 @@ const menu = [
 </script>
 
 <div
+	transition:persist="true"
 	class="fixed left-0 top-0 z-10 flex h-12 w-screen items-center justify-between border-b border-lightGrid bg-lightBG font-microgammaMedium text-cyan-600 dark:border-darkGrid dark:bg-darkBG dark:text-pink-600 sm:bg-white/30 sm:px-6 sm:backdrop-blur-3xl sm:dark:bg-black/30"
-	transition:persist
 >
 	<a href="/" class="z-20 mt-12 w-40 -rotate-3 px-3 sm:px-0">
 		<Image
@@ -101,48 +101,46 @@ const menu = [
 				</svg></a
 			>
 		</li>
-		<li class="flex">
-			<button
-				class="theme-toggle mx-auto flex h-12 w-12 cursor-pointer items-center justify-center border border-b-0 border-t-0 border-lightGrid hover:bg-lightBG dark:border-darkGrid dark:hover:bg-darkBG"
-				data-theme-toggle
-				aria-label="toggle theme"
+		<button
+			class="theme-toggle mx-auto flex h-12 w-12 cursor-pointer items-center justify-center border border-b-0 border-t-0 border-lightGrid hover:bg-lightBG dark:border-darkGrid dark:hover:bg-darkBG"
+			data-theme-toggle
+			aria-label="toggle theme"
+		>
+			<span class="moon"
+				><svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.5"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg
+				></span
 			>
-				<span class="moon"
-					><svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.5"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg
-					></span
-				>
-				<span class="sun"
-					><svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.5"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						class="lucide lucide-sun"
-						><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"
-						></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"
-						></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path
-							d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg
-					></span
-				>
-			</button>
-			<div class="sm:hidden">
-				<DropdownMenu menu={menu} client:load />
-			</div>
-		</li>
+			<span class="sun"
+				><svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.5"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="lucide lucide-sun"
+					><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"
+					></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"
+					></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"
+					></path><path d="m19.07 4.93-1.41 1.41"></path></svg
+				></span
+			>
+		</button>
+		<div class="sm:hidden">
+			<DropdownMenu menu={menu} client:load />
+		</div>
 	</ul>
 </div>

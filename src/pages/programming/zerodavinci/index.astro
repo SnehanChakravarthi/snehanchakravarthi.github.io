@@ -104,7 +104,7 @@ import HeadingLine from '@/components/astroComponents/HeadingLine.astro';
 			/> for styling and <Skillbox skill="mdx" iconClass="i-logos-mdx" /> for blog posts.
 		</p>
 
-		<Macbook className="max-w-full" />
+		<Macbook className="max-w-full" transition:name="zero" transition:persist />
 
 		<HeadingLine title="AR Visualisation" />
 
@@ -118,7 +118,12 @@ import HeadingLine from '@/components/astroComponents/HeadingLine.astro';
 		</p>
 
 		<div class="max-w-60">
-			<Iphone className="max-w-60" videoChoice="zero" />
+			<Iphone
+				className="max-w-60"
+				videoChoice="zero"
+				transition:name="iphoneZero"
+				transition:persist
+			/>
 		</div>
 
 		<HeadingLine title="Result" />

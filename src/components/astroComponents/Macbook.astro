@@ -11,15 +11,7 @@ const selectedVideo = videoChoice === 'acetrait' ? video2 : video;
 ---
 
 <div class="relative flex justify-center">
-	<video
-		class="absolute -z-10 mt-[7.2%] px-[10%]"
-		playsinline
-		autoplay
-		muted
-		loop
-		playsinline
-		transition:persist
-	>
+	<video class="absolute -z-10 mt-[7.2%] px-[10%]" playsinline autoplay muted loop>
 		<source src={selectedVideo} type="video/mp4" />
 		Your browser does not support the video tag.
 	</video>
