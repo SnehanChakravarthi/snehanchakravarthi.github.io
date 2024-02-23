@@ -303,10 +303,10 @@ const Skills = () => {
 
 	return (
 		<section id="skills" className="relative flex w-screen max-w-7xl flex-col px-4 md:px-16">
-			<div className="relative  pt-20">
+			<div className="relative overflow-hidden pt-20">
 				<svg ref={svgRef} className="absolute left-0 top-0 h-full w-full" />
 
-				<div className="text-color-animate z-0 ml-4 -rotate-1 font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl">
+				<div className="text-color-animate z-0 ml-0 -rotate-1 font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:ml-4 sm:text-4xl">
 					<p className="text-decoration -rotate-2 text-xl sm:rotate-1 sm:text-3xl">
 						"Swiss Army{' '}
 						<span className="line-through decoration-black decoration-4 dark:decoration-pink-300">

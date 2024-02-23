@@ -36,7 +36,7 @@ const Avatar = () => {
 					fov: 4,
 					near: 0.1,
 					far: 1000,
-					position: new THREE.Vector3(0, -2, 15)
+					position: new THREE.Vector3(0, -2, 17)
 				}}
 				dpr={[1, 2]}
 				frameloop={isOnScreen ? 'always' : 'never'}
