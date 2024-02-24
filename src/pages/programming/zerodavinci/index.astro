@@ -5,7 +5,7 @@ import Layout from '@/layouts/Layout.astro';
 import Skillbox from '@/components/astroComponents/Skillbox.astro';
 import ViewSiteBadge from '@/components/astroComponents/ViewSiteBadge.astro';
 import Macbook from '@/components/astroComponents/Macbook.astro';
-import Iphone from '@/components/astroComponents/Iphone.astro';
+import Iphone from '@/components/astroComponents/Iphone.tsx';
 
 import Vert from '@/assets/images/zerodavinci/VertCount.png';
 import UV from '@/assets/images/zerodavinci/UVWrap.png';
@@ -117,7 +117,7 @@ import HeadingLine from '@/components/astroComponents/HeadingLine.astro';
 		</p>
 
 		<div class="max-w-60">
-			<Iphone className="max-w-60" videoChoice="zerophone" transition:persist="zerophone" />
+			<Iphone className="max-w-60" videoChoice="zerophone" />
 		</div>
 
 		<HeadingLine title="Result" />
