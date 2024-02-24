@@ -31,7 +31,6 @@ const { title = 'Snehan Chakra Varthi | 2024 Portfolio' } = Astro.props;
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<ViewTransitions />
 	</head>
 	<body
 		class="dark:hero-background-dark hero-background min-w-full bg-lightBG transition-colors duration-700 ease-in-out dark:bg-darkBG"
@@ -39,10 +38,9 @@ const { title = 'Snehan Chakra Varthi | 2024 Portfolio' } = Astro.props;
 		<Navbar />
 		<main
 			class="max-w-screen flex min-h-screen flex-col items-center pt-12 text-lightText dark:text-darkText"
-			transition:animate={fade({ duration: '0.4s' })}
 		>
 			<slot />
 		</main>
 		<Footer />
-	</body>
+	</body><!-- transition:animate={fade({ duration: '0.4s' })} -->
 </html>
