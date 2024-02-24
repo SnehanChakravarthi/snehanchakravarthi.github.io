@@ -2,12 +2,12 @@
 import { Image } from 'astro:assets';
 
 import macbook from '@/assets/images/devices/MacBookPro.png';
-import video from '@/assets/video/zerodvvideo.mp4';
-import video2 from '@/assets/video/Acetrait.mp4';
+import zeroDVVideo from '@/assets/video/zerodvvideo.mp4';
+import acetraitVideo from '@/assets/video/Acetrait.mp4';
 
 const { className = 'max-w-96', videoChoice } = Astro.props;
 
-const selectedVideo = videoChoice === 'acetrait' ? video2 : video;
+const selectedVideo = videoChoice === 'acetrait' ? acetraitVideo : zeroDVVideo;
 ---
 
 <div class="relative flex justify-center">
@@ -17,7 +17,7 @@ const selectedVideo = videoChoice === 'acetrait' ? video2 : video;
 		autoplay
 		muted
 		loop
-		transition:persist="macbookMedia"
+		transition:persist
 	>
 		<source src={selectedVideo} type="video/mp4" />
 		Your browser does not support the video tag.
