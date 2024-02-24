@@ -13,7 +13,6 @@ import { authorData } from '@/siteConfig';
 		attachEventListeners();
 	});
 
-	// Re-initialize after swapping pages
 	document.addEventListener('astro:after-swap', attachEventListeners);
 
 	function attachEventListeners() {
@@ -38,11 +37,9 @@ import { authorData } from '@/siteConfig';
 		}
 	}
 
-	// Clean up before the page is swapped
 	document.addEventListener(
 		'astro:before-swap',
 		() => {
-			// Remove event listeners to prevent memory leaks or errors
 			const buttons = document.querySelectorAll('.copyBtn');
 			buttons.forEach((button) => {
 				button.removeEventListener('click', handleButtonClick);
@@ -93,7 +90,7 @@ import { authorData } from '@/siteConfig';
 			>
 				<div class="flex h-full w-full flex-col items-end">
 					<div class="flex w-full flex-col justify-start font-redhat text-sm sm:text-base">
-						<div class="space-y-2 p-3 text-justify font-virgil sm:px-6">
+						<div class="space-y-1 p-3 text-justify font-virgil sm:px-6">
 							<div class="flex gap-3">
 								<p class="about-card-text">Name:</p>
 								<span>{authorData.name}</span>
@@ -142,7 +139,6 @@ import { authorData } from '@/siteConfig';
 								</ul>
 							</div>
 						</div>
-
 						<div class="flex flex-row items-center justify-between">
 							<div class="flex flex-col items-start p-3 sm:px-6">
 								<p class="dark:text-shadow-3d-dark text-shadow-3d mb-4 text-xl sm:text-2xl">Contact Me</p>
@@ -181,7 +177,7 @@ import { authorData } from '@/siteConfig';
 														href={url}
 														target="_blank"
 														rel="noopener noreferrer"
-														class="flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border border-lightGrid bg-lightCardHover text-sm hover:bg-black/20 dark:border-pink-900 dark:bg-pink-900/30 hover:dark:bg-pink-900"
+														class="flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border border-lightGrid bg-lightCardHover text-sm hover:bg-[#bdd5de] dark:border-pink-900 dark:bg-pink-900/30 hover:dark:bg-pink-900"
 													>
 														{name === 'github' && <Github />}
 														{name === 'linkedin' && <Linkedin />}
