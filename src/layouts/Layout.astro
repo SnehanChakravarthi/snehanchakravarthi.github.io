@@ -31,12 +31,14 @@ const { title = 'Snehan Chakra Varthi | 2024 Portfolio' } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="w-screen bg-lightBG transition-colors duration-300 ease-in-out dark:bg-darkBG">
+	<body
+		class="hero-background dark:hero-background-dark w-screen bg-lightBG bg-fixed transition-colors duration-300 ease-in-out dark:bg-darkBG"
+	>
 		<Navbar />
 		<main
 			class="flex min-h-screen w-screen min-w-full flex-col items-center pt-12 text-lightText dark:text-darkText"
 		>
-			<!-- <slot /> -->
+			<slot />
 		</main>
 		<Footer />
 	</body><!-- transition:animate={fade({ duration: '0.4s' })} -->
