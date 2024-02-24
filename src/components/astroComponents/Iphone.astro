@@ -10,7 +10,7 @@ const { className = 'max-w-52', videoChoice } = Astro.props;
 const selectedVideo = videoChoice === 'zerophone' ? zeroDV : snehan;
 ---
 
-<div class="relative flex justify-center">
+<div class="relative flex justify-center" transition:persist={videoChoice}>
 	<video class="absolute -z-10 mt-[8.2%] rounded-3xl px-[7.7%]" autoplay muted loop playsinline>
 		<source src={selectedVideo} type="video/mp4" />
 		Your browser does not support the video tag.
