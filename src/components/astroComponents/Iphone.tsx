@@ -1,6 +1,4 @@
 import React from 'react';
-import zeroDV from '/video/zerodvAR.mp4';
-import snehan from '/video/snehan.mp4';
 
 function Iphone({
 	className = 'max-w-52',
@@ -9,7 +7,7 @@ function Iphone({
 	className?: string;
 	videoChoice?: string;
 }) {
-	const selectedVideo = videoChoice === 'zerophone' ? zeroDV : snehan;
+	const selectedVideo = videoChoice === 'zerophone' ? '/video/zerodvAR.mp4' : '/video/snehan.mp4';
 	return (
 		<div className="relative flex justify-center">
 			<video
@@ -26,7 +24,6 @@ function Iphone({
 				src="/src/assets/images/devices/iPhone.png"
 				alt="Iphone device showing an application"
 				className={className}
-				loading="eager"
 			/>
 		</div>
 	);
