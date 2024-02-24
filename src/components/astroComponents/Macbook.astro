@@ -2,12 +2,10 @@
 import { Image } from 'astro:assets';
 
 import macbook from '@/assets/images/devices/MacBookPro.png';
-import zeroDVVideo from '/video/zerodvvideo.mp4';
-import acetraitVideo from '/video/Acetrait.mp4';
 
 const { className = 'max-w-96', videoChoice } = Astro.props;
 
-const selectedVideo = videoChoice === 'acetrait' ? acetraitVideo : zeroDVVideo;
+const selectedVideo = videoChoice === 'acetrait' ? '/video/Acetrait.mp4' : '/video/zerodvvideo.mp4';
 ---
 
 <div class="relative flex justify-center">
