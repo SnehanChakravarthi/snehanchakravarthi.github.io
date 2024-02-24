@@ -2,7 +2,6 @@
 import '@/styles/globals.css';
 
 import '@fontsource-variable/red-hat-mono';
-import { ViewTransitions, fade } from 'astro:transitions';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import { authorData } from '@/siteConfig';
@@ -31,7 +30,6 @@ const { title = 'Snehan Chakra Varthi | 2024 Portfolio' } = Astro.props;
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<ViewTransitions />
 	</head>
 	<body
 		class="dark:hero-background-dark hero-background min-w-full bg-lightBG transition-colors duration-300 ease-in-out dark:bg-darkBG"
