@@ -11,13 +11,7 @@ const selectedVideo = videoChoice === 'zero' ? zeroDV : snehan;
 ---
 
 <div class="relative flex justify-center">
-	<video
-		class="absolute -z-10 mt-[8.2%] rounded-3xl px-[7.7%]"
-		autoplay
-		muted
-		loop
-		transition:persist
-	>
+	<video class="absolute -z-10 mt-[8.2%] rounded-3xl px-[7.7%]" autoplay muted loop>
 		<source src={selectedVideo} type="video/mp4" />
 		Your browser does not support the video tag.
 	</video>
