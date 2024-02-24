@@ -38,12 +38,9 @@ const synchatSkills = [
 ---
 
 <div
-	class="mt-2 rounded-2xl bg-lightCard shadow-xl shadow-lightShadow dark:bg-darkCard dark:shadow-darkShadow sm:mt-10 lg:-rotate-1"
+	class="*:programming-card mt-2 rounded-2xl shadow-xl shadow-lightShadow dark:shadow-darkShadow sm:mt-10 lg:-rotate-1"
 >
-	<a
-		class="project-card group flex cursor-pointer flex-col items-center justify-around rounded-t-2xl border px-3 py-3 transition-all duration-150 ease-in-out hover:rounded-2xl hover:shadow-2xl hover:shadow-lightShadow dark:hover:shadow-darkShadow sm:hover:rotate-1 sm:hover:scale-105 lg:flex-row"
-		href="/programming/zerodavinci"
-	>
+	<a class="group flex-col lg:flex-row" href="/programming/zerodavinci">
 		<div class="ml-4 space-y-4 font-redhat">
 			<div class="flex flex-col items-baseline xl:flex-row xl:gap-4">
 				<h2
@@ -67,8 +64,8 @@ const synchatSkills = [
 			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
 				{
 					zerodavinciSkills.map((skill) => (
-						<div class="flex items-center justify-center gap-1 rounded-lg border border-black/20 bg-[#767676]/20 from-cyan-500 to-blue-500 px-1 py-1 text-xs font-bold group-hover:bg-gradient-to-br group-hover:text-black dark:border-white/10 dark:from-orange-600 dark:to-pink-500 sm:gap-2 sm:px-2 sm:text-sm">
-							<div class="flex items-center">
+						<div class="programming-card-skill-box">
+							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
 								<span class={`${skill.icon} h-3 w-3 sm:h-6 sm:w-6`} />
 							</div>
 							{skill.skill}
@@ -80,24 +77,21 @@ const synchatSkills = [
 
 		<div class="flex max-h-96 flex-col items-center sm:flex-row">
 			<div
-				class="-translate-x-2 -rotate-1 scale-75 transition-transform duration-150 sm:translate-x-8 sm:scale-100 sm:group-hover:-translate-x-6 sm:group-hover:-rotate-6 sm:group-hover:scale-110"
+				class="-translate-x-2 -rotate-1 scale-75 transition-transform duration-150 sm:translate-x-8 sm:scale-100 md:group-hover:-translate-x-6 md:group-hover:-rotate-6 md:group-hover:scale-110"
 			>
 				<Macbook transition:name="zero" transition:persist />
 			</div>
 			<div
-				class="max-w-52 -translate-y-60 translate-x-16 rotate-2 scale-75 transition-transform duration-150 sm:-translate-x-16 sm:translate-y-0 sm:scale-100 sm:group-hover:rotate-6 sm:group-hover:scale-110"
+				class="max-w-52 -translate-y-60 translate-x-16 rotate-2 scale-75 transition-transform duration-150 sm:-translate-x-16 sm:translate-y-0 sm:scale-100 md:group-hover:rotate-6 md:group-hover:scale-110"
 			>
 				<Iphone videoChoice="zero" transition:name="iphoneZero" transition:persist />
 			</div>
 		</div>
 	</a>
 
-	<a
-		class="project-card group flex cursor-pointer flex-col-reverse items-center justify-around border border-t-0 px-3 py-3 transition-all duration-150 ease-in-out hover:rounded-2xl hover:border hover:shadow-2xl hover:shadow-lightShadow dark:hover:shadow-darkShadow sm:hover:rotate-1 sm:hover:scale-105 lg:flex-row"
-		href="/programming/acetrait"
-	>
+	<a class="group flex-col-reverse lg:flex-row" href="/programming/acetrait">
 		<div
-			class="-rotate-2 scale-75 transition-transform sm:scale-100 sm:group-hover:-rotate-6 sm:group-hover:scale-110"
+			class="-rotate-2 scale-75 transition-transform sm:scale-100 md:group-hover:-rotate-6 md:group-hover:scale-110"
 		>
 			<Macbook videoChoice="acetrait" transition:name="macbookAce" transition:persist />
 		</div>
@@ -125,7 +119,7 @@ const synchatSkills = [
 			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
 				{
 					acetraitSkills.map((skill) => (
-						<div class="flex items-center justify-center gap-1    rounded-lg border border-black/20 bg-[#767676]/20 from-cyan-500 to-blue-500 px-1 py-1 text-xs font-bold group-hover:bg-gradient-to-br group-hover:text-black dark:border-white/10 dark:from-orange-600 dark:to-pink-500 sm:gap-2 sm:px-2 sm:text-sm">
+						<div class="programming-card-skill-box">
 							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
 								<span class={`${skill.icon} h-3 w-3 sm:h-6 sm:w-6`} />
 							</div>
@@ -136,10 +130,8 @@ const synchatSkills = [
 			</ul>
 		</div>
 	</a>
-	<a
-		class="project-card group flex cursor-pointer flex-col items-center justify-around border-x px-3 py-3 transition-all duration-150 ease-in-out hover:rounded-2xl hover:border hover:shadow-2xl hover:shadow-lightShadow dark:hover:shadow-darkShadow sm:hover:rotate-1 sm:hover:scale-105 lg:flex-row"
-		href="/programming/snehansite"
-	>
+
+	<a class="group flex-col lg:flex-row" href="/programming/snehansite">
 		<div class="ml-4 space-y-4 font-redhat">
 			<div class="flex flex-col items-baseline xl:flex-row xl:gap-4">
 				<h2
@@ -159,7 +151,7 @@ const synchatSkills = [
 			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
 				{
 					snehanSkills.map((skill) => (
-						<div class="flex items-center justify-center gap-1    rounded-lg border border-black/20 bg-[#767676]/20 from-cyan-500 to-blue-500 px-1 py-1 text-xs font-bold group-hover:bg-gradient-to-br group-hover:text-black dark:border-white/10 dark:from-orange-600 dark:to-pink-500 sm:gap-2 sm:px-2 sm:text-sm">
+						<div class="programming-card-skill-box">
 							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
 								<span class={`${skill.icon} h-3 w-3 sm:h-6 sm:w-6`} />
 							</div>
@@ -169,15 +161,13 @@ const synchatSkills = [
 				}
 			</ul>
 		</div><div
-			class="rotate-2 transition-transform sm:group-hover:rotate-6 sm:group-hover:scale-110"
+			class="rotate-2 transition-transform md:group-hover:rotate-6 md:group-hover:scale-110"
 		>
 			<Iphone videoChoice="snehan" transition:name="iphone" transition:persist />
 		</div>
 	</a>
-	<a
-		class="project-card group flex cursor-pointer items-center justify-around rounded-b-2xl border px-3 py-6 transition-all duration-150 ease-in-out hover:rounded-2xl hover:border hover:shadow-2xl hover:shadow-lightShadow dark:hover:shadow-darkShadow sm:hover:rotate-1 sm:hover:scale-105"
-		href="/programming/synchat"
-	>
+
+	<a class="group rounded-b-2xl lg:flex-row" href="/programming/synchat">
 		<div class="mx-4 space-y-4 font-redhat">
 			<div class="flex flex-col items-baseline xl:flex-row xl:gap-4">
 				<h2
@@ -201,7 +191,7 @@ const synchatSkills = [
 			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
 				{
 					synchatSkills.map((skill) => (
-						<div class="flex items-center justify-center gap-1 rounded-lg border border-black/20 bg-[#767676]/20 from-cyan-500 to-blue-500 px-1 py-1 text-xs font-bold  group-hover:bg-gradient-to-br group-hover:text-black dark:border-white/10 dark:from-orange-600 dark:to-pink-500 sm:gap-2 sm:px-2 sm:text-sm">
+						<div class="programming-card-skill-box">
 							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
 								<span class={`${skill.icon} h-3 w-3 sm:h-6 sm:w-6`} />
 							</div>

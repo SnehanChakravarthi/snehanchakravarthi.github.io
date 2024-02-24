@@ -48,36 +48,40 @@
 		display: block;
 	}
 	.text-shadow-3d {
-		@apply font-microgammaBold bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text uppercase text-transparent;
-		filter: drop-shadow(1px 1px 0px rgba(22, 78, 99, 1))
-			drop-shadow(2px 2px 0px rgba(22, 78, 99, 1)) drop-shadow(3px 3px 0px rgba(22, 78, 99, 1));
+		@apply bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text font-microgammaBold uppercase text-transparent;
+		filter: drop-shadow(1px 1px 0px rgba(22, 78, 99, 1)) drop-shadow(2px 2px 0px rgba(22, 78, 99, 1))
+			drop-shadow(3px 3px 0px rgba(22, 78, 99, 1));
 	}
 
 	.text-shadow-3d-dark {
-		@apply font-microgammaBold bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text uppercase text-transparent;
+		@apply bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text font-microgammaBold uppercase text-transparent;
 		filter: drop-shadow(1px 1px 0px rgba(163, 26, 87, 1))
 			drop-shadow(2px 2px 0px rgba(163, 26, 87, 1)) drop-shadow(3px 3px 0px rgba(163, 26, 87, 1));
+	}
+
+	.footer {
+		@apply border-t border-lightGrid bg-lightBG font-microgammaMedium text-cyan-800 dark:border-darkGrid dark:bg-darkBG dark:text-pink-600;
 	}
 
 	.hero-background-dark {
 		background: linear-gradient(
 				to bottom,
 				rgba(16, 18, 20, 0.97) 10%,
-				rgba(42, 11, 25, 0.856) 70%,
+				rgba(42, 11, 25, 0.883) 70%,
 				rgba(78, 26, 52, 0.5) 100%
 			),
-			url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24'%3E%3Cg fill='%23a17288' fill-opacity='0.3'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+			url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24'%3E%3Cg fill='%23a17288' fill-opacity='0.2'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
 		background-attachment: fixed;
 	}
 
 	.hero-background {
 		background: linear-gradient(
 				to bottom,
-				rgba(242, 240, 237, 0.9) 10%,
-				rgba(180, 213, 222, 0.9) 80%,
-				rgba(101, 157, 173, 0.6) 100%
+				rgba(242, 240, 237, 0.97) 10%,
+				rgba(155, 189, 198, 0.9) 80%,
+				rgba(117, 171, 186, 0.78) 100%
 			),
-			url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24'%3E%3Cg fill='%23155e75' fill-opacity='0.2'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+			url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24'%3E%3Cg fill='%23155e75' fill-opacity='0.6'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
 		background-attachment: fixed;
 	}
 
@@ -163,18 +167,33 @@
 		@apply transition-all duration-300 ease-in-out;
 	}
 
-	.project-card {
-		@apply border-lightCardBorder bg-lightCard hover:bg-lightCardHover dark:border-darkCardBorder dark:bg-darkCard dark:hover:bg-darkCardHover hover:border-cyan-950 dark:hover:border-pink-950;
+	.programming-card {
+		@apply flex cursor-pointer items-center justify-around rounded-none border border-b-0 border-lightCardBorder bg-lightCard p-3  transition-all duration-150 ease-in-out  first:rounded-t-2xl last:rounded-b-2xl last:border hover:rounded-2xl hover:border hover:border-cyan-800 hover:bg-lightCardHover hover:shadow-2xl hover:shadow-lightShadow dark:border-darkCardBorder dark:bg-darkCard dark:hover:border-pink-950 dark:hover:bg-darkCardHover dark:hover:shadow-darkShadow md:hover:rotate-1 md:hover:scale-105;
 	}
 
-	.about-card-dark {
-		font-family: 'Virgil', sans-serif;
-		color: #ec4899;
+	.programming-card-skill-box {
+		@apply flex items-center justify-center gap-1 rounded-lg border border-black/20 bg-[#767676]/20 from-cyan-500 to-blue-500 p-1 text-xs font-bold group-hover:bg-gradient-to-br group-hover:text-black dark:border-white/10 dark:from-orange-600 dark:to-pink-500 sm:gap-2 sm:px-2 sm:text-sm;
 	}
+
+	.project-card {
+		@apply border-lightCardBorder bg-lightCard hover:border-cyan-800 hover:bg-lightCardHover dark:border-darkCardBorder dark:bg-darkCard dark:hover:border-pink-950 dark:hover:bg-darkCardHover;
+	}
+
 	.about-card {
-		font-family: 'Virgil', sans-serif;
-		color: #083344;
+		@apply rounded-2xl border  border-lightCardBorder  bg-lightCard shadow-xl shadow-lightShadow dark:border-pink-950 dark:bg-darkCardHover dark:shadow-darkShadow;
 	}
+
+	.about-card-text {
+		@apply font-virgil text-cyan-500 dark:text-pink-500;
+	}
+	.about-card-text-back {
+		@apply font-virgil text-cyan-800 dark:text-pink-500;
+	}
+
+	.about-card-skill-box {
+		@apply inline-block rounded-lg border border-lightGrid bg-lightCardHover px-2 text-sm dark:border-pink-900 dark:bg-pink-900/30;
+	}
+
 	.unique-highlight-wrapper {
 		position: relative;
 		display: inline-block;
@@ -201,13 +220,7 @@
 		background-clip: text;
 		-webkit-background-clip: text;
 		display: inline;
-		padding: 0.25rem; /* Adjust padding as needed */
-	}
-
-	/* For dark mode support */
-	.dark .text-decoration {
-		@apply dark:from-pink-600 dark:to-orange-500;
-		color: transparent;
+		padding: 0.25rem;
 	}
 
 	.text-decoration-card {
@@ -215,10 +228,5 @@
 		color: transparent;
 		background-clip: text;
 		-webkit-background-clip: text;
-	}
-
-	.dark .text-decoration-card {
-		@apply dark:from-pink-600 dark:to-orange-500;
-		color: transparent;
 	}
 }

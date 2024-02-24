@@ -36,7 +36,8 @@ export default {
 				lightShadow: '#05202b',
 				lightCardHover: '#d5e5eb',
 				darkCardHover: '#1c0510',
-				baseLight: '#7fabb8'
+				baseLight: '#7ba9b5',
+				baseDark: '#381627'
 			},
 			dropShadow: {
 				'2xl': '1px 4px 1px rgba(22, 78, 99, 1)'

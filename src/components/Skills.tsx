@@ -205,10 +205,7 @@ const Skills = () => {
 		];
 
 		// Assuming the circle's center is mi dway between start and end, vertically and horizontally
-		const circleCenter = [
-			(startPoint[0] + endPoint[0]) / 2,
-			(startPoint[1] + endPoint[1]) / 2 + 20
-		];
+		const circleCenter = [(startPoint[0] + endPoint[0]) / 2, (startPoint[1] + endPoint[1]) / 2 + 20];
 
 		let intermediatePoints = [];
 
@@ -337,9 +334,7 @@ const Skills = () => {
 							<button
 								className={cn(
 									'px-3 text-slate-500 dark:text-slate-300',
-									expertiseVisibility.all
-										? 'dark:circle-sketch-highlight-dark circle-sketch-highlight'
-										: ''
+									expertiseVisibility.all ? 'dark:circle-sketch-highlight-dark circle-sketch-highlight' : ''
 								)}
 								onClick={() => toggleExpertise('all')}
 							>
@@ -382,7 +377,7 @@ const Skills = () => {
 					</div>
 				</div>
 			</div>
-			<div className="flex w-full flex-col justify-center divide-y divide-lightCardBorder/60 rounded-2xl border border-lightCardBorder bg-lightCard shadow-xl  shadow-lightShadow transition-all duration-300 ease-in-out hover:border-cyan-950 hover:shadow-2xl  hover:shadow-lightShadow dark:divide-darkCardBorder/60 dark:border-darkCardBorder dark:bg-darkCard dark:shadow-darkShadow dark:hover:border-pink-950 dark:hover:bg-darkCardHover dark:hover:shadow-darkShadow sm:rotate-1 sm:hover:-rotate-0 sm:hover:scale-105">
+			<div className="flex w-full flex-col justify-center divide-y divide-lightCardBorder/60 rounded-2xl border border-lightCardBorder bg-lightCard shadow-xl  shadow-lightShadow transition-all duration-150 ease-in-out hover:border-cyan-800 hover:shadow-2xl  hover:shadow-lightShadow dark:divide-darkCardBorder/60 dark:border-darkCardBorder dark:bg-darkCard dark:shadow-darkShadow dark:hover:border-pink-950 dark:hover:bg-darkCardHover dark:hover:shadow-darkShadow sm:rotate-1 md:hover:-rotate-0 md:hover:scale-105">
 				{Object.entries(filteredSkills).map(([category, skills]) => (
 					<div
 						className="grid justify-start px-4 py-2 text-sm sm:grid-flow-col sm:text-base "
@@ -413,8 +408,8 @@ const Skills = () => {
 				))}
 			</div>
 			<p className="mt-6 w-3/4 rotate-2  self-end text-end font-virgil text-base text-cyan-800 dark:text-pink-600 sm:w-2/3 sm:text-lg">
-				... I continually seek out new technologies to study during my leisure time in order to
-				broaden my set of skills.
+				... I continually seek out new technologies to study during my leisure time in order to broaden
+				my set of skills.
 			</p>
 		</section>
 	);

@@ -34,11 +34,11 @@ const { title = 'Snehan Chakra Varthi | 2024 Portfolio' } = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body
-		class="dark:hero-background-dark hero-background min-w-fit bg-[#88AAB6] text-lightText transition-colors duration-300 ease-in-out dark:bg-darkBG dark:text-darkText"
+		class="dark:hero-background-dark hero-background min-w-fit bg-lightBG transition-colors duration-700 ease-in-out dark:bg-darkBG"
 	>
 		<Navbar />
 		<main
-			class="max-w-screen flex min-h-screen flex-col items-center pt-12"
+			class="max-w-screen flex min-h-screen flex-col items-center pt-12 text-lightText dark:text-darkText"
 			transition:animate={fade({ duration: '0.4s' })}
 		>
 			<slot />

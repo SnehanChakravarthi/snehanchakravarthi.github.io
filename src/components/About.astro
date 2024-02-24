@@ -52,12 +52,33 @@ import { authorData } from '@/siteConfig';
 	);
 </script>
 
-<section
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const flipButtonFront = document.getElementById('flipButtonFront');
+		const flipButtonBack = document.getElementById('flipButtonBack');
+		const flipCardInner = document.querySelector('.flip-card-inner');
+
+		const toggleFlip = () => {
+			if (flipCardInner) {
+				flipCardInner.classList.toggle('is-flipped');
+			}
+		};
+
+		if (flipButtonFront) {
+			flipButtonFront.addEventListener('click', toggleFlip);
+		}
+		if (flipButtonBack) {
+			flipButtonBack.addEventListener('click', toggleFlip);
+		}
+	});
+</script>
+
+<div
 	id="about"
-	class="my-40 flex w-screen max-w-7xl flex-col justify-center px-4 pt-20 sm:px-10 md:px-16"
+	class="my-10 flex w-screen max-w-7xl flex-col justify-center px-4 pt-20 sm:px-10 md:px-16"
 >
 	<h3
-		class="z-0 mb-6 ml-4 rotate-1 font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
+		class="z-0 mb-10 ml-4 rotate-1 font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
 	>
 		more
 		<span class="dark:text-shadow-3d-dark text-shadow text-shadow-3d dark:text-shadow-3d-dark">
@@ -65,174 +86,229 @@ import { authorData } from '@/siteConfig';
 		</span> me
 	</h3>
 
-	<div
-		class="project-card relative flex h-auto w-full flex-col items-end justify-between overflow-hidden rounded-2xl border shadow-xl shadow-lightShadow transition-all duration-300 ease-in-out hover:border hover:shadow-2xl hover:shadow-lightShadow dark:shadow-darkShadow dark:hover:shadow-darkShadow sm:hover:rotate-1 sm:hover:scale-105 md:rotate-2 lg:flex-row"
-	>
-		<div class="flex w-full flex-col justify-start font-redhat text-sm sm:text-base">
-			<div class="space-y-2 p-3 text-justify font-redhat sm:p-6">
-				<div class="flex gap-3">
-					<p class="dark:about-card-dark about-card">Name:</p>
-					<span>{authorData.name}</span>
-				</div>
-				<div class="flex gap-3">
-					<p class="dark:about-card-dark about-card">From:</p>
-					<span>{authorData.from}</span>
-				</div>
-				<div class="flex gap-3">
-					<p class="dark:about-card-dark about-card">Current Location:</p>
-					<span>{authorData.location}</span>
-				</div>
-				<div class="flex gap-3">
-					<p class="dark:about-card-dark about-card">Birthday:</p>
-					<span>{authorData.birthday}</span>
-				</div>
-				<div class="">
-					<p class="dark:about-card-dark about-card">Titles:</p>
-					<ul>
-						{authorData.titles.map((title) => <li> • {title}</li>)}
-					</ul>
-				</div>
-				<div class="">
-					<p class="dark:about-card-dark about-card">Education:</p>
-					<ul>
-						{
-							authorData.education.map((edu) => (
-								<li>
-									• {edu.degree}
-									<br /> {edu.from} ({edu.graduation})
-								</li>
-							))
-						}
-					</ul>
-				</div>
-				<div class="">
-					<p class="dark:about-card-dark about-card">Work Experience:</p>
-					<ul>
-						{
-							authorData.work.map((job) => (
-								<li>
-									• {job.title} at {job.company}, {job.from} - {job.to}
-								</li>
-							))
-						}
-					</ul>
-				</div>
-			</div>
-
-			<div class="flex flex-row items-center justify-between">
-				<div class="flex flex-col items-start p-3 sm:p-6">
-					<p class="dark:text-shadow-3d-dark text-shadow-3d my-4 text-xl sm:text-2xl">Contact Me</p>
-					<div class="flex h-auto flex-col items-start gap-4 text-sm sm:h-auto sm:text-base">
-						<div class="flex h-10">
-							<p
-								id="email"
-								class="flex h-full items-center rounded-l-md border border-lightGrid bg-black/20 px-3 dark:border-pink-900 dark:bg-pink-900/20"
-							>
-								{authorData.email}
-							</p>
-							<button
-								class="copyBtn flex h-full cursor-pointer items-center gap-2 self-auto rounded-r-lg border border-l-0 border-lightGrid bg-lightBG px-2 text-black dark:border-pink-900"
-							>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="16"
-									height="16"
-									viewBox="0 0 24 24"
-									fill="none"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									class="lucide lucide-copy"
-									><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path
-										d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg
-								>
-							</button>
+	<div class="flip-card h-full w-full md:rotate-1">
+		<div class="flip-card-inner relative h-full w-full transition-all duration-300 ease-in-out">
+			<div
+				class="about-card hidden-backface relative flex h-auto w-full flex-col items-end justify-center overflow-hidden"
+			>
+				<div class="flex h-full w-full flex-col items-end">
+					<div class="flex w-full flex-col justify-start font-redhat text-sm sm:text-base">
+						<div class="space-y-2 p-3 text-justify font-virgil sm:px-6">
+							<div class="flex gap-3">
+								<p class="about-card-text">Name:</p>
+								<span>{authorData.name}</span>
+							</div>
+							<div class="flex gap-3">
+								<p class="about-card-text">From:</p>
+								<span>{authorData.from}</span>
+							</div>
+							<div class="flex gap-3">
+								<p class="about-card-text">Current Location:</p>
+								<span>{authorData.location}</span>
+							</div>
+							<div class="flex gap-3">
+								<p class="about-card-text">Birthday:</p>
+								<span>{authorData.birthday}</span>
+							</div>
+							<div>
+								<p class="about-card-text">Titles:</p>
+								<ul>
+									{authorData.titles.map((title) => <li> • {title}</li>)}
+								</ul>
+							</div>
+							<div>
+								<p class="about-card-text">Education:</p>
+								<ul>
+									{
+										authorData.education.map((edu) => (
+											<li>
+												• {edu.degree}
+												<br /> {edu.from} ({edu.graduation})
+											</li>
+										))
+									}
+								</ul>
+							</div>
+							<div>
+								<p class="about-card-text">Work Experience:</p>
+								<ul>
+									{
+										authorData.work.map((job) => (
+											<li>
+												• {job.title} at {job.company}, {job.from} - {job.to}
+											</li>
+										))
+									}
+								</ul>
+							</div>
 						</div>
-						<ul class="flex flex-row justify-between gap-4">
-							{
-								Object.entries(authorData.links).map(([name, url]) => (
-									<li>
-										<a
-											href={url}
-											target="_blank"
-											rel="noopener noreferrer"
-											class="flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border border-lightGrid bg-lightBG text-sm hover:bg-black/20 dark:border-pink-900 dark:bg-pink-900/30 hover:dark:bg-pink-900"
-										>
-											{name === 'github' && <Github />}
-											{name === 'linkedin' && <Linkedin />}
-											{name === 'x' && <X />}
-											{name === 'instagram' && <Instagram />}
-										</a>
-									</li>
-								))
-							}
 
-							<li>
-								<a
-									href="/CV.pdf"
-									download
-									class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg bg-cyan-500 font-microgammaMedium text-sm text-black transition-all duration-100 ease-in-out hover:bg-cyan-600 dark:bg-pink-500 dark:hover:bg-pink-600 sm:absolute sm:hidden"
-									>CV</a
-								>
-							</li>
-						</ul>
+						<div class="flex flex-row items-center justify-between">
+							<div class="flex flex-col items-start p-3 sm:px-6">
+								<p class="dark:text-shadow-3d-dark text-shadow-3d mb-4 text-xl sm:text-2xl">Contact Me</p>
+								<div class="flex h-auto flex-col items-start gap-4 text-sm sm:h-auto sm:text-base">
+									<div class="flex h-10">
+										<p
+											id="email"
+											class="flex h-full items-center rounded-l-md border border-lightGrid bg-lightCardHover px-3 dark:border-pink-900 dark:bg-pink-900/20"
+										>
+											{authorData.email}
+										</p>
+										<button
+											class="copyBtn flex h-full cursor-pointer items-center gap-2 self-auto rounded-r-lg border border-l-0 border-lightGrid bg-lightBG px-2 text-black dark:border-pink-900"
+										>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="16"
+												height="16"
+												viewBox="0 0 24 24"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												class="lucide lucide-copy"
+												><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path
+													d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg
+											>
+										</button>
+									</div>
+									<ul class="mb-2 flex flex-row justify-between gap-4">
+										{
+											Object.entries(authorData.links).map(([name, url]) => (
+												<li>
+													<a
+														href={url}
+														target="_blank"
+														rel="noopener noreferrer"
+														class="flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border border-lightGrid bg-lightCardHover text-sm hover:bg-black/20 dark:border-pink-900 dark:bg-pink-900/30 hover:dark:bg-pink-900"
+													>
+														{name === 'github' && <Github />}
+														{name === 'linkedin' && <Linkedin />}
+														{name === 'x' && <X />}
+														{name === 'instagram' && <Instagram />}
+													</a>
+												</li>
+											))
+										}
+
+										<li>
+											<a
+												href="/CV.pdf"
+												download
+												class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg bg-cyan-500 font-microgammaMedium text-sm text-black transition-all duration-100 ease-in-out hover:bg-cyan-600 dark:bg-pink-500 dark:hover:bg-pink-600 sm:absolute sm:hidden"
+												>CV</a
+											>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="hidden sm:block sm:w-3/5 md:w-2/5 lg:absolute lg:bottom-0 lg:right-0">
+								<Image src={SnehanImg3} alt="Snehan Chakra Varthi" loading="eager" />
+							</div>
+						</div>
 					</div>
+					<div class="w-4/5 sm:hidden">
+						<Image src={SnehanImg3} alt="Snehan Chakra Varthi" loading="eager" />
+					</div>
+					<a
+						href="/CV.pdf"
+						download
+						class="right-6 top-6 hidden items-center gap-2 rounded-lg bg-cyan-500 px-3 py-2 font-microgammaMedium text-lg text-black transition-all duration-100 ease-in-out hover:bg-cyan-600 dark:bg-pink-500 dark:hover:bg-pink-600 sm:absolute sm:flex"
+						>Download CV</a
+					>
 				</div>
-				<div class="hidden sm:block sm:w-3/5 md:w-2/5 lg:absolute lg:bottom-0 lg:right-0">
-					<Image src={SnehanImg3} alt="Snehan Chakra Varthi" loading="eager" />
+				<button
+					id="flipButtonFront"
+					class="absolute bottom-0 self-center rounded-t-lg bg-cyan-500 px-3 font-microgammaMedium text-black hover:bg-cyan-600 dark:bg-pink-500 dark:hover:bg-pink-600"
+					>read more</button
+				>
+			</div>
+
+			<div
+				class="about-card hidden-backface flip-card-back absolute top-0 flex h-auto w-full flex-col items-center justify-start overflow-hidden transition-all duration-300 ease-in-out"
+			>
+				<button
+					id="flipButtonBack"
+					class="absolute bottom-0 self-center rounded-t-lg bg-cyan-500 px-3 font-microgammaMedium text-black hover:bg-cyan-600 dark:bg-pink-500 dark:hover:bg-pink-600"
+					>flip to front</button
+				>
+
+				<div class="about-card-text-back p-6
+				text-sm sm:text-lg">
+					<p>
+						Straight outta the green farmlands of South India, that's where my tale unfolds. I grew up
+						with dirt on my hands and creativity in my heart, spending my childhood days sketching away.
+						Things got real interesting when a computer landed in our house. Boom! There I was, a little
+						artist turned digital wizard, messing around with 3D Max like there was no tomorrow. I was
+						designing all sorts of things, from cars to buildings, and even a few robots.
+					</p>
+
+					<p class="mt-6">
+						College was all about cracking the code, literally. I was knee-deep in coding and software,
+						loving every bit of it. Then came the itch for something more – Industrial Product Design
+						caught my fancy. Next thing I know, I'm in Sweden, chasing higher studies and it bacame my
+						base since. I started my career as a Product Designer and started a company called Motsats.
+						After that, I found my love for coding again with the rise of AI and I have been coding ever
+						since.
+					</p>
+					<p class="mt-6">
+						My mornings? A ritual. Brew some strong coffee and dive into VS Code. My coding sessions are
+						nothing without Hanz Zimmer and Ludvig Goransson's epic scores, plus a sprinkle of serene,
+						instrumental vibes. Afternoons are for geeking out – gym sessions with my buddies, listening
+						to <span class="about-card-skill-box">Lex Fridman</span> dinner with <span
+							class="about-card-skill-box">ThePrimeagen</span
+						>'s video on the side, and slaying undead in Elden Ring to wrap up the day.
+					</p>
+					<p class="my-6">
+						I'm all about chasing the new and the next – <span class="about-card-skill-box">Space</span>
+						<span class="about-card-skill-box">Rockets</span>
+						<span class="about-card-skill-box">E/Acc</span>
+						<span class="about-card-skill-box">AI</span> you name it. If it's got a tech edge, I'm there, ready
+						to tinker and explore. So yeah, that's me, in all my geeky glory. Welcome to the ride! 🚀
+					</p>
 				</div>
 			</div>
 		</div>
-		<div class="w-4/5 sm:hidden">
-			<Image src={SnehanImg3} alt="Snehan Chakra Varthi" loading="eager" />
+		<div class="mb-40 flex w-full flex-col justify-center">
+			<h3
+				class="text-color-animate z-0 mt-40 -rotate-3 text-center font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
+			>
+				<span class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate text-3xl sm:text-5xl">
+					THANK YOU
+				</span>
+			</h3>
+			<p
+				class="mt-4 max-w-2xl -rotate-2 self-center pl-10 text-center font-virgil text-base text-cyan-800 dark:text-pink-600 sm:text-lg"
+			>
+				Reach out to me for any queries or collaborations. I'm always open to new opportunities. Let's
+				connect!
+			</p>
 		</div>
-		<a
-			href="/CV.pdf"
-			download
-			class="right-6 top-6 hidden items-center gap-2 rounded-lg bg-cyan-500 px-3 py-2 font-microgammaMedium text-lg text-black transition-all duration-100 ease-in-out hover:bg-cyan-600 dark:bg-pink-500 dark:hover:bg-pink-600 sm:absolute sm:flex"
-			>Download CV</a
-		>
 	</div>
-	<h3
-		class="text-color-animate z-0 mt-40 -rotate-3 text-center font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
-	>
-		<span class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate text-3xl sm:text-5xl">
-			THANK YOU
-		</span>
-	</h3>
-	<p
-		class="mt-4 max-w-2xl -rotate-2 self-center pl-10 text-center font-virgil text-base text-cyan-800 dark:text-pink-600 sm:text-lg"
-	>
-		reach out to me for any queries or collaborations. I'm always open to new opportunities. Let's
-		connect!
-	</p>
-</section>
+</div>
 
 <style>
 	.flip-card {
-		perspective: 3200px;
-		position: relative;
+		perspective: 2000px;
 	}
 
-	.flip-card__front-side,
-	.flip-card__back-side {
-		transition: transform 1s ease-in-out;
-		position: absolute;
+	.flip-card-inner {
+		transform-style: preserve-3d;
+	}
+
+	.hidden-backface {
 		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		-ms-backface-visibility: hidden;
 	}
 
-	.flip-card__front-side {
-		transform: rotateX(0deg);
-	}
-	.flip-card__back-side {
-		transform: rotateX(-180deg);
+	.is-flipped {
+		transform: rotateY(180deg);
 	}
 
-	.flip-card:hover .flip-card__front-side {
-		transform: rotateX(180deg);
-	}
-	.flip-card:hover .flip-card__back-side {
-		transform: rotateX(0deg);
+	.flip-card-back {
+		transform: rotateY(180deg);
 	}
 </style>
