@@ -10,15 +10,8 @@ const { className = 'max-w-96', videoChoice } = Astro.props;
 const selectedVideo = videoChoice === 'acetrait' ? acetraitVideo : zeroDVVideo;
 ---
 
-<div class="relative flex justify-center">
-	<video
-		class="absolute -z-10 mt-[7.2%] px-[10%]"
-		playsinline
-		autoplay
-		muted
-		loop
-		transition:persist
-	>
+<div class="relative flex justify-center" transition:persist={videoChoice}>
+	<video class="absolute -z-10 mt-[7.2%] px-[10%]" playsinline autoplay muted loop>
 		<source src={selectedVideo} type="video/mp4" />
 		Your browser does not support the video tag.
 	</video>
