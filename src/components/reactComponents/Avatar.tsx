@@ -30,7 +30,7 @@ const Avatar = () => {
 	}, []);
 
 	return (
-		<div className="absolute h-screen w-full" ref={canvasContainerRef}>
+		<div className="h-screen w-full" ref={canvasContainerRef}>
 			<Canvas
 				camera={{
 					fov: 4,
