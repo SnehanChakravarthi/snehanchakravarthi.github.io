@@ -24,7 +24,7 @@ export const authorData = {
 	work: [
 		{
 			title: 'Full Stack Developer',
-			company: 'Freelance',
+			company: 'Indie Hacking',
 			from: '2023',
 			to: 'Present'
 		},

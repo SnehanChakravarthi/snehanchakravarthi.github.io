@@ -13,7 +13,7 @@ const DropdownMenu: React.FC<{ menu: MenuItem[] }> = ({ menu }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<div className="border-lightGrid hover:bg-lightBG dark:border-darkGrid dark:hover:bg-darkBG flex h-12 w-12 items-center justify-center border border-b-0 border-l-0 border-r-0 border-t-0">
+		<div className="z-20 flex h-12 w-12 items-center justify-center border border-b-0 border-l-0 border-r-0 border-t-0 border-lightGrid hover:bg-lightBG dark:border-darkGrid dark:hover:bg-darkBG">
 			<button onClick={() => setIsOpen(!isOpen)} className="">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ const DropdownMenu: React.FC<{ menu: MenuItem[] }> = ({ menu }) => {
 				</svg>
 			</button>
 			<div
-				className={`border-lightGrid dark:border-darkGrid absolute left-0 top-12 z-10 h-auto w-screen rounded-b-3xl border border-t-0 bg-white/30 shadow-xl shadow-black backdrop-blur-xl transition duration-100 ease-out dark:bg-black/30 ${
+				className={`absolute left-0 top-12 z-10 h-auto w-screen rounded-b-3xl border border-t-0 border-lightGrid bg-white/30 shadow-xl shadow-black backdrop-blur-xl transition duration-100 ease-out dark:border-darkGrid dark:bg-black/30 ${
 					isOpen ? 'translate-y-0  ' : 'invisible '
 				}`}
 			>
