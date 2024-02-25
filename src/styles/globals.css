@@ -84,11 +84,10 @@
 			url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24'%3E%3Cg fill='%23155e75' fill-opacity='0.4'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
 		background-attachment: fixed, fixed;
 	} */
-
-	::selection {
-		color: red;
-		background: yellow;
-	}
+	/* 
+	body {
+		@apply selection:bg-cyan-900 selection:text-cyan-500 dark:selection:bg-pink-800 dark:selection:text-yellow-500;
+	} */
 
 	.hero-background {
 		position: relative;
@@ -102,6 +101,7 @@
 		width: 100%;
 		height: 100%;
 		z-index: -1;
+
 		background: linear-gradient(
 				to bottom,
 				rgba(242, 240, 237, 0.97) 10%,
@@ -132,8 +132,8 @@
 		background: linear-gradient(
 				to bottom,
 				rgba(16, 18, 20, 0.97) 10%,
-				rgba(42, 11, 25, 0.883) 70%,
-				rgba(78, 26, 52, 0.5) 100%
+				rgba(42, 11, 25, 0.87) 70%,
+				rgba(78, 26, 52, 0.699) 100%
 			),
 			url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24'%3E%3Cg fill='%23a17288' fill-opacity='0.2'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
 		-webkit-background-size: cover;
