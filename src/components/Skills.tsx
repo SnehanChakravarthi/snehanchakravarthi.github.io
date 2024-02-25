@@ -72,7 +72,8 @@ const skills = {
 		{ skill: 'Supabase', expertise: 3, icon: 'i-logos-supabase-icon h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'MySQL', expertise: 3, icon: 'i-skill-icons-mysql-dark h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'MongoDB', expertise: 2, icon: 'i-logos-mongodb-icon h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Firebase', expertise: 2, icon: 'i-logos-firebase h-3 w-3 sm:h-6 sm:w-6' }
+		{ skill: 'Firebase', expertise: 2, icon: 'i-logos-firebase h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Redis', expertise: 2, icon: 'i-logos-redis h-3 w-3 sm:h-6 sm:w-6' }
 	],
 	API: [
 		{ skill: 'Rest', expertise: 3, icon: 'i-skill-icons-rest h-3 w-3 sm:h-6 sm:w-6' },
@@ -91,6 +92,7 @@ const skills = {
 		{ skill: 'Azure', expertise: 1, icon: 'i-logos-microsoft-azure h-3 w-3 sm:h-6 sm:w-6' }
 	],
 	testing: [
+		{ skill: 'Postman', expertise: 2, icon: 'i-skill-icons-postman h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Jest', expertise: 2, icon: 'i-skill-icons-jest h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Mocha', expertise: 2, icon: 'i-logos-mocha h-3 w-3 sm:h-6 sm:w-6' },
 		{

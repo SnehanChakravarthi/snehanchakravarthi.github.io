@@ -2,9 +2,9 @@ export const authorData = {
 	name: 'Snehan Chakravarthi',
 	siteName: 'Snehan Chakravarthi | Portfolio | 2024',
 	description:
-		"Portfolio of Snehan Chakravarthi, a Full Stack Developer and Industrial Designer based in Malmö, Sweden. I'm passionate about creating innovative furniture concepts that let you toggle between zero-gravity comfort and productive work settings, all wrapped up in stunning design inspired by both the past and the future.",
-	url: 'https://snehan.dev/',
-	titles: ['Full Stack Developer ', 'Industrial Designer'],
+		'I’m Snehan Chakravarthi. A multi-disciplinary developer and designer with a passion for creating innovative web applications. My expertise spans a diverse range of projects, from AI platforms to interactive 3D front-ends.',
+	url: 'https://www.snehan.site/',
+	titles: ['Full Stack Developer ', '3D developer', 'Industrial Designer'],
 	location: 'Malmö, Sweden',
 	from: 'Trichy, India',
 	birthday: '1995-06-12',
