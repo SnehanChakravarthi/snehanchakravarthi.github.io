@@ -41,7 +41,7 @@ const Avatar = () => {
 				dpr={[1, 2]}
 				frameloop={isOnScreen ? 'always' : 'never'}
 			>
-				<Perf />
+				{/* <Perf /> */}
 				<Suspense fallback={<Loader />}>
 					<Model scale={1} position={[0, -1.7, 0]} />
 					<Environment preset="apartment" />
