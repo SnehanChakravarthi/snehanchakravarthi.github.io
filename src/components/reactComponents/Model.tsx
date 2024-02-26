@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { SkinnedMesh } from 'three';
-import { useGLTF } from '@react-three/drei';
+import { useAnimations, useGLTF } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 
 import type { GLTF } from 'three-stdlib';
@@ -48,7 +48,16 @@ type ActionName =
 	| 'Dance';
 type GLTFActions = Record<ActionName, THREE.AnimationAction>;
 
-const actions = {
+interface ActionConfig {
+	action: string;
+	repetitions: number;
+}
+
+interface ActionsGroup {
+	heavyActions: ActionConfig[];
+	lightActions: ActionConfig[];
+}
+const actionsGroup: ActionsGroup = {
 	heavyActions: [
 		{ action: 'StretchAction', repetitions: 1 },
 		{ action: 'Stretch2', repetitions: 1 },
@@ -86,7 +95,9 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 	const mouseIdleTimeoutRef = useRef<number | null>(null);
 
 	const idleTimeoutDuration = 1000;
-	const { nodes, materials, animations } = useGLTF('/cad/snehanReadyPlayerOne.glb') as GLTFResult;
+	const { nodes, materials, animations } = useGLTF('/cad/snehanReadyPlayerOne-v1.glb') as GLTFResult;
+
+	const { actions } = useAnimations(animations, group);
 
 	useBlink(avatarMesh);
 
@@ -158,6 +169,64 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 
 	const mixerRef = useRef<THREE.AnimationMixer | null>(null);
 	const mixerRef2 = useRef<THREE.AnimationMixer | null>(null);
+	// const [currentActionName, setCurrentActionName] = useState<string>('HiAction');
+	// const [actionType, setActionType] = useState<'start' | 'light' | 'heavy'>('start');
+
+	// // Function to select a random action name
+	// const getRandomActionName = (type: 'light' | 'heavy') => {
+	// 	const actionsList = type === 'light' ? actionsGroup.lightActions : actionsGroup.heavyActions;
+	// 	if (!Array.isArray(actionsList)) {
+	// 		return null;
+	// 	}
+	// 	const randomIndex = Math.floor(Math.random() * actionsList.length);
+	// 	return actionsList[randomIndex].action;
+	// };
+
+	// useEffect(() => {
+	// 	// Find the action configuration in actionsGroup based on currentActionName
+	// 	const actionConfig = [...actionsGroup.lightActions, ...actionsGroup.heavyActions].find(
+	// 		(config) => config.action === currentActionName
+	// 	);
+
+	// 	if (actionConfig) {
+	// 		// Assume actions is a map of [actionName: AnimationAction]
+	// 		const action = actions[currentActionName];
+	// 		if (action) {
+	// 			const { repetitions } = actionConfig;
+	// 			const clipDuration = action.getClip().duration;
+	// 			const totalDuration = clipDuration * repetitions + 1; // Adding fadeIn duration
+	// 			action.reset().fadeIn(1).play().setLoop(THREE.LoopRepeat, repetitions);
+	// 			action.clampWhenFinished = true;
+
+	// 			setTimeout(() => {
+	// 				let nextType: 'light' | 'heavy';
+	// 				let nextActionName: string;
+
+	// 				if (actionType === 'start') {
+	// 					nextType = 'light';
+	// 				} else if (actionType === 'light') {
+	// 					nextType = 'heavy';
+	// 				} else {
+	// 					nextType = 'light';
+	// 				}
+
+	// 				nextActionName = getRandomActionName(nextType) as string;
+
+	// 				// Set the next action
+	// 				setActionType(nextType);
+	// 				setCurrentActionName(nextActionName);
+	// 			}, totalDuration * 1000); // Convert to milliseconds
+	// 		}
+	// 	}
+
+	// 	return () => {
+	// 		const action = actions[currentActionName];
+	// 		if (action) {
+	// 			action.fadeOut(1);
+	// 		}
+	// 	};
+	// }, [currentActionName, actionType]);
+
 	useEffect(() => {
 		if (animations.length > 0) {
 			mixerRef2.current = new THREE.AnimationMixer(nodes.Hips);
@@ -215,11 +284,8 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 				return action;
 			};
 
-			const transitionToRandomAction = (
-				actionGroup: keyof Actions,
-				onFinishCallback?: () => void
-			) => {
-				const actionDetails = actions[actionGroup];
+			const transitionToRandomAction = (actionGroup: keyof Actions, onFinishCallback?: () => void) => {
+				const actionDetails = actionsGroup[actionGroup];
 				const randomIndex = Math.floor(Math.random() * actionDetails.length);
 				const { action, repetitions } = actionDetails[randomIndex];
 				const actionClip = animations.find((clip) => clip.name === action);
@@ -428,4 +494,4 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 	);
 }
 
-useGLTF.preload('/cad/snehanReadyPlayerOne.glb');
+useGLTF.preload('/cad/snehanReadyPlayerOne-v1.glb');
