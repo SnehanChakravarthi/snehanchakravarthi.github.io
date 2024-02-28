@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '@/layouts/Layout.astro';
 
 import motsatsImage1 from '@/assets/images/Motsats/1.jpg';
@@ -11,7 +12,7 @@ import motsatsImage7 from '@/assets/images/Motsats/7.jpg';
 import motsatsImage8 from '@/assets/images/Motsats/8.jpg';
 import motsatsImage9 from '@/assets/images/Motsats/9.jpg';
 
-import { Image } from 'astro:assets';
+import motsats from '/video/motsats.mp4';
 ---
 
 <Layout title="Motsats | Work + Rest Furniture | Snehan Chakra Varthi">
@@ -28,6 +29,12 @@ import { Image } from 'astro:assets';
 			appropriate for students or employers sitting in front of a screen. It is a lounge chair for
 			siestas and relaxation, designed to elevate the legs higher than the body while laying, to
 			provide a pleasant and relieving rest.
+		</div>
+		<div class="mb-10">
+			<video class="w-full rounded-2xl" playsinline autoplay muted loop>
+				<source src={motsats} type="video/mp4" />
+				Your browser does not support the video tag.
+			</video>
 		</div>
 		<div class="flex flex-col gap-10">
 			<Image
@@ -53,9 +60,9 @@ import { Image } from 'astro:assets';
 			/>
 		</div>
 		<div class="my-16 text-xl">
-			Dual usability with Motsats opens the door for new working and resting habits. No hustle or
-			need for the user leaving the furniture to transform the chair. The unique feel when you can
-			combine business and leisure was the origin of Motsats.
+			Dual usability with Motsats opens the door for new working and resting habits. No hustle or need
+			for the user leaving the furniture to transform the chair. The unique feel when you can combine
+			business and leisure was the origin of Motsats.
 		</div>
 		<Image
 			src={motsatsImage5}
