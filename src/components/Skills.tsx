@@ -295,7 +295,7 @@ const Skills = () => {
 	}, []);
 
 	return (
-		<section id="skills" className="flex w-full max-w-7xl flex-col px-4 md:px-16">
+		<section id="skills" className="flex w-full max-w-6xl flex-col px-4 md:px-16">
 			<div className="relative overflow-hidden pt-20">
 				<svg ref={svgRef} className="absolute left-0 top-0 h-full w-full" />
 

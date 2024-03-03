@@ -72,7 +72,7 @@ import { authorData } from '@/siteConfig';
 
 <div
 	id="about"
-	class="my-10 flex w-full max-w-7xl flex-col justify-center px-4 pt-20 sm:px-10 md:px-16"
+	class="my-10 flex w-full max-w-6xl flex-col justify-center px-4 pt-20 sm:px-10 md:px-16"
 >
 	<h3
 		class="z-0 mb-10 ml-4 rotate-1 font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
@@ -83,8 +83,8 @@ import { authorData } from '@/siteConfig';
 		</span> me
 	</h3>
 
-	<div class="flip-card h-full w-full md:rotate-1">
-		<div class="flip-card-inner relative h-full w-full transition-all duration-300 ease-in-out">
+	<div class="flip-card h-auto w-full md:rotate-1">
+		<div class="flip-card-inner relative h-auto w-full transition-all duration-300 ease-in-out">
 			<div
 				class="about-card hidden-backface relative flex h-auto w-full flex-col items-end justify-center overflow-hidden"
 			>
@@ -210,12 +210,12 @@ import { authorData } from '@/siteConfig';
 									</ul>
 								</div>
 							</div>
-							<div class="hidden sm:block sm:w-3/5 md:w-2/5 lg:absolute lg:bottom-0 lg:right-0">
+							<div class="xs:block hidden sm:w-3/5 md:w-2/5 lg:absolute lg:bottom-0 lg:right-0">
 								<Image src={SnehanImg3} alt="Snehan Chakra Varthi" loading="eager" />
 							</div>
 						</div>
 					</div>
-					<div class="w-4/5 sm:hidden">
+					<div class="xs:hidden w-3/5">
 						<Image src={SnehanImg3} alt="Snehan Chakra Varthi" loading="eager" />
 					</div>
 					<a
@@ -250,7 +250,7 @@ import { authorData } from '@/siteConfig';
 				>
 
 				<div class="about-card-text-back p-6
-				text-sm sm:text-lg">
+				text-sm md:text-lg">
 					<p>
 						Straight outta the green farmlands of South India, that's where my tale unfolds. I grew up
 						with dirt on my hands and creativity in my heart, spending my childhood days sketching away.
@@ -287,7 +287,7 @@ import { authorData } from '@/siteConfig';
 		</div>
 		<div class="mb-40 flex w-full flex-col justify-center">
 			<h3
-				class="text-color-animate z-0 mt-40 -rotate-3 text-center font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
+				class="text-color-animate xs:mt-32 z-0 mt-44 -rotate-3 text-center font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl md:mt-44"
 			>
 				<span class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate text-3xl sm:text-5xl">
 					THANK YOU
