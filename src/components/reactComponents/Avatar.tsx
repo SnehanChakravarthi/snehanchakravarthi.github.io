@@ -5,7 +5,6 @@ import { Environment } from '@react-three/drei';
 import { Model } from './Model';
 import { Suspense } from 'react';
 import Loader from './Loader';
-import { Perf } from 'r3f-perf';
 
 const Avatar = () => {
 	const canvasContainerRef = useRef<HTMLDivElement>(null);
