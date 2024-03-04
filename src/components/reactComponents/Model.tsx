@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { SkinnedMesh } from 'three';
-import { useAnimations, useGLTF } from '@react-three/drei';
+import { useGLTF } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 
 import type { GLTF } from 'three-stdlib';
@@ -96,8 +96,6 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 
 	const idleTimeoutDuration = 1000;
 	const { nodes, materials, animations } = useGLTF('/cad/snehanReadyPlayerOne-v1.glb') as GLTFResult;
-
-	const { actions } = useAnimations(animations, group);
 
 	useBlink(avatarMesh);
 
