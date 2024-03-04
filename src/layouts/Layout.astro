@@ -32,15 +32,15 @@ const { title = 'Snehan Chakra Varthi | 2024 Portfolio' } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body
-		class="hero-background dark:hero-background-dark w-screen bg-lightBG
-		 transition-colors duration-500 ease-in-out dark:bg-darkBG"
+		class="hero-background dark:hero-background-dark left-0 w-screen overflow-x-hidden
+		 bg-lightBG transition-colors duration-500 ease-in-out dark:bg-darkBG"
 	>
 		<Navbar />
 		<main
-			class="flex min-h-screen w-screen min-w-full flex-col items-center pt-12 text-lightText dark:text-darkText"
+			class="left-0 flex min-h-screen w-screen min-w-full flex-col items-center pt-12 text-lightText dark:text-darkText"
 		>
 			<slot />
 		</main>
 		<Footer />
-	</body><!-- transition:animate={fade({ duration: '0.4s' })} -->
+	</body>
 </html>
