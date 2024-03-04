@@ -22,14 +22,14 @@ function animateEyeballs(
 
 	// Logic for setting or resetting eye morph targets
 	const targets = [
-		{ name: 'eyeLookUpLeft', influence: Math.max(0, normalizedY) },
-		{ name: 'eyeLookUpRight', influence: Math.max(0, normalizedY) },
-		{ name: 'eyeLookDownLeft', influence: Math.max(0, -normalizedY) },
-		{ name: 'eyeLookDownRight', influence: Math.max(0, -normalizedY) },
-		{ name: 'eyeLookInLeft', influence: Math.max(0, -normalizedX) },
-		{ name: 'eyeLookInRight', influence: Math.max(0, normalizedX) },
-		{ name: 'eyeLookOutLeft', influence: Math.max(0, normalizedX) },
-		{ name: 'eyeLookOutRight', influence: Math.max(0, -normalizedX) }
+		{ name: 'eyeLookUpLeft', influence: Math.min(1, Math.max(0, normalizedY)) },
+		{ name: 'eyeLookUpRight', influence: Math.min(1, Math.max(0, normalizedY)) },
+		{ name: 'eyeLookDownLeft', influence: Math.min(1, Math.max(0, -normalizedY)) },
+		{ name: 'eyeLookDownRight', influence: Math.min(1, Math.max(0, -normalizedY)) },
+		{ name: 'eyeLookInLeft', influence: Math.min(1, Math.max(0, -normalizedX)) },
+		{ name: 'eyeLookInRight', influence: Math.min(1, Math.max(0, normalizedX)) },
+		{ name: 'eyeLookOutLeft', influence: Math.min(1, Math.max(0, normalizedX)) },
+		{ name: 'eyeLookOutRight', influence: Math.min(1, Math.max(0, -normalizedX)) }
 	];
 
 	targets.forEach((target) => {
