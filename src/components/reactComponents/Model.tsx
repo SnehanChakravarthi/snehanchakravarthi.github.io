@@ -346,7 +346,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 	});
 
 	function updateJointPositions(normalizedX: number, normalizedY: number) {
-		const degreeLimits = [20, 12, 10, 5];
+		const degreeLimits = [20, 15, 13, 5];
 
 		const spine1Node = nodes.Hips?.children[0]?.children[0] as THREE.Object3D | undefined;
 		const spine2Node = spine1Node?.children[0] as THREE.Object3D | undefined;
