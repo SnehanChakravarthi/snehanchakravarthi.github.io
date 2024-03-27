@@ -8,6 +8,11 @@ const skills = {
 	'Front-end': [
 		{ skill: 'Javascript', expertise: 3, icon: 'i-skill-icons-javascript h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Typescript', expertise: 3, icon: 'i-skill-icons-typescript h-3 w-3 sm:h-6 sm:w-6' },
+		{
+			skill: 'Three.js',
+			expertise: 3,
+			icon: 'dark:i-skill-icons-threejs-light i-logos-threejs h-3 w-3 sm:h-6 sm:w-6'
+		},
 		{ skill: 'HTML', expertise: 3, icon: 'i-skill-icons-html h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'CSS', expertise: 3, icon: 'i-skill-icons-css h-3 w-3 sm:h-6 sm:w-6' },
 		{
@@ -16,34 +21,21 @@ const skills = {
 			icon: 'dark:i-logos-react i-skill-icons-react-dark h-3 w-3 sm:h-6 sm:w-6'
 		},
 		{ skill: 'TailwindCSS', expertise: 3, icon: 'i-logos-tailwindcss-icon h-3 w-3 sm:h-6 sm:w-6' },
-		{
-			skill: 'Three.js',
-			expertise: 3,
-			icon: 'dark:i-skill-icons-threejs-light i-logos-threejs h-3 w-3 sm:h-6 sm:w-6'
-		},
-		{ skill: 'MDX', expertise: 3, icon: 'i-logos-mdx h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Vue', expertise: 2, icon: 'i-logos-vue h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Angular', expertise: 2, icon: 'i-logos-angular-icon h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Svelte', expertise: 2, icon: 'i-logos-svelte-icon h-3 w-3 sm:h-6 sm:w-6' },
 		{
 			skill: 'HTMX',
 			expertise: 2,
 			icon: 'dark:i-skill-icons-htmx-light i-skill-icons-htmx-dark h-3 w-3 sm:h-6 sm:w-6'
 		},
-		{ skill: 'Solid', expertise: 1, icon: 'i-logos-solidjs-icon h-3 w-3 sm:h-6 sm:w-6' },
-		{
-			skill: 'Alpinejs',
-			expertise: 1,
-			icon: 'i-skill-icons-alpinejs-dark dark:i-skill-icons-alpinejs-light h-3 w-3 sm:h-6 sm:w-6'
-		}
+		{ skill: 'Solid', expertise: 1, icon: 'i-logos-solidjs-icon h-3 w-3 sm:h-6 sm:w-6' }
 	],
 	frameworks: [
 		{ skill: 'Next.js', expertise: 3, icon: 'i-logos-nextjs-icon h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'r3f', expertise: 3, icon: 'i-skill-icons-r3f h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Astro', expertise: 3, icon: 'i-logos-astro-icon h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'SvelteKit', expertise: 2, icon: 'i-logos-svelte-kit h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Nuxt', expertise: 2, icon: 'i-logos-nuxt-icon h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Remix', expertise: 2, icon: 'i-skill-icons-remix-dark h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'PWA', expertise: 2, icon: 'i-logos-pwa h-3 w-3 sm:h-6 sm:w-6' }
+		{ skill: 'Remix', expertise: 2, icon: 'i-skill-icons-remix-dark h-3 w-3 sm:h-6 sm:w-6' }
 	],
 	tools: [
 		{ skill: 'Prisma', expertise: 3, icon: 'i-skill-icons-prisma h-3 w-3 sm:h-6 sm:w-6' },
@@ -64,8 +56,7 @@ const skills = {
 		{ skill: 'Flask', expertise: 3, icon: 'i-skill-icons-flask-light h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'FastAPI', expertise: 2, icon: 'i-skill-icons-fastapi h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Django', expertise: 1, icon: 'i-skill-icons-django h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Rust', expertise: 1, icon: 'i-logos-rust h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Go', expertise: 1, icon: 'i-logos-go h-3 w-3 sm:h-6 sm:w-6' }
+		{ skill: 'Rust', expertise: 1, icon: 'i-logos-rust h-3 w-3 sm:h-6 sm:w-6' }
 	],
 	databases: [
 		{ skill: 'PostgreSQL', expertise: 3, icon: 'i-logos-postgresql h-3 w-3 sm:h-6 sm:w-6' },
@@ -92,7 +83,7 @@ const skills = {
 		{ skill: 'Azure', expertise: 1, icon: 'i-logos-microsoft-azure h-3 w-3 sm:h-6 sm:w-6' }
 	],
 	testing: [
-		{ skill: 'Postman', expertise: 2, icon: 'i-skill-icons-postman h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Postman', expertise: 3, icon: 'i-skill-icons-postman h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Jest', expertise: 2, icon: 'i-skill-icons-jest h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Playwright', expertise: 1, icon: 'i-logos-playwright h-3 w-3 sm:h-6 sm:w-6' }
 	],
@@ -110,11 +101,6 @@ const skills = {
 	],
 	Tools: [
 		{ skill: 'Git', expertise: 3, icon: 'i-skill-icons-git h-3 w-3 sm:h-6 sm:w-6' },
-		{
-			skill: 'VSCode',
-			expertise: 3,
-			icon: 'dark:i-skill-icons-vscode-light i-skill-icons-vscode-dark h-3 w-3 sm:h-6 sm:w-6'
-		},
 		{ skill: 'Jira', expertise: 3, icon: 'i-logos-jira h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Trello', expertise: 3, icon: 'i-logos-trello h-3 w-3 sm:h-6 sm:w-6' }
 	],
