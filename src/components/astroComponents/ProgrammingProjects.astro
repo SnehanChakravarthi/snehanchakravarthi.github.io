@@ -2,14 +2,6 @@
 import Macbook from '../astroComponents/Macbook.astro';
 import Iphone from '../astroComponents/Iphone.astro';
 
-const zerodavinciSkills = [
-	{ skill: 'JavaScript', icon: 'i-skill-icons-javascript' },
-	{ skill: 'r3f', icon: 'i-logos-react-three-fiber' },
-	{ skill: 'Three.JS', icon: 'dark:i-skill-icons-threejs-light i-logos-threejs' },
-	{ skill: 'React', icon: 'dark:i-logos-react i-skill-icons-react-dark' },
-	{ skill: 'Blender', icon: 'i-logos-blender' },
-	{ skill: 'SolidWorks', icon: 'i-logos-solidworks' }
-];
 const acetraitSkills = [
 	{ skill: 'Typescript', icon: 'i-skill-icons-typescript' },
 	{ skill: 'React', icon: 'dark:i-logos-react i-skill-icons-react-dark' },
@@ -20,6 +12,21 @@ const acetraitSkills = [
 	{ skill: 'OpenAI', icon: 'i-logos-openai-icon' },
 	{ skill: 'Vercel', icon: 'i-logos-vercel-icon' }
 ];
+const zerodavinciSkills = [
+	{ skill: 'JavaScript', icon: 'i-skill-icons-javascript' },
+	{ skill: 'r3f', icon: 'i-logos-react-three-fiber' },
+	{ skill: 'Three.JS', icon: 'dark:i-skill-icons-threejs-light i-logos-threejs' },
+	{ skill: 'React', icon: 'dark:i-logos-react i-skill-icons-react-dark' },
+	{ skill: 'Blender', icon: 'i-logos-blender' },
+	{ skill: 'SolidWorks', icon: 'i-logos-solidworks' }
+];
+const bonblocAIChatbot = [
+	{ skill: 'Docker', icon: 'i-skill-icons-docker' },
+	{ skill: 'NodeJS', icon: 'i-logos-nodejs-icon' },
+	{ skill: 'Express', icon: 'dark:i-skill-icons-expressjs-light i-skill-icons-expressjs-dark' },
+	{ skill: 'Angular', icon: 'i-logos-angular-icon' },
+	{ skill: 'OpenAI', icon: 'i-logos-openai-icon' }
+];
 const snehanSkills = [
 	{ skill: 'Astro', icon: 'i-logos-astro-icon' },
 	{ skill: 'Three.JS', icon: 'dark:i-skill-icons-threejs-light i-logos-threejs' },
@@ -27,19 +34,53 @@ const snehanSkills = [
 	{ skill: 'JavaScript', icon: 'i-skill-icons-javascript' },
 	{ skill: 'r3f', icon: 'i-logos-react-three-fiber' }
 ];
-const synchatSkills = [
-	{ skill: 'Docker', icon: 'i-skill-icons-docker' },
-	{ skill: 'NodeJS', icon: 'i-logos-nodejs-icon' },
-	{ skill: 'Express', icon: 'dark:i-skill-icons-expressjs-light i-skill-icons-expressjs-dark' },
-	{ skill: 'Whatsapp API', icon: 'i-logos-whatsapp-icon' },
-	{ skill: 'Python', icon: 'i-logos-python' },
-	{ skill: 'Flask', icon: 'i-skill-icons-flask-light' }
-];
 ---
 
 <div
 	class="*:programming-card mt-2 rounded-2xl shadow-xl shadow-lightShadow dark:shadow-darkShadow sm:mt-10 lg:-rotate-1"
 >
+	<a class="group flex-col-reverse lg:flex-row" href="/programming/acetrait">
+		<div
+			class="-rotate-2 scale-75 transition-transform sm:scale-100 md:group-hover:-rotate-6 md:group-hover:scale-110"
+		>
+			<Macbook videoChoice="acetrait" />
+		</div>
+		<div class="ml-4 space-y-4 py-8 font-redhat">
+			<div class="flex flex-col items-baseline xl:flex-row xl:gap-4">
+				<h2
+					class="group-hover:dark:text-shadow-3d-dark group-hover:text-shadow-3d font-microgammaBold text-3xl uppercase dark:text-pink-200"
+				>
+					Acetrait
+				</h2>
+				<p class="group-hover:text-decoration-card text-xs text-emerald-600">[ www.acetrait.com ]</p>
+			</div>
+			<p class="text-sm sm:text-base">
+				Designed and developed a full stack app for a client - Acetrait AB, Swedish startup aiming to
+				automate first stage of the recruitment process for organisations using AI.
+			</p>
+			<ul class="*:group-hover:text-decoration-card text-sm text-emerald-600 sm:text-base">
+				<li>⭐️ OpenAI Assitant API and finetuned llm model</li>
+				<li>⭐️ Vector Embedding + RAG for custom AI knowledge</li>
+				<li>⭐️ AI applicant resume parsing</li>
+				<li>⭐️ NextJS 14 with edge functions and server side rendering</li>
+				<li>⭐️ AI interview process and grading system</li>
+				<li>⭐️ PostgreSQL + Supabase Realtime</li>
+			</ul>
+			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
+				{
+					acetraitSkills.map((skill) => (
+						<div class="programming-card-skill-box">
+							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
+								<span class={`${skill.icon} h-3 w-3 sm:h-6 sm:w-6`} />
+							</div>
+							{skill.skill}
+						</div>
+					))
+				}
+			</ul>
+		</div>
+	</a>
+
 	<a class="group flex-col lg:flex-row" href="/programming/zerodavinci">
 		<div class="ml-4 space-y-4 font-redhat">
 			<div class="flex flex-col items-baseline xl:gap-2">
@@ -87,34 +128,30 @@ const synchatSkills = [
 		</div>
 	</a>
 
-	<a class="group flex-col-reverse lg:flex-row" href="/programming/acetrait">
-		<div
-			class="-rotate-2 scale-75 transition-transform sm:scale-100 md:group-hover:-rotate-6 md:group-hover:scale-110"
-		>
-			<Macbook videoChoice="acetrait" />
-		</div>
-		<div class="ml-4 space-y-4 py-8 font-redhat">
+	<a class="group rounded-b-2xl lg:flex-row" href="/programming/bonblocaichatbot">
+		<div class="mx-4 space-y-4 py-8 font-redhat">
 			<div class="flex flex-col items-baseline xl:flex-row xl:gap-4">
 				<h2
 					class="group-hover:dark:text-shadow-3d-dark group-hover:text-shadow-3d font-microgammaBold text-3xl uppercase dark:text-pink-200"
 				>
-					Acetrait
+					Bonbloc AI Chatbot
 				</h2>
-				<p class="group-hover:text-decoration-card text-xs text-emerald-600">[ www.acetrait.com ]</p>
+				<p class="group-hover:text-decoration-card text-xs text-purple-500">[ www.bonbloc.com ]</p>
 			</div>
 			<p class="text-sm sm:text-base">
-				AI powered web platform for smart recruitment. AI Interviewing, Candidate Shortlisting, and
-				more.
+				Built a chatbot for Bonbloc, a company that focuses on providing solutions using Blockchain,
+				IoT, and AI technologies. Built the chatbot using Angular, and the backend using Express and
+				NodeJS adhering to their existing codebase and tech stack. Fetches realtime data from their API
+				to provide context to the chatbot.
 			</p>
-			<ul class="*:group-hover:text-decoration-card text-sm text-emerald-600 sm:text-base">
-				<li>⭐️ Finetunned LLM + Streaming Responses + Dynamic Prompting</li>
-				<li>⭐️ NextJS Server Actions</li>
-				<li>⭐️ PostgreSQL + Supabase Realtime</li>
-				<li>⭐️ Edge Runtime Vercel</li>
+			<ul class="*:group-hover:text-decoration-card text-sm text-purple-500 sm:text-base">
+				<li>⭐️ Speech to Text + Text to Speech features</li>
+				<li>⭐️ Integration with existing Angular application</li>
+				<li>⭐️ Containerised Docker Server</li>
 			</ul>
 			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
 				{
-					acetraitSkills.map((skill) => (
+					bonblocAIChatbot.map((skill) => (
 						<div class="programming-card-skill-box">
 							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
 								<span class={`${skill.icon} h-3 w-3 sm:h-6 sm:w-6`} />
@@ -158,40 +195,6 @@ const synchatSkills = [
 			</ul>
 		</div><div class="rotate-2 transition-transform md:group-hover:rotate-6 md:group-hover:scale-110">
 			<Iphone videoChoice="snehan" />
-		</div>
-	</a>
-
-	<a class="group rounded-b-2xl lg:flex-row" href="/programming/synchat">
-		<div class="mx-4 space-y-4 py-8 font-redhat">
-			<div class="flex flex-col items-baseline xl:flex-row xl:gap-4">
-				<h2
-					class="group-hover:dark:text-shadow-3d-dark group-hover:text-shadow-3d font-microgammaBold text-3xl uppercase"
-				>
-					Synchat
-				</h2>
-				<p class="group-hover:text-decoration-card text-xs text-purple-500">[ Under Construction! ]</p>
-			</div>
-			<p class="text-sm sm:text-base">
-				Containerised servers [Express, Flask] for WhatsApp API and personal AI assistance.
-			</p>
-			<ul class="*:group-hover:text-decoration-card text-sm text-purple-500 sm:text-base">
-				<li>⭐️ Containerised Docker Server Images</li>
-				<li>⭐️ Middlewares</li>
-				<li>⭐️ Whatsap Business API Integration</li>
-				<li>⭐️ Speech to Text + Vision AI Models</li>
-			</ul>
-			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
-				{
-					synchatSkills.map((skill) => (
-						<div class="programming-card-skill-box">
-							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
-								<span class={`${skill.icon} h-3 w-3 sm:h-6 sm:w-6`} />
-							</div>
-							{skill.skill}
-						</div>
-					))
-				}
-			</ul>
 		</div>
 	</a>
 </div>

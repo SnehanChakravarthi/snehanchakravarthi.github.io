@@ -21,21 +21,20 @@ const skills = {
 			icon: 'dark:i-logos-react i-skill-icons-react-dark h-3 w-3 sm:h-6 sm:w-6'
 		},
 		{ skill: 'TailwindCSS', expertise: 3, icon: 'i-logos-tailwindcss-icon h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Angular', expertise: 2, icon: 'i-logos-angular-icon h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Svelte', expertise: 2, icon: 'i-logos-svelte-icon h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Angular', expertise: 1, icon: 'i-logos-angular-icon h-3 w-3 sm:h-6 sm:w-6' },
 		{
 			skill: 'HTMX',
-			expertise: 2,
+			expertise: 1,
 			icon: 'dark:i-skill-icons-htmx-light i-skill-icons-htmx-dark h-3 w-3 sm:h-6 sm:w-6'
-		},
-		{ skill: 'Solid', expertise: 1, icon: 'i-logos-solidjs-icon h-3 w-3 sm:h-6 sm:w-6' }
+		}
 	],
 	frameworks: [
 		{ skill: 'Next.js', expertise: 3, icon: 'i-logos-nextjs-icon h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'r3f', expertise: 3, icon: 'i-skill-icons-r3f h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Astro', expertise: 3, icon: 'i-logos-astro-icon h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'SvelteKit', expertise: 2, icon: 'i-logos-svelte-kit h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Remix', expertise: 2, icon: 'i-skill-icons-remix-dark h-3 w-3 sm:h-6 sm:w-6' }
+		{ skill: 'Remix', expertise: 1, icon: 'i-skill-icons-remix-dark h-3 w-3 sm:h-6 sm:w-6' }
 	],
 	tools: [
 		{ skill: 'Prisma', expertise: 3, icon: 'i-skill-icons-prisma h-3 w-3 sm:h-6 sm:w-6' },
@@ -53,15 +52,15 @@ const skills = {
 			icon: 'dark:i-skill-icons-expressjs-light i-skill-icons-expressjs-dark h-3 w-3 sm:h-6 sm:w-6'
 		},
 		{ skill: 'Python', expertise: 3, icon: 'i-logos-python h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Flask', expertise: 3, icon: 'i-skill-icons-flask-light h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'FastAPI', expertise: 2, icon: 'i-skill-icons-fastapi h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Django', expertise: 1, icon: 'i-skill-icons-django h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Rust', expertise: 1, icon: 'i-logos-rust h-3 w-3 sm:h-6 sm:w-6' }
+		{ skill: 'Flask', expertise: 2, icon: 'i-skill-icons-flask-light h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'FastAPI', expertise: 1, icon: 'i-skill-icons-fastapi h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Django', expertise: 1, icon: 'i-skill-icons-django h-3 w-3 sm:h-6 sm:w-6' }
 	],
-	databases: [
+	database: [
 		{ skill: 'PostgreSQL', expertise: 3, icon: 'i-logos-postgresql h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Supabase', expertise: 3, icon: 'i-logos-supabase-icon h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'MySQL', expertise: 3, icon: 'i-skill-icons-mysql-dark h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'VectorStores', expertise: 3, icon: 'i-logos-vector-icon h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Supabase', expertise: 3, icon: 'i-logos-supabase-icon h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'MongoDB', expertise: 2, icon: 'i-logos-mongodb-icon h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Firebase', expertise: 2, icon: 'i-logos-firebase h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Redis', expertise: 2, icon: 'i-logos-redis h-3 w-3 sm:h-6 sm:w-6' }
@@ -73,10 +72,10 @@ const skills = {
 	devOps: [
 		{ skill: 'Docker', expertise: 3, icon: 'i-skill-icons-docker h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Vercel', expertise: 3, icon: 'i-logos-vercel-icon h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Kubernetes', expertise: 2, icon: 'i-skill-icons-kubernetes h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Kubernetes', expertise: 1, icon: 'i-skill-icons-kubernetes h-3 w-3 sm:h-6 sm:w-6' },
 		{
 			skill: 'AWS',
-			expertise: 2,
+			expertise: 1,
 			icon: 'dark:i-skill-icons-aws-light i-skill-icons-aws-dark h-3 w-3 sm:h-6 sm:w-6'
 		},
 		{ skill: 'GCP', expertise: 1, icon: 'dark:i-logos-google-cloud h-3 w-3 sm:h-6 sm:w-6' },
@@ -84,7 +83,7 @@ const skills = {
 	],
 	testing: [
 		{ skill: 'Postman', expertise: 3, icon: 'i-skill-icons-postman h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Jest', expertise: 2, icon: 'i-skill-icons-jest h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Jest', expertise: 1, icon: 'i-skill-icons-jest h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Playwright', expertise: 1, icon: 'i-logos-playwright h-3 w-3 sm:h-6 sm:w-6' }
 	],
 	design: [
