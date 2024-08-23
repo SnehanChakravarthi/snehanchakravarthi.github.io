@@ -5,7 +5,7 @@ import DesignProjects from './astroComponents/DesignProjects.astro';
 ---
 
 <section id="projects" class="flex w-full max-w-6xl flex-col px-4 pt-20 sm:px-10 md:px-16">
-	<h3
+	<!-- <h3
 		class="text-color-animate z-0 mx-4 mt-8 -rotate-2 font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
 	>
 		Take a look at these specially selected <span
@@ -13,16 +13,25 @@ import DesignProjects from './astroComponents/DesignProjects.astro';
 		>
 			PROJECTS &nbsp;
 		</span> where I've showcased my abilities!
-	</h3>
+	</h3> -->
 
 	<h3
-		class="text-color-animate z-0 mt-20 text-center font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
+		class="text-color-animate z-0 mx-4 mt-8 -rotate-2 font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
 	>
-		<span class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate text-2xl sm:text-5xl">
-			1. &nbsp;programming
-		</span>
+		Explore my areas of <span class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate">
+			EXPERTISE &nbsp;
+		</span> across various domains
 	</h3>
-	<p
+
+	<div
+		class="text-color-animate z-0 mt-20 flex items-center justify-center gap-4 text-center font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
+	>
+		<p>1.</p>
+		<h3 class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate text-2xl sm:text-5xl">
+			programming
+		</h3>
+	</div>
+	<!-- <p
 		class="mt-2 max-w-xl self-center text-pretty pl-10 font-virgil text-base text-cyan-800 dark:text-pink-600 sm:text-lg"
 	>
 		I'm a full-stack dev geek with a flair for crafting functional eye-catching web apps, dabbling in
@@ -31,16 +40,73 @@ import DesignProjects from './astroComponents/DesignProjects.astro';
 		> With a strong foundation/passion in comp sci and <span class="text-decoration"
 			>bachelors degree in information tech</span
 		>, I'm always leveling up in the tech game.
-	</p>
+	</p> -->
 
-	<div class="mt-10">
+	<div class="mx-auto mt-10 max-w-3xl space-y-8">
+		{
+			[
+				{
+					title: 'Full Stack Web Development',
+					description:
+						'Proficient in crafting end-to-end web solutions, seamlessly integrating frontend and backend technologies to create robust, scalable applications that deliver exceptional user experiences.',
+					emoji: '🌐'
+				},
+				{
+					title: 'Mobile Application Development',
+					description:
+						'Experienced in developing cross-platform mobile apps using React Native and Flutter, ensuring smooth performance and native-like experiences across iOS and Android devices.',
+					emoji: '📱'
+				},
+				{
+					title: 'Backend Development',
+					description:
+						'Skilled in designing and implementing efficient server-side architectures, APIs, and databases to power complex applications and ensure optimal performance and security.',
+					emoji: '⚙️'
+				},
+				{
+					title: '3D Interactive Web Applications',
+					description:
+						'Adept at creating immersive 3D experiences for the web using technologies like Three.js and WebGL, bringing engaging visualizations and interactive elements to life in the browser.',
+					emoji: '🕹️'
+				},
+				{
+					title: 'AI and Chatbot Development',
+					description:
+						'Experienced in developing intelligent conversational interfaces and AI-powered applications, leveraging natural language processing and machine learning to create innovative solutions.',
+					emoji: '🤖'
+				}
+			].map((skill) => (
+				<div class=" mt-2 text-center  sm:mt-10 ">
+					<div class="flex items-center justify-center gap-2">
+						<div class="text-2xl">{skill.emoji} </div>
+						<h4 class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate text-2xl">
+							{skill.title}
+						</h4>
+					</div>
+					<p class="mt-2 pl-4 font-virgil text-lg text-cyan-800 dark:text-pink-600">
+						{skill.description}
+					</p>
+				</div>
+			))
+		}
+	</div>
+
+	<h3
+		class="text-color-animate z-0 mx-auto mt-20 rotate-2 font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
+	>
+		here are some of my <span class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate">
+			PROGRAMMING PROJECTS &nbsp;
+		</span>
+	</h3>
+
+	<div class="mt-6">
 		<ProgrammingProjects />
 	</div>
 	<h3
 		class="text-color-animate z-0 mt-28 text-center font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
 	>
 		<span class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate text-2xl sm:text-5xl">
-			2. &nbsp;industrial design
+			2. &nbsp;3D CAD + Industrial Design
 		</span>
 	</h3>
 	<p
@@ -57,7 +123,9 @@ import DesignProjects from './astroComponents/DesignProjects.astro';
 	<h3
 		class="text-color-animate z-0 mt-20 text-center font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl"
 	>
-		<span class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate text-2xl sm:text-5xl">
+		<span
+			class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate hyphens-auto text-2xl sm:text-5xl"
+		>
 			3. &nbsp;entrepreneurship
 		</span>
 	</h3>

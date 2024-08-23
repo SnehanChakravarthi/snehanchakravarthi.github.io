@@ -1,0 +1,125 @@
+---
+import { Image } from 'astro:assets';
+
+import Layout from '@/layouts/Layout.astro';
+import Skillbox from '@/components/astroComponents/Skillbox.astro';
+import ViewSiteBadge from '@/components/astroComponents/ViewSiteBadge.astro';
+import Macbook from '@/components/astroComponents/Macbook.astro';
+import HeadingLine from '@/components/astroComponents/HeadingLine.astro';
+
+import Acetrait1 from '@/assets/images/acetrait/acetrait1.png';
+import Acetrait2 from '@/assets/images/acetrait/acetrait2.png';
+---
+
+<Layout title="Inova Assistans | Snehan Chakra Varthi">
+	<ViewSiteBadge link="https://www.inovaassistans.se" />
+
+	<div
+		class="mb-20 flex max-w-5xl flex-col items-center space-y-8 px-4 text-center font-redhat text-sm dark:text-pink-600 sm:px-8 sm:text-base md:px-12"
+	>
+		<h1
+			class="dark:text-shadow-3d-dark text-shadow mt-14 font-microgammaBold text-3xl text-cyan-400 dark:text-white sm:text-5xl"
+		>
+			INOVA ASSISTANS
+		</h1>
+
+		<HeadingLine title="what is it?" />
+		<p>
+			Inova Assistans is a personal assistance service that offers <span class="text-decoration"
+				>high-quality support to special needs population in Sweden</span
+			>. They focus on creating an inclusive environment that respects individuals&apos; right to
+			self-determination. I designed and developed their website, which includes:
+		</p>
+		<ul class="mt-2 list-inside list-disc space-y-2">
+			<li>Helena: An AI chatbot with a custom knowledge base about Swedish support laws</li>
+			<li>An admin dashboard for posting jobs, news, and reviewing applicants</li>
+			<li>User-friendly interfaces for both clients and staff</li>
+		</ul>
+		<Macbook className="max-w-full" videoChoice="inovaassistans" />
+		<HeadingLine title="stack ?" />
+		<p>
+			I used <Skillbox skill="next.js" iconClass="i-logos-nextjs-icon " /> as the framework for this project.
+			My love for <Skillbox skill="react" iconClass="dark:i-logos-react i-skill-icons-react-dark " />,
+			and <Skillbox skill="tailwindcss" iconClass="i-logos-tailwindcss-icon " /> made it easy to code the
+			site.
+		</p>
+
+		<HeadingLine title="backend" />
+		<p>
+			Used Server Actions, with <Skillbox skill="nodejs" iconClass="i-logos-nodejs-icon " />, and
+			hosted on <Skillbox skill="vercel" iconClass="i-logos-vercel-icon " /> . Also used <span
+				class="text-decoration"
+				>edge functions
+			</span> for the AI chatbot to enable streaming responses.
+		</p>
+
+		<p>
+			Written in <Skillbox skill="typescript" iconClass="i-skill-icons-typescript " />. The database is
+			built on <Skillbox skill="supabase" iconClass="i-logos-supabase-icon " />. The AI is powered by
+			<Skillbox skill="openai" iconClass="i-logos-openai-icon " /> API.
+		</p>
+
+		<HeadingLine title="Vector Database" />
+		<p>
+			Used <Skillbox skill="openai" iconClass="i-logos-openai-icon " /> assistant API to create the sophesticated
+			AI chatbot that uses a vector database to store the knowledge base.
+		</p>
+
+		<HeadingLine title="features" />
+		<ul class="space-y-4 *:flex *:flex-col">
+			<li>
+				<p class="text-decoration text-lg">AI Chatbot - Helena</p>
+				<p>
+					An intelligent assistant with a custom knowledge base about Swedish support laws, providing
+					instant information and guidance to users.
+				</p>
+			</li>
+			<li>
+				<p class="text-decoration text-lg">Admin Dashboard</p>
+				<p>
+					A comprehensive backend interface for administrators to manage job postings, news updates, and
+					applicant reviews efficiently.
+				</p>
+			</li>
+			<li>
+				<p class="text-decoration text-lg">User-Friendly Interfaces</p>
+				<p>
+					Tailored, intuitive interfaces designed specifically for both clients and staff, ensuring easy
+					navigation and access to relevant information.
+				</p>
+			</li>
+			<li>
+				<p class="text-decoration text-lg">Responsive Design</p>
+				<p>
+					A fully responsive website that provides an optimal viewing experience across a wide range of
+					devices, from desktop computers to mobile phones.
+				</p>
+			</li>
+		</ul>
+
+		<HeadingLine title="Result" />
+
+		<p>
+			The new website has been a significant upgrade for Inova Assistans. The clients are thrilled with
+			the result, especially considering their previous WordPress site was outdated and lacked modern
+			features. Now, they have a sleek, responsive platform with an AI assistant ready to answer
+			questions about Swedish support laws at any time.
+		</p>
+		<p>
+			While the site is quite new, it's already making a positive impact. The AI chatbot, Helena, has
+			been particularly well-received, providing instant, accurate information to users.
+		</p>
+		<p>
+			This project has deepened my understanding of AI and Large Language Models (LLMs). The
+			development process was smooth and enjoyable, thanks in large part to the excellent libraries
+			available for integrating AI from providers like OpenAI and Mixtral. These tools have made it
+			possible to create sophisticated AI-powered features with relative ease.
+		</p>
+		<p>
+			You can explore the site yourself at <a
+				href="https://www.inovaassistans.se"
+				class="text-decoration">www.inovaassistans.se</a
+			> to see how AI is enhancing personal assistance services in Sweden.
+		</p>
+	</div>
+</Layout>

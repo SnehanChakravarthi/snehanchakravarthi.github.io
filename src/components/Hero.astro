@@ -1,4 +1,12 @@
-<section class="flex h-screen w-full flex-col items-center overflow-clip">
+---
+import { Image } from 'astro:assets';
+import Nasa from '../assets/images/collab/nasa.png';
+import Ikea from '../assets/images/collab/ikea.png';
+import Infra from '../assets/images/collab/infra-logo.png';
+import Bonbloc from '../assets/images/collab/bonbloc.svg';
+---
+
+<section class="flex h-screen w-full flex-col items-center justify-between overflow-clip">
 	<div class="mt-20 flex flex-col items-center justify-center md:mt-40">
 		<div class="relative flex w-1/2 translate-y-3 items-start">
 			<p
@@ -22,5 +30,16 @@
 		>
 			a multi-disciplinary<br class="md:hidden" /> developer + designer
 		</p>
+	</div>
+	<div
+		class="text-color-animate mx-auto rotate-3 font-virgil text-xl text-cyan-800 dark:text-pink-600 sm:text-2xl md:mb-10"
+	>
+		collaborated for projects with
+		<div class="flex flex-row items-center justify-center lg:gap-4">
+			<Image src={Nasa} alt="Nasa" class="h-8 w-auto lg:h-16 lg:w-auto" />
+			<Image src={Ikea} alt="Ikea" class="h-8 w-auto lg:h-16 lg:w-auto" />
+			<Image src={Infra} alt="Infra" class="h-10 w-auto lg:h-24 lg:w-auto" />
+			<Image src={Bonbloc} alt="Bonbloc" class="h-8 w-auto lg:h-16 lg:w-auto" />
+		</div>
 	</div>
 </section>

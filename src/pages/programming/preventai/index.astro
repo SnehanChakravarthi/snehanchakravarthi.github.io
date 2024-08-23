@@ -1,0 +1,58 @@
+---
+import HeadingLine from '@/components/astroComponents/HeadingLine.astro';
+import Macbook from '@/components/astroComponents/Macbook.astro';
+import Skillbox from '@/components/astroComponents/Skillbox.astro';
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title="PreventAI | Snehan Chakra Varthi">
+	<div
+		class="mb-20 flex max-w-5xl flex-col items-center space-y-8 px-4 text-center font-redhat text-sm dark:text-pink-600 sm:px-8 sm:text-base md:px-12"
+	>
+		<h1
+			class="dark:text-shadow-3d-dark text-shadow mt-14 font-microgammaBold text-3xl text-cyan-400 dark:text-white sm:text-5xl"
+		>
+			PreventAI
+		</h1>
+
+		<HeadingLine title="what is it?" />
+		<p>
+			PreventAI, a project of Swedish startup InfraMotionLabs, is an AI-powered surveillance system for
+			supermarkets. I developed the client-facing platform prototype and an AI virtual assistant
+			capable of human-like speech and behavior.
+		</p>
+
+		<Macbook className="max-w-full" videoChoice="preventai" />
+		<HeadingLine title="AI Virtual Assistant" />
+		<p>
+			I developed the 3D model of the avatar using advanced modeling techniques in <Skillbox
+				skill="blender"
+				iconClass="i-logos-blender"
+			/>. To bring the avatar to life, I implemented a complex system of <span class="text-decoration"
+				>shape keys</span
+			>, which allowed for precise control over facial expressions, particularly the mouth and lip
+			movements. This technique involves creating multiple variations of the mesh and blending between
+			them to achieve smooth, realistic animations.
+		</p>
+		<p>
+			For the speech synthesis and lip-syncing, I integrated the <Skillbox
+				skill="azure"
+				iconClass="i-logos-azure-icon"
+			/> Cognitive Services Text-to-Speech API. This powerful tool not only generates high-quality audio
+			but also provides detailed viseme data. Visemes are the visual representations of phonemes, which
+			are the smallest units of sound in speech. By mapping these visemes to the corresponding shape keys
+			in the 3D model, I achieved a remarkably accurate synchronization between the avatar's mouth movements
+			and the generated audio.
+		</p>
+		<p>
+			The result is a highly realistic AI virtual assistant capable of natural-looking speech,
+			enhancing the user experience and bringing a human
+			<HeadingLine title="Project" />
+			<p>
+				As PreventAI is an emerging startup, I can only share limited information about the project. The
+				video clip above showcases an early version of the AI avatar, demonstrating the capabilities
+				we've developed so far.
+			</p>
+		</p>
+	</div>
+</Layout>

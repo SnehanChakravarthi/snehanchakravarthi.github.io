@@ -22,49 +22,64 @@ const skills = {
 		},
 		{ skill: 'TailwindCSS', expertise: 3, icon: 'i-logos-tailwindcss-icon h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Svelte', expertise: 2, icon: 'i-logos-svelte-icon h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Angular', expertise: 1, icon: 'i-logos-angular-icon h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Angular', expertise: 1, icon: 'i-skill-icons-angular-light h-3 w-3 sm:h-6 sm:w-6' },
 		{
 			skill: 'HTMX',
 			expertise: 1,
 			icon: 'dark:i-skill-icons-htmx-light i-skill-icons-htmx-dark h-3 w-3 sm:h-6 sm:w-6'
 		}
 	],
+	'back-End': [
+		{ skill: 'Python', expertise: 3, icon: 'i-logos-python h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Nodejs', expertise: 3, icon: 'i-logos-nodejs-icon h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Bun', expertise: 3, icon: 'i-skill-icons-bun-dark h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Go', expertise: 3, icon: 'i-logos-go h-3 w-3 sm:h-6 sm:w-6' }
+	],
 	frameworks: [
 		{ skill: 'Next.js', expertise: 3, icon: 'i-logos-nextjs-icon h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'r3f', expertise: 3, icon: 'i-skill-icons-r3f h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Astro', expertise: 3, icon: 'i-logos-astro-icon h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'SvelteKit', expertise: 2, icon: 'i-logos-svelte-kit h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Remix', expertise: 1, icon: 'i-skill-icons-remix-dark h-3 w-3 sm:h-6 sm:w-6' }
-	],
-	tools: [
-		{ skill: 'Prisma', expertise: 3, icon: 'i-skill-icons-prisma h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'ReactQuery', expertise: 3, icon: 'i-logos-react-query-icon h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Redux', expertise: 2, icon: 'i-skill-icons-redux h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'tRPC', expertise: 2, icon: 'i-logos-trpc h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'FramerMotion', expertise: 2, icon: 'i-logos-framer h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Puppeteer', expertise: 2, icon: 'i-logos-puppeteer h-3 w-3 sm:h-6 sm:w-6' }
-	],
-	'back-End': [
-		{ skill: 'Nodejs', expertise: 3, icon: 'i-logos-nodejs-icon h-3 w-3 sm:h-6 sm:w-6' },
 		{
 			skill: 'Express',
 			expertise: 3,
 			icon: 'dark:i-skill-icons-expressjs-light i-skill-icons-expressjs-dark h-3 w-3 sm:h-6 sm:w-6'
 		},
-		{ skill: 'Python', expertise: 3, icon: 'i-logos-python h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Flask', expertise: 2, icon: 'i-skill-icons-flask-light h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'FastAPI', expertise: 1, icon: 'i-skill-icons-fastapi h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'Django', expertise: 1, icon: 'i-skill-icons-django h-3 w-3 sm:h-6 sm:w-6' }
+
+		{ skill: 'Flask', expertise: 3, icon: 'i-skill-icons-flask-light h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'FastAPI', expertise: 2, icon: 'i-skill-icons-fastapi h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Django', expertise: 2, icon: 'i-skill-icons-django h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'SvelteKit', expertise: 2, icon: 'i-logos-svelte-kit h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Remix', expertise: 1, icon: 'i-skill-icons-remix-dark h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Hono', expertise: 1, icon: 'i-logos-hono h-3 w-3 sm:h-6 sm:w-6' }
+	],
+	CAD: [
+		{ skill: 'Blender', expertise: 3, icon: 'i-logos-blender h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: '3Ds Max', expertise: 3, icon: 'i-logos-3ds-max h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Keyshot', expertise: 3, icon: 'i-logos-3ds-max h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Rhino', expertise: 3, icon: 'i-logos-3ds-max h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'SolidWorks', expertise: 3, icon: 'i-logos-solidworks h-3 w-3 sm:h-6 sm:w-6' }
 	],
 	database: [
 		{ skill: 'PostgreSQL', expertise: 3, icon: 'i-logos-postgresql h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'MySQL', expertise: 3, icon: 'i-skill-icons-mysql-dark h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'SQLite', expertise: 3, icon: 'i-skill-icons-sqlite h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'VectorStores', expertise: 3, icon: 'i-logos-vector-icon h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Supabase', expertise: 3, icon: 'i-logos-supabase-icon h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'MongoDB', expertise: 2, icon: 'i-logos-mongodb-icon h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Firebase', expertise: 2, icon: 'i-logos-firebase h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Redis', expertise: 2, icon: 'i-logos-redis h-3 w-3 sm:h-6 sm:w-6' }
 	],
+	tools: [
+		{ skill: 'Prisma', expertise: 3, icon: 'i-skill-icons-prisma h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Drizzle', expertise: 3, icon: 'i-skill-icons-drizzle h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'ReactQuery', expertise: 3, icon: 'i-logos-react-query-icon h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Vite', expertise: 3, icon: 'i-skill-icons-vite-light h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Redux', expertise: 2, icon: 'i-skill-icons-redux h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'tRPC', expertise: 2, icon: 'i-logos-trpc h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'FramerMotion', expertise: 2, icon: 'i-logos-framer h-3 w-3 sm:h-6 sm:w-6' },
+		{ skill: 'Puppeteer', expertise: 2, icon: 'i-logos-puppeteer h-3 w-3 sm:h-6 sm:w-6' }
+	],
+
 	API: [
 		{ skill: 'Rest', expertise: 3, icon: 'i-skill-icons-rest h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'GraphQL', expertise: 2, icon: 'i-logos-graphql h-3 w-3 sm:h-6 sm:w-6' }
@@ -102,10 +117,6 @@ const skills = {
 		{ skill: 'Git', expertise: 3, icon: 'i-skill-icons-git h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Jira', expertise: 3, icon: 'i-logos-jira h-3 w-3 sm:h-6 sm:w-6' },
 		{ skill: 'Trello', expertise: 3, icon: 'i-logos-trello h-3 w-3 sm:h-6 sm:w-6' }
-	],
-	CAD: [
-		{ skill: 'Blender', expertise: 3, icon: 'i-logos-blender h-3 w-3 sm:h-6 sm:w-6' },
-		{ skill: 'SolidWorks', expertise: 3, icon: 'i-logos-solidworks h-3 w-3 sm:h-6 sm:w-6' }
 	]
 };
 
@@ -358,7 +369,7 @@ const Skills = () => {
 					</div>
 				</div>
 			</div>
-			<div className="flex w-full flex-col justify-center divide-y divide-lightCardBorder/60 rounded-2xl border border-lightCardBorder bg-lightCard shadow-xl  shadow-lightShadow transition-all duration-150 ease-in-out hover:border-cyan-800 hover:shadow-2xl  hover:shadow-lightShadow dark:divide-darkCardBorder/60 dark:border-darkCardBorder dark:bg-darkCard dark:shadow-darkShadow dark:hover:border-pink-950 dark:hover:bg-darkCardHover dark:hover:shadow-darkShadow sm:rotate-1 md:hover:-rotate-0 md:hover:scale-105">
+			<div className="flex w-full flex-col justify-center divide-y divide-lightCardBorder/60 rounded-2xl border border-lightCardBorder bg-lightCard shadow-xl  shadow-lightShadow transition-all duration-150 ease-in-out hover:border-cyan-800 hover:shadow-2xl  hover:shadow-lightShadow dark:divide-darkCardBorder/60 dark:border-darkCardBorder dark:bg-darkCard dark:shadow-darkShadow dark:hover:border-pink-950 dark:hover:bg-darkCardHover dark:hover:shadow-darkShadow md:rotate-1 md:hover:-rotate-0 md:hover:scale-105">
 				{Object.entries(filteredSkills).map(([category, skills]) => (
 					<div
 						className="grid justify-start px-4 py-2 text-sm sm:grid-flow-col sm:text-base "

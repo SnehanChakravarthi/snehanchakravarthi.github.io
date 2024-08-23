@@ -34,11 +34,158 @@ const snehanSkills = [
 	{ skill: 'JavaScript', icon: 'i-skill-icons-javascript' },
 	{ skill: 'r3f', icon: 'i-logos-react-three-fiber' }
 ];
+const inovaAssitansSkills = [
+	{ skill: 'Next.JS', icon: 'i-logos-nextjs-icon' },
+	{ skill: 'TailwindCSS', icon: 'i-logos-tailwindcss-icon' },
+	{ skill: 'React', icon: 'dark:i-logos-react i-skill-icons-react-dark' },
+	{ skill: 'JavaScript', icon: 'i-skill-icons-javascript' },
+	{ skill: 'PostgreSQL', icon: 'i-logos-postgresql' },
+	{ skill: 'OpenAI', icon: 'i-logos-openai-icon' }
+];
+const preventAISkills = [
+	{ skill: 'React', icon: 'dark:i-logos-react i-skill-icons-react-dark' },
+	{ skill: 'JavaScript', icon: 'i-skill-icons-javascript' },
+	{ skill: 'OpenAI', icon: 'i-logos-openai-icon' },
+	{ skill: 'Azure', icon: 'i-logos-azure-icon' },
+	{ skill: 'Three.JS', icon: 'dark:i-skill-icons-threejs-light i-logos-threejs' }
+];
 ---
 
 <div
 	class="*:programming-card mt-2 rounded-2xl shadow-xl shadow-lightShadow dark:shadow-darkShadow sm:mt-10 lg:-rotate-1"
 >
+	<a class="group flex-col lg:flex-row" href="/programming/zerodavinci">
+		<div class="ml-4 space-y-4 font-redhat">
+			<div class="flex flex-col items-baseline xl:gap-2">
+				<h2
+					class="group-hover:dark:text-shadow-3d-dark group-hover:text-shadow-3d font-microgammaBold text-3xl uppercase dark:text-pink-200"
+				>
+					Zero da Vinci
+				</h2>
+				<p class="group-hover:text-decoration-card text-xs text-yellow-600">[ www.zerodavinci.com ]</p>
+			</div>
+			<p class="text-sm sm:text-base">
+				An interactive three.js site for product launch with blog section and stripe paywall.
+			</p>
+			<ul class="*:group-hover:text-decoration-card text-sm text-yellow-600 sm:text-base">
+				<li>🌟 3D & AR visualization</li>
+				<li>🌟 Scroll animations & camera control</li>
+				<li>🌟 Optimized low-poly models (17k verts)</li>
+				<li>🌟 SEO-ready MDX Blog</li>
+			</ul>
+			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
+				{
+					zerodavinciSkills.map((skill) => (
+						<div class="programming-card-skill-box">
+							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
+								<span class={`${skill.icon} h-3 w-3 sm:h-6 sm:w-6`} />
+							</div>
+							{skill.skill}
+						</div>
+					))
+				}
+			</ul>
+		</div>
+
+		<div class="flex max-h-96 flex-col items-center sm:flex-row">
+			<div
+				class="-translate-x-2 -rotate-1 scale-75 transition-transform duration-150 sm:translate-x-8 sm:scale-100 md:group-hover:-translate-x-6 md:group-hover:-rotate-6 md:group-hover:scale-110"
+			>
+				<Macbook videoChoice="zerodv" />
+			</div>
+			<div
+				class="max-w-52 -translate-y-60 translate-x-16 rotate-2 scale-75 transition-transform duration-150 sm:-translate-x-16 sm:translate-y-0 sm:scale-100 md:group-hover:rotate-6 md:group-hover:scale-110"
+			>
+				<Iphone videoChoice="zerophone" />
+			</div>
+		</div>
+	</a>
+
+	<a class="group flex-col-reverse lg:flex-row" href="/programming/preventai">
+		<div
+			class="-rotate-2 scale-75 transition-transform sm:scale-100 md:group-hover:-rotate-6 md:group-hover:scale-110"
+		>
+			<Macbook videoChoice="preventai" />
+		</div>
+		<div class="ml-4 space-y-4 py-8 font-redhat">
+			<div class="flex flex-col items-baseline xl:flex-row xl:gap-4">
+				<h2
+					class="group-hover:dark:text-shadow-3d-dark group-hover:text-shadow-3d font-microgammaBold text-3xl uppercase dark:text-pink-200"
+				>
+					PreventAI
+				</h2>
+				<p class="group-hover:text-decoration-card text-xs text-emerald-600">[ under construction ]</p>
+			</div>
+			<p class="text-sm sm:text-base">
+				Developing an innovative web platform with an AI avatar assistant called Michelle, for a swedish
+				AI startup called PreventAI, part of InfraMotionLabs. They are building a surveillance system
+				for the future with AI, targeting the supermarkets.
+			</p>
+			<ul class="*:group-hover:text-decoration-card text-sm text-emerald-600 sm:text-base">
+				<li>⭐️ Agentic AI systems, with parallel execution of multiple agents</li>
+				<li>⭐️ Three.js for 3D avatars</li>
+				<li>⭐️ Visemes for lip syncing</li>
+				<li>⭐️ Azure Cognitive Services</li>
+				<li>⭐️ PostgreSQL + Supabase Realtime</li>
+			</ul>
+			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
+				{
+					preventAISkills.map((skill) => (
+						<div class="programming-card-skill-box">
+							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
+								<span class={`${skill.icon} h-3 w-3 sm:h-6 sm:w-6`} />
+							</div>
+							{skill.skill}
+						</div>
+					))
+				}
+			</ul>
+		</div>
+	</a>
+
+	<a class="group flex-col-reverse lg:flex-row" href="/programming/inovaassistans">
+		<div class="ml-4 space-y-4 py-8 font-redhat">
+			<div class="flex flex-col items-baseline xl:flex-row xl:gap-4">
+				<h2
+					class="group-hover:dark:text-shadow-3d-dark group-hover:text-shadow-3d font-microgammaBold text-3xl uppercase dark:text-pink-200"
+				>
+					Inova Assistans
+				</h2>
+				<p class="group-hover:text-decoration-card text-xs text-orange-600">
+					[ www.inovaassistans.se ]
+				</p>
+			</div>
+			<p class="text-sm sm:text-base">
+				Developed the complete web solution for Inova Assistans, an established Swedish company that
+				provides assistants to the special needs population.
+			</p>
+			<ul class="*:group-hover:text-decoration-card text-sm text-orange-600 sm:text-base">
+				<li>⭐️ AI chatbot with speech to text</li>
+				<li>⭐️ Vector Embedding + RAG for custom AI knowledge</li>
+				<li>⭐️ React + NextJS 14</li>
+				<li>⭐️ PostgreSQL</li>
+				<li>⭐️ Admin dashboard for managing clients, recruitment and scheduling</li>
+			</ul>
+			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
+				{
+					inovaAssitansSkills.map((skill) => (
+						<div class="programming-card-skill-box">
+							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
+								<span class={`${skill.icon} h-3 w-3 sm:h-6 sm:w-6`} />
+							</div>
+							{skill.skill}
+						</div>
+					))
+				}
+			</ul>
+		</div>
+		<div
+			class="rotate-2 scale-75 transition-transform sm:scale-100 md:group-hover:-rotate-6 md:group-hover:scale-110"
+		>
+			<Macbook videoChoice="inovaassistans" />
+		</div>
+	</a>
+
 	<a class="group flex-col-reverse lg:flex-row" href="/programming/acetrait">
 		<div
 			class="-rotate-2 scale-75 transition-transform sm:scale-100 md:group-hover:-rotate-6 md:group-hover:scale-110"
@@ -81,54 +228,7 @@ const snehanSkills = [
 		</div>
 	</a>
 
-	<a class="group flex-col lg:flex-row" href="/programming/zerodavinci">
-		<div class="ml-4 space-y-4 font-redhat">
-			<div class="flex flex-col items-baseline xl:gap-2">
-				<h2
-					class="group-hover:dark:text-shadow-3d-dark group-hover:text-shadow-3d font-microgammaBold text-3xl uppercase dark:text-pink-200"
-				>
-					Zero da Vinci
-				</h2>
-				<p class="group-hover:text-decoration-card text-xs text-yellow-600">[ www.zerodavinci.com ]</p>
-			</div>
-			<p class="text-sm sm:text-base">
-				An interactive three.js site for product launch with blog section and stripe paywall.
-			</p>
-			<ul class="*:group-hover:text-decoration-card text-sm text-yellow-600 sm:text-base">
-				<li>🌟 3D & AR visualization</li>
-				<li>🌟 Scroll animations & camera control</li>
-				<li>🌟 Optimized low-poly models (17k verts)</li>
-				<li>🌟 SEO-ready MDX Blog</li>
-			</ul>
-			<ul class="flex flex-row flex-wrap gap-1 text-sm sm:gap-2 sm:text-base">
-				{
-					zerodavinciSkills.map((skill) => (
-						<div class="programming-card-skill-box">
-							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
-								<span class={`${skill.icon} h-3 w-3 sm:h-6 sm:w-6`} />
-							</div>
-							{skill.skill}
-						</div>
-					))
-				}
-			</ul>
-		</div>
-
-		<div class="flex max-h-96 flex-col items-center sm:flex-row">
-			<div
-				class="-translate-x-2 -rotate-1 scale-75 transition-transform duration-150 sm:translate-x-8 sm:scale-100 md:group-hover:-translate-x-6 md:group-hover:-rotate-6 md:group-hover:scale-110"
-			>
-				<Macbook videoChoice="zero" />
-			</div>
-			<div
-				class="max-w-52 -translate-y-60 translate-x-16 rotate-2 scale-75 transition-transform duration-150 sm:-translate-x-16 sm:translate-y-0 sm:scale-100 md:group-hover:rotate-6 md:group-hover:scale-110"
-			>
-				<Iphone videoChoice="zerophone" />
-			</div>
-		</div>
-	</a>
-
-	<a class="group rounded-b-2xl lg:flex-row" href="/programming/bonblocaichatbot">
+	<!-- <a class="group rounded-b-2xl lg:flex-row" href="/programming/bonblocaichatbot">
 		<div class="mx-4 space-y-4 py-8 font-redhat">
 			<div class="flex flex-col items-baseline xl:flex-row xl:gap-4">
 				<h2
@@ -155,6 +255,7 @@ const snehanSkills = [
 						<div class="programming-card-skill-box">
 							<div class="flex h-4 w-4 items-center sm:h-5 sm:w-5">
 								<span class={`${skill.icon} h-3 w-3 sm:h-6 sm:w-6`} />
+								""
 							</div>
 							{skill.skill}
 						</div>
@@ -162,7 +263,7 @@ const snehanSkills = [
 				}
 			</ul>
 		</div>
-	</a>
+	</a> -->
 
 	<a class="group flex-col lg:h-96 lg:flex-row" href="/programming/snehansite">
 		<div class="ml-4 space-y-4 font-redhat">

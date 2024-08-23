@@ -8,6 +8,7 @@ export const authorData = {
 	location: 'Malmö, Sweden',
 	from: 'Trichy, India',
 	birthday: '1995-06-12',
+	phone: '+46 760724988',
 	age: 28,
 	education: [
 		{
@@ -23,8 +24,8 @@ export const authorData = {
 	],
 	work: [
 		{
-			title: 'Full Stack Developer',
-			company: 'Indie Hacking',
+			title: 'Founder and developer',
+			company: 'Troubleshoot Labs',
 			from: '2023',
 			to: 'Present'
 		},

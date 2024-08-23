@@ -7,8 +7,10 @@ import ViewSiteBadge from '@/components/astroComponents/ViewSiteBadge.astro';
 import Macbook from '@/components/astroComponents/Macbook.astro';
 import HeadingLine from '@/components/astroComponents/HeadingLine.astro';
 
-import Acetrait1 from '@/assets/images/acetrait/acetrait1.png';
-import Acetrait2 from '@/assets/images/acetrait/acetrait2.png';
+import Acetrait3 from '@/assets/images/acetrait/acetrait3.png';
+import Acetrait4 from '@/assets/images/acetrait/acetrait4.png';
+import Acetrait5 from '@/assets/images/acetrait/acetrait5.png';
+import Acetrait6 from '@/assets/images/acetrait/acetrait6.png';
 ---
 
 <Layout title="Acetrait | Snehan Chakra Varthi">
@@ -63,7 +65,7 @@ import Acetrait2 from '@/assets/images/acetrait/acetrait2.png';
 			as there were long waiting periods for response from some API fetch calls from the LLMs, frequently
 			hitting the <span class="text-decoration">Server Execution Limits</span> on Vercel.
 		</p>
-		<Image src={Acetrait2} alt="Screenshot of Acetrait Create Job Utility" />
+		<Macbook className="max-w-full" videoChoice="acetrait2" />
 
 		<p>
 			What else? I fully committed to <Skillbox
@@ -105,7 +107,20 @@ import Acetrait2 from '@/assets/images/acetrait/acetrait2.png';
 				feed for candidates.
 			</li>
 		</ul>
-		<Image src={Acetrait1} alt="Screenshot of Acetrait Job Feed" />
+		<Image src={Acetrait3} alt="Screenshot of organisation dashboard" />
+		<p>
+			Organisation dashboard, where you can create job posts, view applicants, and take AI interview
+			for the organisation, to help the AI understand the organisation better.
+		</p>
+		<Image src={Acetrait4} alt="Screenshot of creating Job post using AI" />
+		<p>
+			Creating job post using AI, just give the basic details and the AI will create the job post for
+			you.
+		</p>
+		<Image src={Acetrait5} alt="Screenshot of candidate grading" />
+		<p>AI grading of the candidate, with the reasoning for the score.</p>
+		<Image src={Acetrait6} alt="Screenshot of candidate grading reasoning" />
+		<p>AI grading reasoning, with the attributes and the score.</p>
 
 		<HeadingLine title="Technical Overview" />
 

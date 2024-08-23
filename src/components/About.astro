@@ -169,6 +169,14 @@ import { authorData } from '@/siteConfig';
 											>
 										</button>
 									</div>
+									<div class="flex h-10">
+										<p
+											id="email"
+											class="flex h-full items-center rounded-md border border-lightGrid bg-lightCardHover px-3 dark:border-pink-900 dark:bg-pink-900/20"
+										>
+											{authorData.phone}
+										</p>
+									</div>
 									<ul class="mb-2 flex flex-row justify-between gap-4">
 										{
 											Object.entries(authorData.links).map(([name, url]) => (
@@ -210,12 +218,12 @@ import { authorData } from '@/siteConfig';
 									</ul>
 								</div>
 							</div>
-							<div class="xs:block hidden sm:w-3/5 md:w-2/5 lg:absolute lg:bottom-0 lg:right-0">
+							<div class="hidden xs:block sm:w-3/5 md:w-2/5 lg:absolute lg:bottom-0 lg:right-0">
 								<Image src={SnehanImg3} alt="Snehan Chakra Varthi" loading="eager" />
 							</div>
 						</div>
 					</div>
-					<div class="xs:hidden w-3/5">
+					<div class="w-3/5 xs:hidden">
 						<Image src={SnehanImg3} alt="Snehan Chakra Varthi" loading="eager" />
 					</div>
 					<a
@@ -287,7 +295,7 @@ import { authorData } from '@/siteConfig';
 		</div>
 		<div class="mb-40 flex w-full flex-col justify-center">
 			<h3
-				class="text-color-animate xs:mt-32 z-0 mt-44 -rotate-3 text-center font-virgil text-3xl text-cyan-800 dark:text-pink-600 sm:text-4xl md:mt-44"
+				class="text-color-animate z-0 mt-44 -rotate-3 text-center font-virgil text-3xl text-cyan-800 dark:text-pink-600 xs:mt-32 sm:text-4xl md:mt-44"
 			>
 				<span class="dark:text-shadow-3d-dark text-shadow-3d text-color-animate text-3xl sm:text-5xl">
 					THANK YOU
